@@ -716,7 +716,7 @@ private fun ContextHeader(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Brush.verticalGradient(listOf(lerp(tint, Color.Black, 0.3f), Immersive.Page)))
+            .background(Brush.verticalGradient(listOf(lerp(tint, Color.Black, 0.3f), Color.Transparent)))
             .padding(top = immersiveTopContentPadding(), bottom = 18.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {

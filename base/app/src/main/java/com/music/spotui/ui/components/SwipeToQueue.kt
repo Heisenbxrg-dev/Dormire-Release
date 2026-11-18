@@ -88,7 +88,8 @@ fun SwipeToQueue(
         Box(
             modifier = Modifier
                 .offset { IntOffset(offset.value.roundToInt(), 0) }
-                .background(background)
+                // Solid only while the row slides over the strip: at rest it is clear, so the page's backdrop shows through the list.
+                .background(if (revealed) background else Color.Transparent)
                 // A row that cannot be queued (a local file of the computer, say) does not slide.
                 .then(if (!queueable) Modifier else Modifier.pointerInput(song.id) {
                     detectHorizontalDragGestures(
