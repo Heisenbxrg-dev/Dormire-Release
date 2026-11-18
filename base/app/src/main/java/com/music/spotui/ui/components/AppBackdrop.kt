@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
@@ -14,13 +15,13 @@ import com.music.spotui.data.preferences.BackgroundImagePref
 /**
  * The bottom layer of the app, under every page (pages paint AppPage = transparent):
  * Dormire's wavy black, or the user's image dimmed by the Settings slider. A soft accent glow
- * answers each touch.
+ * answers each touch. Isolated in its own layer so page scrolling never redraws it.
  */
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun AppBackdrop(modifier: Modifier = Modifier) {
     val uri = BackgroundImagePref.uri
-    Box(modifier.fillMaxSize()) {
+    Box(modifier.fillMaxSize().graphicsLayer()) {
         if (uri == null) {
             WavyBackdrop()
         } else {
@@ -28,7 +29,7 @@ fun AppBackdrop(modifier: Modifier = Modifier) {
             GlideImage(
                 model = uri,
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().graphicsLayer(),
                 contentScale = ContentScale.Crop,
             )
             Box(Modifier.fillMaxSize().background(Color.Black.copy(alpha = BackgroundImagePref.dim)))

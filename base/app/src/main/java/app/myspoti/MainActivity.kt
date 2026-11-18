@@ -232,7 +232,7 @@ class MainActivity : AppCompatActivity() {
                         if (inPip) {
                             if (pipSong) com.music.spotui.ui.components.PipSong() else com.music.spotui.ui.components.PipVideo()
                         }
-                        // Dormire launch screen: ~2 s of "DORMIRE" on fire over the wavy black, once per launch.
+                        // Dormire launch screen: 4 s of "DORMIRE" on fire over the wavy black, once per launch.
                         if (dormireSplash && !inPip && !tv) com.music.spotui.ui.components.DormireSplash(onFinished = { dormireSplash = false })
                     }
                 } } }

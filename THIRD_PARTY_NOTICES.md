@@ -183,3 +183,8 @@ cards, focus look (border, scale, glow), focus restoring rows, the seek bar, the
 the tab bar's sliding indicator and gradient placeholders. Modified for Myspoti, 2026-11. Files
 holding adapted code say so at their top. Licensed under the Apache License, Version 2.0
 (https://www.apache.org/licenses/LICENSE-2.0). Neither sample ships a NOTICE file.
+
+## Dormire launch-screen fonts
+- Cinzel (res/font/dormire_cinzel.ttf) – Copyright The Cinzel Project Authors, SIL Open Font License 1.1.
+- Cormorant Garamond Italic (res/font/dormire_cormorant_italic.ttf) – Copyright The Cormorant Project Authors, SIL Open Font License 1.1.
+Both are static, subsetted instances of the Google Fonts releases. Licence text: https://openfontlicense.org

@@ -2,7 +2,7 @@
 
 ## Novità
 - Icona: le note musicali in fiamme su nero ondulato (la tua immagine).
-- Avvio: ~2 secondi di "DORMIRE" che va a fuoco sul nero ondulato, con sotto
+- Avvio: 4 secondi di "DORMIRE" (font Cinzel) che brucia sul nero ondulato, con sotto
   "Il sonno profondo prima di GtaVI". Poi dissolvenza nell'app.
 - Sfondo app: nero ondulato (stessa texture dell'icona) con un bagliore che "respira"
   nel colore accento; ogni tocco accende una luce morbida sotto il dito.
