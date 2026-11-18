@@ -1188,7 +1188,7 @@ object SongPlayer {
      * (busy, reloading) is sent once more instead of leaving the old song playing.
      */
     private suspend fun playChecked(itemUri: String, isLatest: () -> Boolean, play: suspend () -> Unit) {
-        if (NativeAudio.on && _activeDevice.value == null) {
+        if (NativeAudio.on && phonePlays) {
             play()
             return
         }
@@ -2038,6 +2038,7 @@ object SongPlayer {
      */
     fun next(by: String = "user") {
         Log.d(TAG, "next tapped")
+        if (_activeDevice.value == null && chosenRemote != null) refreshDevice()
         app.myspoti.host.android.Logbook.log("next asked by $by")
         userActed()
         Haptics.click()
@@ -2064,7 +2065,7 @@ object SongPlayer {
         // burst of "next" commands left the Web Player out of step (state conflicts, then a
         // player stuck until reloaded), and each song skipped through asks for a licence.
         val now = SystemClock.elapsedRealtime()
-        if (NativeAudio.on && _activeDevice.value == null) {
+        if (NativeAudio.on && phonePlays) {
             cancelBurst()
             pendingSkip = 0
             pendingTrackId = null
@@ -2190,7 +2191,7 @@ object SongPlayer {
         transport(waitReady = !stateSeen, checkAfter = true, pullBack = false, done = { ok -> skipDone(shown, ok) }) {
             if (target == null) api.player.next() else api.player.skipTo(target)
         }
-        if (target != null && (!NativeAudio.on || _activeDevice.value != null)) {
+        if (target != null && (!NativeAudio.on || !phonePlays)) {
             burstTarget = target
             burstContext = _nowPlaying.value.contextUri
             burstSeq++
@@ -2218,7 +2219,7 @@ object SongPlayer {
     private val verifyBurst = Runnable {
         val t = burstTarget ?: return@Runnable
         burstTarget = null
-        if (NativeAudio.on && _activeDevice.value == null) return@Runnable
+        if (NativeAudio.on && phonePlays) return@Runnable
         val seq = burstSeq
         val tap = verifyTap
         // A newer tap, pick or pause: the user moved on (a reported log: a previous pressed
@@ -2287,7 +2288,7 @@ object SongPlayer {
         skipSentAt = now
         positionMs = 0L
         positionAt = now
-        if (NativeAudio.on && _activeDevice.value == null) {
+        if (NativeAudio.on && phonePlays) {
             pendingSkip = 0
             pendingTrackId = null
             pendingItemUri = null
@@ -2351,7 +2352,7 @@ object SongPlayer {
                 if (order.size > 1) api.player.addToQueue(order.drop(1).map { it.url })
             } else {
                 api.player.play(ctx)
-                if (NativeAudio.on && _activeDevice.value == null) return@transport
+                if (NativeAudio.on && phonePlays) return@transport
             }
             kotlinx.coroutines.delay(1500)
             api.player.setShuffle(true)
@@ -2625,6 +2626,7 @@ object SongPlayer {
 
     fun seekTo(ms: Long) {
         if (LocalPlayer.active.value) { LocalPlayer.seekTo(ms); return }
+        if (_activeDevice.value == null && chosenRemote != null) refreshDevice()
         cancelBurst()
         val now = SystemClock.elapsedRealtime()
         positionMs = ms
@@ -2866,6 +2868,15 @@ object SongPlayer {
             chosen = value
             runCatching { chosenPrefs().edit().putString("device", value).putLong("at", System.currentTimeMillis()).apply() }
         }
+    /**
+     * This phone is the one playing: no other device is active and none was picked here (or kept
+     * from before a restart). A picked console/TV/speaker whose state is not read yet is NOT the
+     * phone: without this a skip or a seek taken in that gap played on the phone (reported on a PS5).
+     */
+    private val phonePlays: Boolean get() = _activeDevice.value == null && chosenRemote == null
+
+    /** Device kinds that are never a "takeover": started on purpose, they keep the music (normalised, no underscores). */
+    private val KEEP_REMOTE_TYPES = setOf("GAMECONSOLE", "TV", "CASTVIDEO", "CASTAUDIO", "SPEAKER", "AVR", "STB", "AUDIODONGLE", "AUTOMOBILE")
     @Volatile private var chosen: String? = null
     @Volatile private var chosenLoaded = false
     private fun chosenPrefs() = Graph.app.getSharedPreferences("myspoti_connect_choice", Context.MODE_PRIVATE)
@@ -2901,6 +2912,14 @@ object SongPlayer {
         _activeDevice.value = active?.takeIf { !it.local }?.let { ConnectDevice(it.id, it.name, it.type, false, true) }
         val remote = _activeDevice.value ?: return
         if (remote.id == chosenRemote) return
+        // A console, TV or speaker already playing was started on purpose (the PS5's own Spotify, a pick
+        // made before a restart): it keeps the music and its commands go to it. Only another phone,
+        // tablet or computer of the account "taking over" is pulled back, as before.
+        if (remote.type.uppercase().replace("_", "") in KEEP_REMOTE_TYPES || remote.name.contains("playstation", true) || remote.name.contains("ps5", true)) {
+            app.myspoti.host.android.Logbook.log("connect: ${remote.type.lowercase()} kept as the playing device, not pulled back")
+            chosenRemote = remote.id
+            return
+        }
         // A Jam joined here: the music plays on the host's device and the commands go to it (Connect,
         // to the session's device): pulling it back took the host's playback away and broke the Jam.
         // (The Jam is read again first when none is known: after a restart the app has not read it yet.)

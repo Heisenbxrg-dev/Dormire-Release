@@ -41,7 +41,10 @@ import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -60,6 +63,13 @@ import kotlin.math.sin
 private val TitleFont = FontFamily(Font(R.font.dormire_cinzel, FontWeight.ExtraBold))
 /** Cormorant Garamond Italic (OFL): an elegant italic for the tagline. */
 private val TaglineFont = FontFamily(Font(R.font.dormire_cormorant_italic, FontWeight.Medium, FontStyle.Italic))
+
+/** Capitals of two heights, like the launch art: D, R and M tall, the letters between them smaller. */
+private fun titleText(text: String) = buildAnnotatedString {
+    text.forEach { c ->
+        withStyle(SpanStyle(fontSize = if (c == 'D' || c == 'R' || c == 'M') 58.sp else 45.sp)) { append(c) }
+    }
+}
 
 private const val TOTAL_MS = 4000L
 private const val FADE_OUT_MS = 450
@@ -139,8 +149,8 @@ fun DormireSplash(onFinished: () -> Unit) {
                     fontFamily = TaglineFont,
                     fontStyle = FontStyle.Italic,
                     fontWeight = FontWeight.Medium,
-                    fontSize = 19.sp,
-                    letterSpacing = 0.6.sp,
+                    fontSize = 20.sp,
+                    letterSpacing = 0.5.sp,
                     color = Color(0xFFEADBC8),
                     shadow = Shadow(Color(0x99000000), Offset(0f, 2f), 6f),
                     textAlign = TextAlign.Center,
@@ -183,7 +193,7 @@ private fun FireTitle(text: String) {
         }),
         label = "fire-flicker",
     )
-    val style = TextStyle(fontFamily = TitleFont, fontWeight = FontWeight.ExtraBold, fontSize = 50.sp, letterSpacing = 7.sp)
+    val style = TextStyle(fontFamily = TitleFont, fontWeight = FontWeight.ExtraBold, fontSize = 50.sp, letterSpacing = 5.sp)
 
     Box(contentAlignment = Alignment.Center, modifier = Modifier.padding(top = 30.dp, start = 16.dp, end = 16.dp)) {
         // Small, soft flames licking the top of the letters (drawn past the text bounds on purpose).
@@ -212,7 +222,7 @@ private fun FireTitle(text: String) {
         }
         // Soft glow: static text with a blurred shadow; only its layer alpha flickers (no redraw).
         Text(
-            text,
+            titleText(text),
             style = style.copy(color = Color(0xFFFF3300), shadow = Shadow(Color(0xDDFF3300), Offset.Zero, blurRadius = 36f)),
             modifier = Modifier.graphicsLayer {
                 alpha = flicker.value
@@ -222,7 +232,7 @@ private fun FireTitle(text: String) {
         )
         // Crisp letters with a fire gradient flowing upward, and a dark-red edge for depth.
         Text(
-            text,
+            titleText(text),
             style = style.copy(color = Color.White, shadow = Shadow(Color(0xFF5A0000), Offset(0f, 3f), 2f)),
             modifier = Modifier
                 .graphicsLayer { compositingStrategy = CompositingStrategy.Offscreen }

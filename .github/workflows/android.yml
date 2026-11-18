@@ -3,6 +3,7 @@ name: Android Build
 on:
   push:
     branches: [master, main]
+  workflow_dispatch:
 
 defaults:
   run:
@@ -11,6 +12,8 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      KS_B64: ${{ secrets.MYSPOTI_STABLE_KEYSTORE_BASE64 }}
     steps:
       - uses: actions/checkout@v4
 
@@ -30,11 +33,28 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
+      # Con la tua chiave (secret) l'APK si aggiorna sopra quello gia' installato.
+      # Senza chiave la build parte lo stesso ("-beta", firmata con una chiave di prova):
+      # ogni APK e' firmato diversamente, quindi va prima disinstallata la versione precedente.
+      - name: Keystore
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            echo "MYSPOTI_KEYSTORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+            echo "MYSPOTI_KEYSTORE_PASSWORD=${{ secrets.MYSPOTI_STABLE_KEYSTORE_PASSWORD }}" >> "$GITHUB_ENV"
+            echo "MYSPOTI_KEY_ALIAS=${{ secrets.MYSPOTI_STABLE_KEY_ALIAS }}" >> "$GITHUB_ENV"
+            echo "MYSPOTI_KEY_PASSWORD=${{ secrets.MYSPOTI_STABLE_KEY_PASSWORD }}" >> "$GITHUB_ENV"
+            echo "VERSION=1.0.${{ github.run_number }}" >> "$GITHUB_ENV"
+          else
+            echo "VERSION=1.0.${{ github.run_number }}-beta" >> "$GITHUB_ENV"
+          fi
+
+      # Release = ottimizzata (R8, risorse ridotte): molto piu' fluida della debug.
+      - name: Build Release APK
+        run: ./gradlew assembleRelease :app:collectApks -PappVersionName="$VERSION" -PappVersionCode="$((1000 + GITHUB_RUN_NUMBER))"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: dormire-debug-apk
-          path: base/app/build/outputs/apk/debug/*.apk
-          retention-days: 14 
+          name: dormire-apk
+          path: base/app/build/release-apks/*.apk
+          retention-days: 14
