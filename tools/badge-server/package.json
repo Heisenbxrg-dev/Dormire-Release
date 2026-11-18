@@ -1,0 +1,13 @@
+{
+  "name": "revera-badge-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "author": "carunodev",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "start": "node server.mjs",
+    "cli": "node cli.mjs",
+    "test": "node --test test.mjs"
+  }
+}

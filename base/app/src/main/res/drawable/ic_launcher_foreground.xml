@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dormire launcher icon foreground: original vector art, two stylised eighth notes joined by a
+    beam, drawn in Dormire red on a transparent canvas. The matching ic_launcher_background.xml
+    paints the solid black circle under it.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Note stem (left note) -->
+    <path
+        android:pathData="M46,32 L52,30 L52,72 L46,72 Z"
+        android:fillColor="#E50914" />
+
+    <!-- Note head (left note) -->
+    <path
+        android:pathData="M34,74 C34,67 43,63 50,65 C55,66 56,72 52,76 C47,80 34,80 34,74 Z"
+        android:fillColor="#E50914" />
+
+    <!-- Note stem (right note) -->
+    <path
+        android:pathData="M68,38 L74,36 L74,78 L68,78 Z"
+        android:fillColor="#E50914" />
+
+    <!-- Note head (right note) -->
+    <path
+        android:pathData="M56,80 C56,73 65,69 72,71 C77,72 78,78 74,82 C69,86 56,86 56,80 Z"
+        android:fillColor="#E50914" />
+
+    <!-- Beam connecting the two stems (eighth-note style) -->
+    <path
+        android:pathData="M46,30 L74,24 L74,32 L46,38 Z"
+        android:fillColor="#E50914" />
+
+    <!-- Highlight on left note head to give depth -->
+    <path
+        android:pathData="M38,70 C40,68 44,67 47,68 C45,71 41,72 38,72 Z"
+        android:fillColor="#FF4D4D" />
+
+</vector>

@@ -1,0 +1,2248 @@
+{
+  "author": "carunodev",
+  "baseline": "542797e",
+  "ui_files": [
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AboutSheet.kt",
+      "composables": [
+        "AboutSheet",
+        "AboutRow"
+      ],
+      "lines": 84
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AccountProviderSignIn.kt",
+      "composables": [
+        "accountProviderLabel",
+        "YtmSignInDialog"
+      ],
+      "lines": 69
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AccountsList.kt",
+      "composables": [
+        "accountsLook",
+        "AccountsList",
+        "switchAccountDetail",
+        "AccountsSheet"
+      ],
+      "lines": 203
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AddCollectionToPlaylistSheet.kt",
+      "composables": [
+        "AddCollectionToPlaylistSheet",
+        "AlbumOptionsSheet",
+        "LikedPickRow"
+      ],
+      "lines": 225
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AddSongsScreen.kt",
+      "composables": [
+        "AddSongsScreen",
+        "AddSongRow"
+      ],
+      "lines": 209
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AddToPlaylistSheet.kt",
+      "composables": [
+        "AddToPlaylistSheet",
+        "PickRow"
+      ],
+      "lines": 174
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AppComponents.kt",
+      "composables": [
+        "Loader",
+        "placeholderAlpha",
+        "SkeletonList",
+        "SkeletonLyrics",
+        "SkeletonRows",
+        "MiniPlayer",
+        "Snackbar"
+      ],
+      "lines": 453
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/ArtistChooser.kt",
+      "composables": [
+        "ArtistChooserHost",
+        "rememberArtistCredit",
+        "rememberArtistLineScrolls"
+      ],
+      "lines": 184
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/ArtistOptionsSheet.kt",
+      "composables": [
+        "ArtistOptionsSheet",
+        "ArtistMenuRow"
+      ],
+      "lines": 117
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AudioRoute.kt",
+      "composables": [
+        "rememberAudioRoute"
+      ],
+      "lines": 78
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AutoMixInfo.kt",
+      "composables": [],
+      "lines": 36
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/AutoMixVisuals.kt",
+      "composables": [
+        "rememberMixCue",
+        "rememberMixPulse",
+        "PlaybackSpeedNote"
+      ],
+      "lines": 242
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/BetaLogButton.kt",
+      "composables": [
+        "BetaLogButton",
+        "BugIcon",
+        "LogsDialog"
+      ],
+      "lines": 175
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/BlendPanel.kt",
+      "composables": [
+        "BlendPanel",
+        "CompactLine",
+        "StoryCard",
+        "Members"
+      ],
+      "lines": 213
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/BottomBarsSpace.kt",
+      "composables": [
+        "bottomBarsSpace"
+      ],
+      "lines": 16
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/CanvasPlayer.kt",
+      "composables": [],
+      "lines": 121
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/CrossfadeSlider.kt",
+      "composables": [
+        "CrossfadeSlider"
+      ],
+      "lines": 56
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/DownloadBadge.kt",
+      "composables": [
+        "DownloadBadge",
+        "DownloadListButton"
+      ],
+      "lines": 79
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/EpisodeSheets.kt",
+      "composables": [
+        "EpisodeDownloadButton",
+        "EpisodeOptionsSheet",
+        "SheetAction",
+        "episodeMinutes",
+        "PodcastSpeedSheet"
+      ],
+      "lines": 289
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/ErrorRetry.kt",
+      "composables": [
+        "ErrorRetry"
+      ],
+      "lines": 34
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/FastScrollbar.kt",
+      "composables": [
+        "FastScrollbar"
+      ],
+      "lines": 88
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/FindInList.kt",
+      "composables": [
+        "SearchClearButton",
+        "FindInListField",
+        "FindInListEmpty"
+      ],
+      "lines": 154
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/FitText.kt",
+      "composables": [
+        "FitText"
+      ],
+      "lines": 55
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/FrameCadence.kt",
+      "composables": [],
+      "lines": 22
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/FrameClock.kt",
+      "composables": [
+        "rememberFrameClock"
+      ],
+      "lines": 38
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/HiddenSongUndo.kt",
+      "composables": [
+        "HiddenSongUndo"
+      ],
+      "lines": 49
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/HomeItemActions.kt",
+      "composables": [],
+      "lines": 57
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/LinkedText.kt",
+      "composables": [
+        "rememberLinkedText"
+      ],
+      "lines": 77
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/LoginHelp.kt",
+      "composables": [
+        "LoginHelpButton",
+        "LoginHelpDialog",
+        "LoginReportLink"
+      ],
+      "lines": 126
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/LookAlertDialog.kt",
+      "composables": [
+        "LookAlertDialog"
+      ],
+      "lines": 33
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/LookSheet.kt",
+      "composables": [
+        "LookSheet"
+      ],
+      "lines": 27
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/LyricsBadge.kt",
+      "composables": [
+        "LyricsBadge"
+      ],
+      "lines": 44
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/LyricsShare.kt",
+      "composables": [],
+      "lines": 25
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/LyricsSourceSheet.kt",
+      "composables": [
+        "LyricsSourceSheet"
+      ],
+      "lines": 105
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/MeaningSheet.kt",
+      "composables": [
+        "rememberShown",
+        "readerLanguage",
+        "TranslateChip",
+        "GeniusSource",
+        "AboutSheet",
+        "NoteSheet"
+      ],
+      "lines": 163
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/Motion.kt",
+      "composables": [
+        "PlayPauseIcon",
+        "LoadedFade",
+        "arrivingRow",
+        "leavingPlaceholder",
+        "animatedRow"
+      ],
+      "lines": 198
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/MusicVideo.kt",
+      "composables": [
+        "VideoSurface",
+        "VideoSwitchPill",
+        "SwitchPill",
+        "VideoFullscreenButton",
+        "VideoFullscreenOverlay",
+        "RoundIcon",
+        "PipVideo"
+      ],
+      "lines": 304
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/PlayerSheets.kt",
+      "composables": [
+        "activeDeviceLabel",
+        "activeDeviceIcon",
+        "playingSourceLabel",
+        "spotifyQualityLabel",
+        "playingExtensionName",
+        "DevicesSheet",
+        "DeviceRow",
+        "QualitySheet",
+        "JamSection",
+        "SleepTimerSheet",
+        "QueueSheet",
+        "PillButton",
+        "QueueList",
+        "SwipeLeftToRemove",
+        "SheetHeader",
+        "QueueSheetRow",
+        "QueueAction"
+      ],
+      "lines": 1078
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/PlaylistOptionsSheet.kt",
+      "composables": [
+        "PlaylistOptionsSheet",
+        "EditDetailsDialog",
+        "OptionRow",
+        "QueueListRows"
+      ],
+      "lines": 459
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/PodcastBadges.kt",
+      "composables": [
+        "NewEpisodeDot",
+        "EpisodeProgressBar"
+      ],
+      "lines": 51
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/ProfileAvatar.kt",
+      "composables": [
+        "ProfileAvatar"
+      ],
+      "lines": 52
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/PullToDismiss.kt",
+      "composables": [
+        "rememberPullToDismiss"
+      ],
+      "lines": 161
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/QualityPickers.kt",
+      "composables": [
+        "StreamingQualityPicker",
+        "DownloadQualityPicker",
+        "DownloadAskHost",
+        "NeedSourceDialog"
+      ],
+      "lines": 226
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/RecentlyPlayedParts.kt",
+      "composables": [
+        "groupSubtitle",
+        "countLabel",
+        "dayLabel",
+        "kindLabel"
+      ],
+      "lines": 95
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/RepeatIcons.kt",
+      "composables": [],
+      "lines": 43
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SavedInSheet.kt",
+      "composables": [
+        "SavedInSheet",
+        "FolderRow",
+        "SavedInRow"
+      ],
+      "lines": 343
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/ShareCard.kt",
+      "composables": [],
+      "lines": 119
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SongBlend.kt",
+      "composables": [
+        "rememberSongBlend",
+        "SongBlendCover"
+      ],
+      "lines": 88
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SongOptionsSheet.kt",
+      "composables": [
+        "SongOptionsSheet",
+        "LikedBadge",
+        "MenuRow",
+        "CreditsSheet",
+        "SpeedSheet"
+      ],
+      "lines": 455
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SongPip.kt",
+      "composables": [
+        "PipSong"
+      ],
+      "lines": 139
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SongQueue.kt",
+      "composables": [],
+      "lines": 48
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SourcePicker.kt",
+      "composables": [
+        "SourcePicker",
+        "detailOf",
+        "ImmersiveSourcePicker",
+        "ClassicSourcePicker"
+      ],
+      "lines": 161
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SpotifyCodeSheet.kt",
+      "composables": [
+        "SpotifyCodeSheet",
+        "ShareAction"
+      ],
+      "lines": 213
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SpotifyImages.kt",
+      "composables": [],
+      "lines": 38
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/StatsForNerdsSheet.kt",
+      "composables": [
+        "StatsForNerdsSheet"
+      ],
+      "lines": 229
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SupporterSheet.kt",
+      "composables": [
+        "SupporterBadge",
+        "UserBadgesRow",
+        "SupporterSheet"
+      ],
+      "lines": 328
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SwipeToQueue.kt",
+      "composables": [
+        "SwipeToQueue"
+      ],
+      "lines": 115
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/SwipeToRemove.kt",
+      "composables": [
+        "SwipeToRemove"
+      ],
+      "lines": 101
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/TitleMarquee.kt",
+      "composables": [
+        "titleMarquee"
+      ],
+      "lines": 25
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/TrackSaved.kt",
+      "composables": [],
+      "lines": 18
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/UserTouch.kt",
+      "composables": [],
+      "lines": 14
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/VoiceSearch.kt",
+      "composables": [],
+      "lines": 19
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/WhySourceSheet.kt",
+      "composables": [
+        "WhySourceSheet",
+        "outcomeLabel",
+        "Head",
+        "Line"
+      ],
+      "lines": 101
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/WideTap.kt",
+      "composables": [],
+      "lines": 175
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/components/WindowSize.kt",
+      "composables": [
+        "windowSize",
+        "configurationWindowSize",
+        "ProvideWindowSize"
+      ],
+      "lines": 162
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveButtons.kt",
+      "composables": [
+        "ImmersiveButton",
+        "ImmersiveCircleButton",
+        "ImmersivePlayShuffleButtons",
+        "ImmersiveMessageState"
+      ],
+      "lines": 180
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveClickable.kt",
+      "composables": [],
+      "lines": 64
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveCover.kt",
+      "composables": [
+        "ImmersiveCover",
+        "ImmersiveCoverPlaceholder",
+        "ImmersivePlayingBars"
+      ],
+      "lines": 174
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveOverscroll.kt",
+      "composables": [
+        "rememberImmersiveOverscrollFactory"
+      ],
+      "lines": 198
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveRows.kt",
+      "composables": [
+        "ImmersiveSongRow",
+        "ImmersiveListRow",
+        "RowScaffold",
+        "ImmersiveMoreButton"
+      ],
+      "lines": 321
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveSearchField.kt",
+      "composables": [
+        "ImmersiveSearchField"
+      ],
+      "lines": 138
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveSections.kt",
+      "composables": [
+        "SectionHeader",
+        "ImmersiveShelfRow",
+        "ImmersiveShelf",
+        "ImmersiveShelfCard",
+        "ImmersiveLargeAlbumCard"
+      ],
+      "lines": 287
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveSkeletons.kt",
+      "composables": [
+        "ImmersiveShimmerBox",
+        "SkeletonLine",
+        "ImmersiveSectionHeaderSkeleton",
+        "ImmersiveSongRowSkeleton",
+        "ImmersiveHeroShelfSkeleton",
+        "ImmersiveShelfSkeleton",
+        "ImmersivePlayShuffleSkeleton"
+      ],
+      "lines": 268
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/components/ImmersiveSongText.kt",
+      "composables": [
+        "ImmersiveSongTitle",
+        "ImmersiveExplicitBadge"
+      ],
+      "lines": 94
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/ImmersiveTheme.kt",
+      "composables": [],
+      "lines": 85
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/lyrics/ImmersiveListEdges.kt",
+      "composables": [],
+      "lines": 62
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/lyrics/ImmersiveLyricClock.kt",
+      "composables": [
+        "rememberLyricsPlayhead"
+      ],
+      "lines": 146
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/lyrics/ImmersiveLyricsPanel.kt",
+      "composables": [
+        "ImmersiveLyricsPanel",
+        "LyricsToggle",
+        "LyricsList",
+        "PanelRow",
+        "ShareBar",
+        "NoteLayout",
+        "NoteMark",
+        "PanelVoice",
+        "PanelBackground",
+        "GapRow",
+        "LyricsSkeleton"
+      ],
+      "lines": 1311
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/lyrics/ImmersiveQueuePanel.kt",
+      "composables": [
+        "ImmersiveQueuePanel",
+        "QueueEntry",
+        "QueueHeader",
+        "QueueToggle",
+        "QueueHeading",
+        "QueueRow"
+      ],
+      "lines": 702
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/lyrics/QueueDragMath.kt",
+      "composables": [],
+      "lines": 180
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/motion/ImmersiveMotion.kt",
+      "composables": [
+        "immersiveItemPlacement"
+      ],
+      "lines": 142
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveActivityScreens.kt",
+      "composables": [
+        "ImmersiveFriendsScreen",
+        "ImmersiveFriendRow",
+        "ImmersiveLocalFilesScreen",
+        "LocalEmpty",
+        "ImmersiveEpisodeScreen",
+        "ImmersiveQueueScreen"
+      ],
+      "lines": 407
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveDiscoverScreens.kt",
+      "composables": [
+        "ImmersiveNewReleasesScreen",
+        "ImmersiveEpisodesScreen",
+        "ImmersiveNewEpisodesScreen",
+        "ImmersiveRecapScreen",
+        "SpotifyStatsBlock",
+        "ImmersiveWeeklyChart"
+      ],
+      "lines": 361
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveDownloadsScreen.kt",
+      "composables": [
+        "ImmersiveDownloadsScreen",
+        "NoticeCard"
+      ],
+      "lines": 276
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveEqualizerScreen.kt",
+      "composables": [
+        "ImmersiveEqualizerScreen",
+        "DbRow"
+      ],
+      "lines": 138
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveExtensionDetail.kt",
+      "composables": [
+        "ExtHeader",
+        "DetailRow",
+        "TintedCard",
+        "ImmersiveExtensionEntryScreen",
+        "ImmersiveExtensionScreen",
+        "SettingRow"
+      ],
+      "lines": 445
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveExtensionParts.kt",
+      "composables": [
+        "ImmersiveExtRow",
+        "ImmersiveSwitch",
+        "ImmersiveRowIcon",
+        "ImmersiveExtensionPageFrame",
+        "ImmersiveStateButton"
+      ],
+      "lines": 166
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveExtensionsScreen.kt",
+      "composables": [
+        "ImmersiveExtensionsScreen",
+        "EmptyState",
+        "RepoHeader",
+        "GitHubHeader",
+        "StoreRow",
+        "AreaActivity",
+        "InstalledRow"
+      ],
+      "lines": 490
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveHiddenSongsScreen.kt",
+      "composables": [
+        "ImmersiveHiddenSongsScreen"
+      ],
+      "lines": 45
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveLibraryPages.kt",
+      "composables": [
+        "ImmersiveFolderScreen",
+        "ImmersiveLocalPlaylistScreen"
+      ],
+      "lines": 237
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersivePage.kt",
+      "composables": [
+        "ImmersivePage",
+        "row",
+        "ImmersiveGroupRow",
+        "ImmersiveSwitchRow",
+        "ImmersiveChoiceRow"
+      ],
+      "lines": 285
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersivePagesParts.kt",
+      "composables": [
+        "ImmersiveSegmentedControl",
+        "ImmersiveSwipeToRemove",
+        "ImmersiveNameDialog",
+        "ImmersiveSheet",
+        "ImmersiveSheetRow",
+        "ImmersivePageFrame"
+      ],
+      "lines": 305
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveRecentlyPlayedScreen.kt",
+      "composables": [
+        "ImmersiveRecentlyPlayedScreen",
+        "GroupRow",
+        "PlayRow",
+        "RecentCover"
+      ],
+      "lines": 340
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveSettingsScreen.kt",
+      "composables": [
+        "ImmersiveSettingsScreen",
+        "SettingsRoot",
+        "transitionValue",
+        "SourcesPage",
+        "PlaybackPage",
+        "LibraryPage",
+        "LyricsPage",
+        "StreamingPage",
+        "CrossfadePage",
+        "DownloadsPage",
+        "StoragePage",
+        "DownloadQualityPage",
+        "DataPage",
+        "DisplayPage",
+        "AccentRow",
+        "LookPage",
+        "RotationPage",
+        "LanguagePage",
+        "LyricsLanguagePage",
+        "AppPage",
+        "AccountsPage",
+        "DurationStepper"
+      ],
+      "lines": 1288
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/ImmersiveWhatsNewScreen.kt",
+      "composables": [
+        "ImmersiveWhatsNewScreen",
+        "WhatsNewRow"
+      ],
+      "lines": 193
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/pages/SponsorBlockGroup.kt",
+      "composables": [],
+      "lines": 44
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/people/ImmersiveFollowListScreen.kt",
+      "composables": [
+        "ImmersiveFollowListScreen"
+      ],
+      "lines": 78
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/people/ImmersiveProfileScreen.kt",
+      "composables": [
+        "ImmersiveProfileScreen",
+        "CountLink"
+      ],
+      "lines": 291
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/player/ImmersiveMiniPlayer.kt",
+      "composables": [
+        "ImmersiveMiniPlayer"
+      ],
+      "lines": 213
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/player/ImmersivePlayer.kt",
+      "composables": [
+        "dragToClose",
+        "PlayerDismissStrip",
+        "swipeToChangeTrack",
+        "ImmersivePlayer",
+        "rememberImmersiveCanvas",
+        "PlayerBackdrop",
+        "PlayerCredits",
+        "PlayerControlsBlock",
+        "LandscapePlayer"
+      ],
+      "lines": 871
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/player/ImmersivePlayerOverlay.kt",
+      "composables": [
+        "ImmersivePlayerOverlay"
+      ],
+      "lines": 190
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/player/ImmersivePodcastPlayer.kt",
+      "composables": [
+        "ImmersivePodcastPlayer",
+        "PodcastTransportRow",
+        "SkipButton",
+        "TransportButton",
+        "SpeedChip",
+        "BottomGlyph"
+      ],
+      "lines": 521
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/player/PlayerBridge.kt",
+      "composables": [
+        "rememberImmersivePlayer"
+      ],
+      "lines": 243
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/player/PlayerControls.kt",
+      "composables": [
+        "PlayerScrubber",
+        "ScrubTimes",
+        "CircleGlyph",
+        "TransportRow",
+        "TransportGlyph",
+        "VolumeRow",
+        "Pill",
+        "PillDivider",
+        "PillSegment",
+        "BottomGlyph",
+        "PlayerActionRow"
+      ],
+      "lines": 581
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/player/PlayerState.kt",
+      "composables": [
+        "rememberPlayerScrub",
+        "rememberPlayerVolume"
+      ],
+      "lines": 178
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/podcast/ImmersiveEpisodeRow.kt",
+      "composables": [
+        "ImmersiveEpisodeRow",
+        "PlayDisc"
+      ],
+      "lines": 171
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/podcast/ImmersiveHeaderParts.kt",
+      "composables": [
+        "rememberHeaderCollapse",
+        "CoverGlow",
+        "ImmersiveOverscrollHost",
+        "rowPlacement"
+      ],
+      "lines": 75
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/podcast/ImmersiveShowScreen.kt",
+      "composables": [
+        "ImmersiveShowScreen",
+        "ShowHeader",
+        "About"
+      ],
+      "lines": 314
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveAlbumByIdScreen.kt",
+      "composables": [
+        "ImmersiveAlbumByIdScreen"
+      ],
+      "lines": 56
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveArtistReleasesScreen.kt",
+      "composables": [
+        "ImmersiveArtistReleasesScreen",
+        "ReleaseRow",
+        "ReleaseFilterChip"
+      ],
+      "lines": 181
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveArtistScreen.kt",
+      "composables": [
+        "releaseDetail",
+        "ImmersiveArtistScreen",
+        "ArtistLoading",
+        "ArtistNameHeader",
+        "ArtistOverviewContent"
+      ],
+      "lines": 522
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveArtistScreenParts.kt",
+      "composables": [
+        "ArtistBackdrop",
+        "ArtistPlayCircle",
+        "ArtistCompactSongRow",
+        "ArtistTopReleaseCard",
+        "ArtistLikedRow"
+      ],
+      "lines": 331
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveCategoryScreen.kt",
+      "composables": [
+        "ImmersiveCategoryScreen",
+        "CategoryCard"
+      ],
+      "lines": 109
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveContextScreen.kt",
+      "composables": [
+        "ImmersiveContextScreen",
+        "ContextLoading",
+        "ImmersiveContextContent",
+        "ContextHeader",
+        "LikedSleeve",
+        "DownloadCircle",
+        "SortMenu",
+        "SimilarAlbums",
+        "InviteJoinBar"
+      ],
+      "lines": 1081
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveContextScreenParts.kt",
+      "composables": [
+        "rememberTrackTapper",
+        "ImmersiveSwipeToQueue",
+        "ImmersiveAboutText",
+        "ImmersiveRowDivider"
+      ],
+      "lines": 138
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveHomeChips.kt",
+      "composables": [
+        "ImmersiveChipRow",
+        "ImmersiveChip",
+        "ImmersiveHomeFacets"
+      ],
+      "lines": 137
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveHomeProfile.kt",
+      "composables": [
+        "ProfileDisc",
+        "AvatarDisc",
+        "ImmersiveProfileSheet",
+        "SheetRow"
+      ],
+      "lines": 224
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveHomeScreen.kt",
+      "composables": [
+        "ImmersiveHomeScreen",
+        "WhatsNewBell",
+        "cardSubtitle",
+        "HeroSection",
+        "ShelfSection",
+        "ShortcutGrid"
+      ],
+      "lines": 384
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveLibraryScreen.kt",
+      "composables": [
+        "ImmersiveLibraryScreen",
+        "gridCollapse",
+        "libraryEntries",
+        "LibraryHeader",
+        "LibraryList",
+        "LibraryEntryRow",
+        "LibraryGrid"
+      ],
+      "lines": 907
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveLibrarySheets.kt",
+      "composables": [
+        "ImmersiveLibrarySortSheet",
+        "ImmersiveAccountSheet",
+        "AccountRow"
+      ],
+      "lines": 166
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveSearchBrowse.kt",
+      "composables": [
+        "rememberBrowseTiles",
+        "BrowseTileRow",
+        "BrowseTileCard"
+      ],
+      "lines": 184
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/screens/ImmersiveSearchScreen.kt",
+      "composables": [
+        "ImmersiveSearchScreen",
+        "ImmersiveVoiceSearchButton",
+        "SuggestionRow",
+        "RowDivider",
+        "SongResultRow",
+        "TopResultCard"
+      ],
+      "lines": 652
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/sheets/ImmersiveAlertDialog.kt",
+      "composables": [
+        "ImmersiveAlertDialog"
+      ],
+      "lines": 43
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/sheets/ImmersiveGlassSheet.kt",
+      "composables": [
+        "ImmersiveGlassSheet"
+      ],
+      "lines": 63
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/sheets/ImmersiveMeaningSheet.kt",
+      "composables": [
+        "ImmersiveMeaningSheet",
+        "MeaningBody",
+        "MeaningHeader",
+        "MeaningText",
+        "MeaningFooter",
+        "FooterPill"
+      ],
+      "lines": 288
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/sheets/ImmersiveSheet.kt",
+      "composables": [
+        "rememberImmersiveSheetTint",
+        "ImmersiveSheet",
+        "ImmersiveSheetTitle",
+        "ImmersiveSheetHeader",
+        "ImmersiveSheetDivider",
+        "ImmersiveSheetRow",
+        "ImmersiveSheetOption",
+        "ImmersiveSheetNote"
+      ],
+      "lines": 378
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/sheets/ImmersiveSleepTimerSheet.kt",
+      "composables": [
+        "ImmersiveSleepTimerSheet"
+      ],
+      "lines": 36
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/sheets/ImmersiveSongOptionsSheet.kt",
+      "composables": [
+        "ImmersiveSongOptionsSheet",
+        "LikedTick"
+      ],
+      "lines": 362
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/Backdrop.kt",
+      "composables": [],
+      "lines": 29
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/BackdropClipCache.kt",
+      "composables": [],
+      "lines": 18
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/BackdropEffectScope.kt",
+      "composables": [],
+      "lines": 96
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/BackdropGeometry.kt",
+      "composables": [],
+      "lines": 25
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/BackdropInvalidation.kt",
+      "composables": [],
+      "lines": 9
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/backdrops/LayerBackdrop.kt",
+      "composables": [
+        "rememberLayerBackdrop"
+      ],
+      "lines": 215
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/backdrops/LayerBackdropModifier.kt",
+      "composables": [],
+      "lines": 186
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/DrawBackdropModifier.kt",
+      "composables": [],
+      "lines": 432
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/effects/Blur.kt",
+      "composables": [],
+      "lines": 41
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/effects/ColorFilter.kt",
+      "composables": [],
+      "lines": 87
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/effects/Lens.kt",
+      "composables": [],
+      "lines": 131
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/effects/RenderEffect.kt",
+      "composables": [],
+      "lines": 24
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/highlight/Highlight.kt",
+      "composables": [],
+      "lines": 40
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/highlight/HighlightModifier.kt",
+      "composables": [],
+      "lines": 178
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/highlight/HighlightStyle.kt",
+      "composables": [],
+      "lines": 150
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/internal/InverseLayerScope.kt",
+      "composables": [],
+      "lines": 142
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/internal/LayerRecorder.kt",
+      "composables": [],
+      "lines": 42
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/internal/Outline.kt",
+      "composables": [],
+      "lines": 30
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/internal/Paint.kt",
+      "composables": [],
+      "lines": 28
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/internal/RenderEffect.kt",
+      "composables": [],
+      "lines": 62
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/internal/Shaders.kt",
+      "composables": [],
+      "lines": 216
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/internal/ShapeProvider.kt",
+      "composables": [],
+      "lines": 56
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/Platform.kt",
+      "composables": [],
+      "lines": 22
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/RuntimeShader.kt",
+      "composables": [],
+      "lines": 94
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/RuntimeShaderCache.kt",
+      "composables": [],
+      "lines": 33
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/shadow/InnerShadow.kt",
+      "composables": [],
+      "lines": 53
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/shadow/InnerShadowModifier.kt",
+      "composables": [],
+      "lines": 170
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/shadow/Shadow.kt",
+      "composables": [],
+      "lines": 39
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/backdrop/shadow/ShadowModifier.kt",
+      "composables": [],
+      "lines": 149
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/FloatingTabBar.kt",
+      "composables": [
+        "FloatingTabBar",
+        "ExpandedTabs",
+        "ExpandedStandaloneTab",
+        "Tab",
+        "standaloneTab",
+        "colors",
+        "shapes",
+        "sizes"
+      ],
+      "lines": 587
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/GlassSelectionPill.kt",
+      "composables": [
+        "FlatSelectionPill",
+        "LiftedSelectionPill",
+        "GlassSelectionPill"
+      ],
+      "lines": 650
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/ImmersiveChrome.kt",
+      "composables": [
+        "rememberImmersiveChromeState",
+        "immersiveChromeScroll",
+        "ImmersiveBottomChrome",
+        "MinimizedTabPill"
+      ],
+      "lines": 308
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/ImmersiveGlass.kt",
+      "composables": [
+        "liquidGlassAvailability",
+        "rememberLiquidGlassActive",
+        "rememberImmersiveBackdrop",
+        "immersiveLiquidGlass",
+        "immersivePageFrost",
+        "rememberGlassPress"
+      ],
+      "lines": 362
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/ImmersiveHaze.kt",
+      "composables": [
+        "rememberImmersiveHazeState",
+        "immersiveHazeSource",
+        "immersiveFrost",
+        "immersiveGlassSurface"
+      ],
+      "lines": 143
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/ImmersiveTabBar.kt",
+      "composables": [
+        "rememberTabNavigation",
+        "TabBarContent",
+        "tabLabel",
+        "TabIcon"
+      ],
+      "lines": 209
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/immersive/shell/ImmersiveTopBar.kt",
+      "composables": [
+        "rememberBarControlSize",
+        "immersiveTopBarHeight",
+        "immersiveTopContentPadding",
+        "ImmersiveTopBar",
+        "ImmersiveTopBar",
+        "ImmersiveTopBar",
+        "rememberTopBarCollapse",
+        "rememberTopBarCollapse",
+        "ImmersiveBarAction",
+        "ImmersiveLargeTitle",
+        "ImmersiveTopGlass",
+        "immersiveHeaderContentPadding",
+        "ImmersiveFloatingHeader",
+        "AnimatedHeaderActions",
+        "holdsTouches"
+      ],
+      "lines": 504
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/DemoSong.kt",
+      "composables": [
+        "DemoCover",
+        "DemoTile"
+      ],
+      "lines": 167
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/Look.kt",
+      "composables": [
+        "ProvideLook",
+        "rememberReduceMotion",
+        "rememberReduceMotionSetting"
+      ],
+      "lines": 71
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/LookPreview.kt",
+      "composables": [
+        "rememberDemoClock",
+        "rememberStillClock",
+        "PhoneFrame",
+        "LookDemo",
+        "rememberPhases",
+        "FlyingCover",
+        "Glyph",
+        "Glyph",
+        "PlayGlyph",
+        "TimeRow",
+        "ClassicDemo",
+        "ClassicHome",
+        "ClassicMini",
+        "ClassicTabs",
+        "ClassicPlayer",
+        "ClassicSeekBar",
+        "ClassicLyricsCard",
+        "ImmersiveDemo",
+        "ImmersiveHome",
+        "ImmersiveMini",
+        "ImmersiveTabs",
+        "GlassDisc",
+        "ImmersivePlayer",
+        "ImmersiveLyrics"
+      ],
+      "lines": 757
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/LookStep.kt",
+      "composables": [
+        "LookStep",
+        "LookSegments",
+        "LookStills"
+      ],
+      "lines": 206
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/LyricClock.kt",
+      "composables": [],
+      "lines": 387
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/LyricTap.kt",
+      "composables": [],
+      "lines": 30
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/MeshGradient.kt",
+      "composables": [
+        "MeshGradientBackground",
+        "cyclingMeshPalette",
+        "rememberArtworkColors"
+      ],
+      "lines": 370
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/PauseShrink.kt",
+      "composables": [
+        "rememberPauseScale"
+      ],
+      "lines": 22
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/SweptLyricLine.kt",
+      "composables": [
+        "SweptLyricLine"
+      ],
+      "lines": 846
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/SweptLyricModel.kt",
+      "composables": [],
+      "lines": 562
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/look/ThinSlider.kt",
+      "composables": [
+        "ThinSlider",
+        "ThinSlider",
+        "LoadingSheen"
+      ],
+      "lines": 270
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/MainBottomNavigation.kt",
+      "composables": [
+        "MainBottomNavigation",
+        "rememberTabNavigation",
+        "MainNavigationRail",
+        "NavBarTab"
+      ],
+      "lines": 310
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/MyNavHost.kt",
+      "composables": [
+        "MyNavHost",
+        "isImmersive"
+      ],
+      "lines": 413
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/PlayerSheet.kt",
+      "composables": [
+        "PlayerOverlay"
+      ],
+      "lines": 122
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/Routes.kt",
+      "composables": [],
+      "lines": 106
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/repository/AppRepository.kt",
+      "composables": [],
+      "lines": 33
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/AccountBrowser.kt",
+      "composables": [],
+      "lines": 102
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/AlbumByIdScreen.kt",
+      "composables": [
+        "AlbumByIdScreen"
+      ],
+      "lines": 57
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ArtistScreen.kt",
+      "composables": [
+        "ArtistScreen",
+        "ArtistOverviewContent",
+        "PopularTrackRow",
+        "SectionHeader",
+        "ReleaseCard",
+        "ReleaseRow",
+        "ShowAllButton",
+        "ArtistReleasesScreen",
+        "ReleaseSectionHeader",
+        "ReleaseFilterChip",
+        "RelatedArtistCard"
+      ],
+      "lines": 934
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/CategoryScreen.kt",
+      "composables": [
+        "CategoryScreen",
+        "CategoryGrid"
+      ],
+      "lines": 162
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ContextScreen.kt",
+      "composables": [
+        "ContextScreen",
+        "ContextContent",
+        "RecommendedRow",
+        "MembersSheet",
+        "item",
+        "TrackRow",
+        "LikedCover",
+        "TrackSortButton",
+        "SimilarAlbums"
+      ],
+      "lines": 1770
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/DiscoverScreens.kt",
+      "composables": [
+        "ScreenHeader",
+        "Loading",
+        "SectionTitle",
+        "NewReleasesScreen",
+        "EpisodesScreen",
+        "NewEpisodesScreen",
+        "formatMinutes",
+        "RecapScreen"
+      ],
+      "lines": 317
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/DownloadsScreen.kt",
+      "composables": [
+        "DownloadsScreen",
+        "SectionTitle"
+      ],
+      "lines": 310
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/EpisodeScreen.kt",
+      "composables": [
+        "EpisodeScreen",
+        "SaveEpisodeButton"
+      ],
+      "lines": 304
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/EqualizerScreen.kt",
+      "composables": [
+        "EqualizerScreen",
+        "DbSlider",
+        "eqBandLabel"
+      ],
+      "lines": 202
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ExtensionDetail.kt",
+      "composables": [
+        "authorLine",
+        "RepoChangedWarning",
+        "Header",
+        "ActionsList",
+        "Detail",
+        "Tags",
+        "HomepageButton",
+        "ExtensionEntryScreen",
+        "ExtensionScreen",
+        "networkEditors",
+        "ExtensionSectionSettings",
+        "SettingEditor",
+        "UpdateNeedsOk",
+        "AcceptRow",
+        "RefusedNeedsOk",
+        "ChangeRow",
+        "ReportButton",
+        "RateButtons"
+      ],
+      "lines": 607
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ExtensionPage.kt",
+      "composables": [
+        "ExtensionPageScreen",
+        "ExtensionPageBody"
+      ],
+      "lines": 200
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ExtensionParts.kt",
+      "composables": [
+        "rememberPackagePicker",
+        "InstallPrompt",
+        "RiskBox",
+        "ClashChoices",
+        "ClashDialog",
+        "rememberEnabler",
+        "PromptHeader",
+        "ActionTile",
+        "ActionRow",
+        "ExtIcon",
+        "inactiveLine",
+        "stateLine",
+        "VersionPill",
+        "ExtPill",
+        "ActionIcons",
+        "StateButton",
+        "Dot",
+        "Page",
+        "ExtSection",
+        "ExtSection",
+        "ExtDivider",
+        "SwitchRow",
+        "UrlDialog"
+      ],
+      "lines": 568
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ExtensionsScreen.kt",
+      "composables": [
+        "ExtensionsScreen",
+        "Tabs",
+        "SearchField",
+        "CategoryChips",
+        "EmptyState",
+        "RepoHeader",
+        "GitHubHeader",
+        "RatingLine",
+        "StoreRow",
+        "incompatibleLine",
+        "incompatibleWith",
+        "AreaSection",
+        "InstalledRow",
+        "InstallButtons",
+        "GuideLink"
+      ],
+      "lines": 549
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/FollowListScreen.kt",
+      "composables": [
+        "FollowListScreen"
+      ],
+      "lines": 108
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/HiddenSongsScreen.kt",
+      "composables": [
+        "HiddenSongsScreen"
+      ],
+      "lines": 85
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/HomeScreen.kt",
+      "composables": [
+        "HomeScreen",
+        "HomeFeedContent",
+        "HomeHeaderRow",
+        "HomePill",
+        "HomeShortcutGrid",
+        "HomeFeedSection",
+        "HomeFeedCard",
+        "WhatsNewBell",
+        "ProfileSheet"
+      ],
+      "lines": 617
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/LibraryExtras.kt",
+      "composables": [
+        "NameDialog",
+        "SheetRow",
+        "LibraryCreateSheet",
+        "BlendSheet",
+        "BlendInviteSheet",
+        "PageHeader",
+        "FolderScreen",
+        "LocalItemRow",
+        "LocalPlaylistScreen",
+        "AddLocalToPlaylistSheet",
+        "PickRow",
+        "LibraryItemSheet"
+      ],
+      "lines": 668
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/LibraryScreeen.kt",
+      "composables": [
+        "LibraryScreen",
+        "LibraryChipRow",
+        "AccountAvatar",
+        "SumUpLibraryScreen",
+        "LibraryEntryCover",
+        "LibraryGridScreen",
+        "LibraryNote",
+        "LibrarySkeleton",
+        "AccountSheet",
+        "AccountRow",
+        "LibrarySortSheet"
+      ],
+      "lines": 1002
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/LocalFilesScreen.kt",
+      "composables": [
+        "LocalFilesScreen",
+        "EmptyState",
+        "LocalFoldersSheet"
+      ],
+      "lines": 264
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/LyricsScreen.kt",
+      "composables": [
+        "rememberPosition",
+        "rememberLyricsState",
+        "KeepScreenOnForLyrics",
+        "AutoFollow",
+        "LyricLineText",
+        "LyricsScreen",
+        "LyricsMenu",
+        "LyricsChip",
+        "LyricsSelectionBar",
+        "LyricsControls",
+        "LyricsSeekBar",
+        "InlineLyrics",
+        "CardIconButton",
+        "LyricsOverlay",
+        "rememberPipLyricLines"
+      ],
+      "lines": 1131
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/MetadataOrder.kt",
+      "composables": [
+        "MetadataOrderList"
+      ],
+      "lines": 87
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/Onboarding.kt",
+      "composables": [],
+      "lines": 76
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/PlayerScreen.kt",
+      "composables": [
+        "PlayerScreen",
+        "ImmersiveStrip",
+        "VideoFullscreen",
+        "playingFromLabels",
+        "PlayerTopBar",
+        "ExplicitBadge",
+        "LikeButton",
+        "PlayerInfo",
+        "ElapsedLabel",
+        "SpotifySeekBar",
+        "PlayerFull",
+        "PlayerConnectRow",
+        "PlayerOptionsSheet",
+        "AddButton",
+        "CanvasVideo"
+      ],
+      "lines": 1761
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/PlaylistReorder.kt",
+      "composables": [
+        "rememberPlaylistDrag",
+        "movableRow"
+      ],
+      "lines": 198
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/PodcastPlayerScreen.kt",
+      "composables": [
+        "PodcastProgress",
+        "PodcastPlayerScreen",
+        "SkipIcon"
+      ],
+      "lines": 407
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ProfileScreen.kt",
+      "composables": [
+        "ProfileScreen"
+      ],
+      "lines": 264
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/QueueScreen.kt",
+      "composables": [
+        "QueueScreen",
+        "QueueHeader",
+        "SwipeRemove",
+        "QueueRow"
+      ],
+      "lines": 232
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/RecentlyPlayedScreen.kt",
+      "composables": [
+        "RecentlyPlayedScreen",
+        "DayHeader",
+        "Pill",
+        "GroupRow",
+        "PlayRow",
+        "RecentCover"
+      ],
+      "lines": 340
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/SearchScreen.kt",
+      "composables": [
+        "SearchScreen",
+        "SumUpSearchScreen",
+        "SearchStatus",
+        "SearchFilterChips",
+        "RecentItemRow",
+        "SearchSongRow",
+        "SearchSectionHeader",
+        "SearchShowRow",
+        "SearchArtistRow",
+        "SearchAlbumRow",
+        "SearchPlaylistRow",
+        "BrowseAllSection",
+        "BrowseCategoryTile",
+        "SearchTopBar",
+        "SearchStickyBar",
+        "SearchProfileRow"
+      ],
+      "lines": 957
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/SettingsScreen.kt",
+      "composables": [
+        "SettingsScreen",
+        "ExtensionSettingsRows",
+        "SourcesBlock",
+        "Section",
+        "Divider",
+        "LookRow",
+        "AccentRow",
+        "TransitionsLink",
+        "TransitionsRow",
+        "Chip",
+        "Choices",
+        "AutoMixDurationBoundsRow",
+        "AutoMixDiagnosticsPanel",
+        "AutoMixCacheRow",
+        "AccountProviderRows",
+        "OrientationRow",
+        "LanguageRow",
+        "LyricsTranslationRow",
+        "cacheSizeLabel",
+        "StorageRows",
+        "RemoveDownloadsRow",
+        "OptionRow",
+        "AboutRow"
+      ],
+      "lines": 1302
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/SettingsSearch.kt",
+      "composables": [],
+      "lines": 170
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/SetupScreen.kt",
+      "composables": [
+        "SetupScreen",
+        "AccountChoiceScreen",
+        "AccountStep",
+        "StepDots",
+        "riseIn",
+        "PermissionsStep",
+        "QualityStep",
+        "IntroStep",
+        "ExtensionsStep",
+        "SetupTitle",
+        "SetupSubtitle",
+        "SetupButton",
+        "SetupLinkButton",
+        "setupCard",
+        "InfoRow",
+        "SetupRow",
+        "CardTitle",
+        "CardDetail"
+      ],
+      "lines": 532
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/ShowScreen.kt",
+      "composables": [
+        "ShowScreen",
+        "Header",
+        "FollowPill",
+        "TabLabel",
+        "About",
+        "EpisodeRow"
+      ],
+      "lines": 507
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/SourceOrder.kt",
+      "composables": [
+        "SourceOrderList",
+        "MoveArrows",
+        "Rank",
+        "SourceRow",
+        "sourceLineSummary"
+      ],
+      "lines": 177
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/SponsorBlockSettings.kt",
+      "composables": [
+        "SponsorBlockSettings"
+      ],
+      "lines": 29
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/StatsScreens.kt",
+      "composables": [
+        "StatsChip",
+        "StatsTabs",
+        "SpotifyStatsTab",
+        "StatsSectionTitle",
+        "WeeklyMinutesChart",
+        "ArtistTopBadge",
+        "FriendActivityScreen",
+        "FriendRow"
+      ],
+      "lines": 348
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/WelcomeScreen.kt",
+      "composables": [
+        "WelcomeScreen",
+        "Glow",
+        "Features"
+      ],
+      "lines": 217
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/WhatsNewScreen.kt",
+      "composables": [
+        "rememberWhatsNewFeed",
+        "whatsNewPlayback",
+        "whatsNewSaved",
+        "WhatsNewOptionsSheet",
+        "whatsNewSubtitle",
+        "whatsNewDate",
+        "WhatsNewScreen",
+        "WhatsNewRow",
+        "FilterPill"
+      ],
+      "lines": 393
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/screens/WholeList.kt",
+      "composables": [],
+      "lines": 14
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/theme/Color.kt",
+      "composables": [],
+      "lines": 30
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/theme/Theme.kt",
+      "composables": [
+        "SpotuiTheme"
+      ],
+      "lines": 115
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/theme/Type.kt",
+      "composables": [],
+      "lines": 54
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvApp.kt",
+      "composables": [
+        "TvApp",
+        "TvFrame",
+        "TvHome",
+        "TvHomeShelves",
+        "TvLibrary",
+        "TvGrid",
+        "TvSearch",
+        "TvSearchResults",
+        "TvSongs",
+        "TvSongsPage",
+        "TvPillButton",
+        "TvSongRow",
+        "TvRetry"
+      ],
+      "lines": 549
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvCaps.kt",
+      "composables": [],
+      "lines": 42
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvExtensions.kt",
+      "composables": [
+        "TvExtensions"
+      ],
+      "lines": 31
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvNowPlaying.kt",
+      "composables": [
+        "TvNowPlaying",
+        "TvPlayerScreen",
+        "TvMarquee",
+        "TvTransport",
+        "TvSeekBar",
+        "TvClock"
+      ],
+      "lines": 338
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvPages.kt",
+      "composables": [
+        "TvArtist",
+        "TvArtistPage",
+        "TvShow",
+        "TvShowPage",
+        "TvDevicesDialog",
+        "TvDevicesList",
+        "TvDeviceRow",
+        "TvShelfSkeletonLine",
+        "TvSectionTitle",
+        "TvShelf"
+      ],
+      "lines": 328
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvParts.kt",
+      "composables": [
+        "tvFocusLook",
+        "tvCard",
+        "tvPill",
+        "TvTopBar",
+        "TvAlbumCard",
+        "TvGradientCard",
+        "TvCover",
+        "TvIconButton",
+        "TvHero",
+        "TvHeroSlide",
+        "TvShelfSkeleton",
+        "SkeletonRow"
+      ],
+      "lines": 413
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvSupport.kt",
+      "composables": [],
+      "lines": 13
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/tv/TvTheme.kt",
+      "composables": [
+        "rememberTvTint",
+        "TvBackdrop"
+      ],
+      "lines": 166
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/ArtistViewModel.kt",
+      "composables": [],
+      "lines": 59
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/CategoryViewModel.kt",
+      "composables": [],
+      "lines": 28
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/EpisodeViewModel.kt",
+      "composables": [],
+      "lines": 68
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/HomeViewModel.kt",
+      "composables": [],
+      "lines": 86
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/LibraryViewModel.kt",
+      "composables": [],
+      "lines": 122
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/LyricsViewModel.kt",
+      "composables": [],
+      "lines": 269
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/PlayerViewModel.kt",
+      "composables": [],
+      "lines": 206
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/SearchViewModel.kt",
+      "composables": [],
+      "lines": 127
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/viewmodel/ShowViewModel.kt",
+      "composables": [],
+      "lines": 124
+    }
+  ],
+  "preferences": [
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/AccountProviderPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.setValue\nimport app.myspoti.api.account.AccountProviders\n\n/**\n * \"Music account\": the account provider the listen sync, the account's library and the first metadata\n * provider use (Spotify, YouTube Music, or none), one at a time. Spotify for an install from before,\n * which only had Spotify. Changing it ends the running sync and binds the chosen provider's\n * ([com.music.spotui.di.AccountSync.providerChanged]).\n */\nobject AccountProviderPref {\n    private const val KEY = \"account_provider\"\n    private fun prefs(c: Context) = c.getSharedPreferences(\"settings_prefs\", Context.MODE_PRIVATE)\n\n    var id by androidx.compose.runtime.mutableStateOf(initial(com.music.spotui.di.Graph.app))\n        private set\n\n    private fun initial(c: Context): String =\n        AccountProviders.normalized(prefs(c).getString(KEY, null))\n\n    fun set(c: Context, value: String) {\n        val v = AccountProviders.normalized(value)\n        if (v == id) return\n        id = v\n        prefs(c).edit().putString(KEY, v).apply()\n        com.music.spotui.di.AccountSync.providerChanged()\n        com.music.spotui.di.YtmRuntime.startIfChosen()\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/AppearancePref.kt",
+      "source": "package com.music.spotui.data.preferences\n\n/*\n * Appearance choices on top of the look: the wallpaper's colours (Material You) for the Classic\n * look, and the font of both looks. Compose state, so every screen redraws when one changes.\n */\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.setValue\nimport androidx.compose.ui.graphics.Color\n\nprivate const val PREF = \"settings_prefs\"\n\nprivate fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n\n/**\n * \"Dynamic colors (Material You)\": the Classic look's accent taken from the wallpaper (Android 12\n * and later), in place of the accent chosen in the settings. Off by default. The Immersive look\n * keeps its own colours, taken from the playing cover.\n */\nobject DynamicColorPref {\n    private const val KEY = \"dynamic_color\"\n\n    /** The phone has wallpaper colours to give (Android 12 and later). */\n    val available: Boolean get() = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S\n\n    var on by mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, false))\n        private set\n\n    /** On, and the phone can give the colours. */\n    val active: Boolean get() = on && available\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        cached = null\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n\n    // The wallpaper's accent, read once per configuration (see [refresh]): it is asked at every draw.\n    @Volatile private var cached: Color? = null\n\n    /** The configuration changed (a new wallpaper recreates the activity): the accent is read again. */\n    fun refresh() { cached = null }\n\n    /**\n     * The wallpaper's accent for the Classic look, or null (off, Immersive, before Android 12). The\n     * same tone Material's dynamic dark scheme gives its primary colour (system_accent1_200).\n     */\n    fun accent(): Color? {\n        if (!on || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.S || LookPref.look != Look.CLASSIC) return null\n        cached?.let { return it }\n        return runCatching { Color(com.music.spotui.di.Graph.app.getColor(android.R.color.system_accent1_200)) }\n            .getOrNull()?.also { cached = it }\n    }\n}\n\n/**\n * \"App font\": Myspoti's own fonts (Manrope in the Classic look, Inter in the Immersive one, the\n * default) or the phone's system font. No font is bundled for it: the system one is the phone's.\n */\nobject AppFontPref {\n    private const val KEY = \"system_font\"\n\n    /** True: the phone's system font everywhere in the app. */\n    var system by mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, false))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        system = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Download lyrics with songs\": a downloaded song's lyrics are looked up and kept with it, so the\n * lyrics show without a connection. On by default.\n */\nobject LyricsOfflinePref {\n    private const val KEY = \"download_lyrics\"\n\n    var on by mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/DownloadPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\n/*\n * Download preferences: availability and quality.\n */\n\nimport android.content.Context\n\n// The stored file keeps its first name: renaming it would reset everyone's settings.\nprivate const val PREF = \"LosslessPref\"\nprivate const val KEY_HI_RES = \"hires_24bit\"\nprivate const val KEY_ENABLED = \"enabled\"\nprivate const val KEY_SMALL = \"small_aac\"\nprivate const val KEY_ASK = \"ask_each_time\"\nprivate const val KEY_PUBLIC = \"public_music\"\n\n/**\n * Hi-res downloads (24-bit when the source has it: bigger files, ~3× a CD-quality FLAC).\n * Default off: CD quality is asked for.\n */\nfun isHiRes(context: Context): Boolean = ProfilePrefs.getBoolean(prefs(context), KEY_HI_RES, false)\n\nfun setHiRes(context: Context, on: Boolean) = prefs(context).edit().putBoolean(ProfilePrefs.key(KEY_HI_RES), on).apply()\n\n/** Downloads on. Off: no downloads at all, \"Downloaded\" becomes Local Files only. */\nfun isDownloadsEnabled(context: Context): Boolean = ProfilePrefs.getBoolean(prefs(context), KEY_ENABLED, true)\n\nfun setDownloadsEnabled(context: Context, on: Boolean) = prefs(context).edit().putBoolean(ProfilePrefs.key(KEY_ENABLED), on).apply()\n\n/** Downloads kept small: the checked FLAC re-encoded to AAC on the phone. */\nfun isSmallDownloads(context: Context): Boolean = ProfilePrefs.getBoolean(prefs(context), KEY_SMALL, false)\n\nfun setSmallDownloads(context: Context, on: Boolean) = prefs(context).edit().putBoolean(ProfilePrefs.key(KEY_SMALL), on).apply()\n\n/** The quality is asked at each download (once for a whole list). */\nfun isAskDownloadQuality(context: Context): Boolean = ProfilePrefs.getBoolean(prefs(context), KEY_ASK, false)\n\nfun setAskDownloadQuality(context: Context, on: Boolean) = prefs(context).edit().putBoolean(ProfilePrefs.key(KEY_ASK), on).apply()\n\n/**\n * Downloads saved as plain files in the phone's Download folder (Download/Orpheon), visible in the\n * file manager and playable by other apps — instead of encrypted in the app's private storage.\n * Default off: private, encrypted. Takes effect only with Android's \"All files access\" granted;\n * without it the store falls back to private (see OfflineStore.songAudioDir).\n */\nfun isPublicDownloads(context: Context): Boolean = ProfilePrefs.getBoolean(prefs(context), KEY_PUBLIC, false)\n\nfun setPublicDownloads(context: Context, on: Boolean) = prefs(context).edit().putBoolean(ProfilePrefs.key(KEY_PUBLIC), on).apply()\n\nprivate fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/EqualizerPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.setValue\nimport com.music.spotui.di.EqBands\nimport com.music.spotui.di.EqTuning\nimport com.music.spotui.di.Equalizer\nimport com.music.spotui.di.Spatial\n\n/** The equalizer's ready-made curves: ten band gains and the preamp that keeps them under full scale, in dB. */\nenum class EqPreset(val gains: FloatArray, val preamp: Float) {\n    FLAT(floatArrayOf(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f), 0f),\n    BASS_BOOST(floatArrayOf(6f, 5f, 4f, 2f, 0f, 0f, 0f, 0f, 0f, 0f), -5f),\n    BASS_CUT(floatArrayOf(-6f, -5f, -4f, -2f, 0f, 0f, 0f, 0f, 0f, 0f), 0f),\n    TREBLE_BOOST(floatArrayOf(0f, 0f, 0f, 0f, 0f, 1f, 2f, 4f, 5f, 6f), -5f),\n    TREBLE_CUT(floatArrayOf(0f, 0f, 0f, 0f, 0f, -1f, -2f, -4f, -5f, -6f), 0f),\n    VOCAL(floatArrayOf(-2f, -2f, -1f, 0f, 2f, 4f, 4f, 2f, 0f, -1f), -3f),\n    ROCK(floatArrayOf(5f, 4f, 2f, -1f, -2f, -1f, 1f, 3f, 4f, 5f), -4f),\n    POP(floatArrayOf(-1f, 1f, 3f, 4f, 3f, 0f, -1f, -1f, 1f, 2f), -3f),\n    JAZZ(floatArrayOf(3f, 2f, 1f, 2f, -1f, -1f, 0f, 1f, 2f, 3f), -2f),\n    CLASSICAL(floatArrayOf(3f, 2f, 1f, 0f, 0f, 0f, -1f, -1f, 1f, 2f), -2f),\n    ELECTRONIC(floatArrayOf(5f, 4f, 1f, 0f, -2f, 1f, 0f, 1f, 4f, 5f), -4f),\n    HIP_HOP(floatArrayOf(5f, 4f, 2f, 3f, -1f, -1f, 1f, -1f, 2f, 3f), -4f),\n    ACOUSTIC(floatArrayOf(4f, 4f, 3f, 1f, 2f, 1f, 3f, 3f, 3f, 2f), -4f),\n    SPOKEN_WORD(floatArrayOf(-4f, -3f, 0f, 1f, 3f, 4f, 4f, 3f, 1f, -2f), -3f),\n    /** The user's own curve (a band or the preamp moved by hand). */\n    CUSTOM(FloatArray(10), 0f),\n}\n\n/**\n * The equalizer, speed and silence skipping of the local player (ExoPlayer: extensions' streams,\n * downloads, the phone's files). Spotify's own songs play in the Web Player, whose decoded sound\n * the app never gets: none of this applies to them, nor to a Cast device. Kept across launches.\n *\n * Speed: 0.5× to 2× for everything the local player plays, 1× by default (podcasts streamed by\n * Spotify keep their own speed, the podcast player's). Off 1×, Spotify does not follow the song\n * (see AccountSync): its page plays at 1× only.\n *\n * Spatial audio: the stereo widened by mid/side processing (see SpatialProcessor), off by default,\n * on its own switch (the equalizer may be off).\n */\nobject EqualizerPref {\n    private const val PREF = \"equalizer_prefs\"\n    private fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n    private val p get() = prefs(com.music.spotui.di.Graph.app)\n\n    val SPEEDS = listOf(0.5f, 0.75f, 1f, 1.25f, 1.5f, 1.75f, 2f)\n\n    var enabled by mutableStateOf(p.getBoolean(\"enabled\", false))\n        private set\n    var preset by mutableStateOf(runCatching { EqPreset.valueOf(p.getString(\"preset\", null) ?: \"FLAT\") }.getOrDefault(EqPreset.FLAT))\n        private set\n    private var customGains by mutableStateOf(FloatArray(EqBands.COUNT) { p.getFloat(\"gain$it\", 0f) })\n    private var customPreamp by mutableStateOf(p.getFloat(\"preamp\", 0f))\n    var speed by mutableStateOf(p.getFloat(\"speed\", 1f).coerceIn(0.5f, 2f))\n        private set\n    var skipSilence by mutableStateOf(p.getBoolean(\"skip_silence\", false))\n        private set\n    var spatial by mutableStateOf(p.getBoolean(\"spatial\", false))\n        private set\n    var spatialWidth by mutableStateOf(p.getFloat(\"spatial_width\", Spatial.DEFAULT_WIDTH).coerceIn(Spatial.MIN_WIDTH, Spatial.MAX_WIDTH))\n        private set\n\n    /** The gains shown and heard: the preset's, or the user's own. */\n    val gains: FloatArray get() = if (preset == EqPreset.CUSTOM) customGains else preset.gains\n    val preamp: Float get() = if (preset == EqPreset.CUSTOM) customPreamp else preset.preamp\n\n    init { push() }\n\n    fun setEnabled(c: Context, on: Boolean) {\n        enabled = on\n        prefs(c).edit().putBoolean(\"enabled\", on).apply()\n        push()\n    }\n\n    fun setPreset(c: Context, value: EqPreset) {\n        // Custom picked from the list: the curve last made by hand.\n        preset = value\n        prefs(c).edit().putString(\"preset\", value.name).apply()\n        push()\n    }\n\n    /**\n     * A band moved by hand: the curve shown becomes the user's own, from where it was. Heard at\n     * once; kept when [save] (a slider saves once, at the end of its drag, see [save]).\n     */\n    fun setGain(c: Context, band: Int, db: Float, save: Boolean = true) {\n        if (band !in 0 until EqBands.COUNT) return\n        val g = gains.copyOf().also { it[band] = db.coerceIn(EqBands.MIN_DB, EqBands.MAX_DB) }\n        custom(c, g, preamp, save)\n    }\n\n    fun setPreamp(c: Context, db: Float, save: Boolean = true) =\n        custom(c, gains.copyOf(), db.coerceIn(EqBands.PREAMP_MIN_DB, EqBands.PREAMP_MAX_DB), save)\n\n    private fun custom(c: Context, g: FloatArray, pre: Float, save: Boolean) {\n        customGains = g; customPreamp = pre; preset = EqPreset.CUSTOM\n        push()\n        if (save) save(c)\n    }\n\n    /** Keeps the user's own curve as it is now. */\n    fun save(c: Context) {\n        prefs(c).edit().apply {\n            customGains.forEachIndexed { i, v -> putFloat(\"gain$i\", v) }\n            putFloat(\"preamp\", customPreamp); putString(\"preset\", preset.name)\n        }.apply()\n    }\n\n    fun setSpeed(c: Context, value: Float) {\n        speed = value.coerceIn(0.5f, 2f)\n        prefs(c).edit().putFloat(\"speed\", speed).apply()\n        com.music.spotui.di.LocalPlayer.applyPlayback()\n        // Spotify's page plays at 1× only: the listen sync stops off 1×, and starts again at 1×.\n        com.music.spotui.di.AccountSync.listen.refresh()\n    }\n\n    fun setSkipSilence(c: Context, on: Boolean) {\n        skipSilence = on\n        prefs(c).edit().putBoolean(\"skip_silence\", on).apply()\n        com.music.spotui.di.LocalPlayer.applyPlayback()\n    }\n\n    fun setSpatial(c: Context, on: Boolean) {\n        spatial = on\n        prefs(c).edit().putBoolean(\"spatial\", on).apply()\n        push()\n    }\n\n    /** Heard at once, gliding; kept when [save] (a slider saves once, at the end of its drag). */\n    fun setSpatialWidth(c: Context, value: Float, save: Boolean = true) {\n        spatialWidth = value.coerceIn(Spatial.MIN_WIDTH, Spatial.MAX_WIDTH)\n        push()\n        if (save) prefs(c).edit().putFloat(\"spatial_width\", spatialWidth).apply()\n    }\n\n    /** Hands the curve and the width to the players' audio stages (read on their audio threads). */\n    private fun push() {\n        Equalizer.current = if (enabled) EqTuning(gains, preamp) else null\n        Spatial.current = if (spatial) spatialWidth else null\n        // The audio offload is allowed only with both doing nothing.\n        com.music.spotui.di.LocalPlayer.applyOffload()\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/HiddenSongs.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.setValue\nimport com.music.spotui.data.entity.SongsModel\nimport org.json.JSONArray\nimport org.json.JSONObject\n\n/** A song marked \"Not interested\": enough to list it in Settings and show it again. */\ndata class HiddenSong(val id: String, val title: String, val singer: String, val coverUri: String)\n\n/**\n * \"Not interested\", as YouTube Music's dislike: a list that stays on this phone (nothing is sent to\n * Spotify). A hidden song is skipped when a list, a radio or the queue comes to it, and is dimmed\n * in song lists; playing it by hand still plays it. Newest first.\n */\nobject HiddenSongs {\n    private const val PREF = \"HiddenSongs\"\n    private const val KEY = \"songs\"\n\n    var songs by mutableStateOf(load(com.music.spotui.di.Graph.app))\n        private set\n    private var ids by mutableStateOf(songs.map { it.id }.toSet())\n\n    /** The song [justHidden] is offered to be taken back (the Undo snackbar of the app's root). */\n    var justHidden by mutableStateOf<HiddenSong?>(null)\n\n    fun isHidden(trackId: String): Boolean = trackId.isNotBlank() && trackId in ids\n\n    fun hide(context: Context, song: SongsModel) {\n        if (song.spotifyTrackId.isBlank() || isHidden(song.spotifyTrackId)) return\n        val h = HiddenSong(song.spotifyTrackId, song.title, song.singer, song.coverUri)\n        set(context, listOf(h) + songs)\n        justHidden = h\n    }\n\n    fun show(context: Context, trackId: String) = set(context, songs.filterNot { it.id == trackId })\n\n    private fun set(context: Context, list: List<HiddenSong>) {\n        songs = list\n        ids = list.map { it.id }.toSet()\n        val arr = JSONArray().also { a ->\n            list.forEach { a.put(JSONObject().put(\"id\", it.id).put(\"title\", it.title).put(\"singer\", it.singer).put(\"cover\", it.coverUri)) }\n        }\n        context.getSharedPreferences(PREF, Context.MODE_PRIVATE).edit().putString(KEY, arr.toString()).apply()\n    }\n\n    private fun load(context: Context): List<HiddenSong> {\n        val raw = context.getSharedPreferences(PREF, Context.MODE_PRIVATE).getString(KEY, null) ?: return emptyList()\n        return runCatching {\n            val arr = JSONArray(raw)\n            (0 until arr.length()).map { arr.getJSONObject(it).let { o -> HiddenSong(o.getString(\"id\"), o.optString(\"title\"), o.optString(\"singer\"), o.optString(\"cover\")) } }\n        }.getOrDefault(emptyList())\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/LastSession.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport com.music.spotui.data.entity.SongsModel\nimport kotlinx.serialization.builtins.ListSerializer\nimport kotlinx.serialization.json.Json\n\n// The last session's queue (and the list it was played in, kept beside it) and the rule that decides who wins at launch, kept pure so they\n// are tested without Android. The song itself lives in SongPlayer's \"myspoti_last_track\".\n\nobject LastSession {\n    /** Where the saved session played: Spotify's own player, or the local player (an extension's stream, a download). */\n    const val SOURCE_SPOTIFY = \"spotify\"\n    const val SOURCE_LOCAL = \"local\"\n\n    private const val MAX_QUEUE = 100\n    private val json = Json { ignoreUnknownKeys = true; encodeDefaults = true }\n\n    /** The songs of the session's queue as stored; capped so the preferences stay small. */\n    fun encodeQueue(songs: List<SongsModel>): String =\n        json.encodeToString(ListSerializer(SongsModel.serializer()), songs.take(MAX_QUEUE))\n\n    /** The stored queue, empty when missing or unreadable. */\n    fun decodeQueue(raw: String?): List<SongsModel> {\n        if (raw.isNullOrBlank()) return emptyList()\n        return runCatching { json.decodeFromString(ListSerializer(SongsModel.serializer()), raw) }.getOrDefault(emptyList())\n    }\n\n    /**\n     * The saved queue of the song [trackId]: [songs] from that song on, once each. The page's queue\n     * can still list the song before it, and a queue read just after a skip belongs to the song\n     * left: that one holds no [trackId] and is not saved with it. Empty when it does not hold it.\n     */\n    fun queueFor(trackId: String, songs: List<SongsModel>): List<SongsModel> {\n        val at = songs.indexOfFirst { it.spotifyTrackId == trackId }\n        if (trackId.isBlank() || at < 0) return emptyList()\n        return songs.drop(at).distinctBy { it.spotifyTrackId.ifBlank { it.url } }\n    }\n\n    /**\n     * Spotify's state at launch is older than the session saved from the local player: it still\n     * shows the song played before and must not replace it. A state stamped after the save\n     * (another device played since) or one that plays is real and wins.\n     */\n    fun engineStateIsStale(savedSource: String, savedAtMs: Long, engineTimestampMs: Long, enginePaused: Boolean): Boolean =\n        savedSource == SOURCE_LOCAL && enginePaused && engineTimestampMs <= savedAtMs\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/LibraryCachePref.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport com.music.spotui.data.entity.ArtistsModel\nimport com.music.spotui.data.entity.LibraryEntry\nimport org.json.JSONArray\nimport org.json.JSONObject\n\nprivate const val PREF = \"LibraryCache\"\n\nfun cacheLibraryEntries(context: Context, entries: List<LibraryEntry>) {\n    val json = JSONArray().apply {\n        entries.forEach { e ->\n            put(JSONObject().apply {\n                put(\"spotifyId\", e.spotifyId)\n                put(\"name\", e.name)\n                put(\"subtitle\", e.subtitle)\n                put(\"coverUri\", e.coverUri)\n                put(\"isPlaylist\", e.isPlaylist)\n                put(\"artists\", e.artists)\n                put(\"folderUri\", e.folderUri)\n                put(\"childCount\", e.childCount)\n                put(\"ownerUri\", e.ownerUri)\n            })\n        }\n    }.toString()\n    context.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n        .edit().putString(\"entries\", json).apply()\n}\n\nfun getCachedLibraryEntries(context: Context): List<LibraryEntry> = runCatching {\n    val raw = context.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n        .getString(\"entries\", null) ?: return emptyList()\n    val arr = JSONArray(raw)\n    (0 until arr.length()).map { i ->\n        arr.getJSONObject(i).let { o ->\n            LibraryEntry(\n                spotifyId = o.getString(\"spotifyId\"),\n                name = o.getString(\"name\"),\n                subtitle = o.getString(\"subtitle\"),\n                coverUri = o.getString(\"coverUri\"),\n                isPlaylist = o.getBoolean(\"isPlaylist\"),\n                artists = o.optString(\"artists\", \"\"),\n                folderUri = o.optString(\"folderUri\", \"\"),\n                childCount = o.optInt(\"childCount\", 0),\n                ownerUri = o.optString(\"ownerUri\", \"\"),\n            )\n        }\n    }\n}.getOrDefault(emptyList())\n\nfun cacheFollowedArtists(context: Context, artists: List<ArtistsModel>) {\n    val json = JSONArray().apply {\n        artists.forEach { a ->\n            put(JSONObject().apply {\n                put(\"name\", a.name)\n                put(\"coverUri\", a.coverUri)\n                put(\"id\", a.id)\n            })\n        }\n    }.toString()\n    context.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n        .edit().putString(\"followedArtists\", json).apply()\n}\n\nfun getCachedFollowedArtists(context: Context): List<ArtistsModel> = runCatching {\n    val raw = context.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n        .getString(\"followedArtists\", null) ?: return emptyList()\n    val arr = JSONArray(raw)\n    (0 until arr.length()).map { i ->\n        arr.getJSONObject(i).let { o ->\n            ArtistsModel(\n                name = o.getString(\"name\"),\n                coverUri = o.getString(\"coverUri\"),\n                id = o.optString(\"id\", \"\"),\n            )\n        }\n    }\n}.getOrDefault(emptyList())\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/LocalFilesPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.setValue\n\n/**\n * Settings > Library: the pinned \"Local Files\" row of the Library, shown unless turned off (asked\n * on Discord: \"I do not have local files on my phone\"). Hiding it touches no file and no playlist.\n */\nobject LocalFilesPref {\n    private const val PREF = \"library_prefs\"\n    private const val KEY = \"local_files_shown\"\n\n    var shown by mutableStateOf(true)\n        private set\n\n    fun init(context: Context) {\n        shown = context.getSharedPreferences(PREF, Context.MODE_PRIVATE).getBoolean(KEY, true)\n    }\n\n    fun set(context: Context, value: Boolean) {\n        shown = value\n        context.getSharedPreferences(PREF, Context.MODE_PRIVATE).edit().putBoolean(KEY, value).apply()\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/LookPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\n/*\n * The app's look: Classic (today's) or Immersive, picked during the onboarding.\n */\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.setValue\n\n/** The two looks. [CLASSIC] is the default, so nothing changes for anyone who has not chosen. */\nenum class Look {\n    CLASSIC, IMMERSIVE;\n\n    companion object {\n        fun of(name: String?): Look = entries.firstOrNull { it.name == name } ?: CLASSIC\n    }\n}\n\nobject LookPref {\n    private const val PREF = \"settings_prefs\"\n    private const val KEY = \"look\"\n    private const val KEY_CHOSEN = \"look_chosen\"\n    private const val KEY_OFFERED = \"look_offered\"\n\n    /** The chosen look, as Compose state: everything reading it redraws when it changes. */\n    var look by mutableStateOf(Look.of(prefs(com.music.spotui.di.Graph.app).getString(KEY, null)))\n        private set\n\n    fun set(c: Context, value: Look) {\n        look = value\n        prefs(c).edit().putString(KEY, value.name).apply()\n    }\n\n    /** The look step of the onboarding was seen (new installs and updates alike). */\n    fun isChosen(c: Context): Boolean = prefs(c).getBoolean(KEY_CHOSEN, false)\n    fun setChosen(c: Context) {\n        prefs(c).edit().putBoolean(KEY_CHOSEN, true).putBoolean(KEY_OFFERED, true).apply()\n        offered = true\n    }\n\n    /**\n     * The new-look popup was shown to an existing user (or the onboarding look step covered it), as\n     * Compose state. The activity kept its own copy, read once at its start: the look step of the\n     * onboarding saved \"offered\" but the copy stayed false, and the popup came up as soon as the\n     * onboarding ended, asking the look a second time.\n     */\n    var offered by mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY_OFFERED, false))\n        private set\n    fun isOffered(c: Context): Boolean = prefs(c).getBoolean(KEY_OFFERED, false)\n    fun setOffered(c: Context) {\n        prefs(c).edit().putBoolean(KEY_OFFERED, true).apply()\n        offered = true\n    }\n    fun clearOffered(c: Context) {\n        prefs(c).edit().remove(KEY_OFFERED).apply()\n        offered = false\n    }\n\n    private fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/PodcastPrefs.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableIntStateOf\nimport androidx.compose.runtime.setValue\nimport com.music.spotui.data.entity.SongsModel\nimport com.music.spotui.di.Graph\nimport java.time.Instant\nimport java.time.LocalDate\nimport java.time.ZoneOffset\n\n/** How a show page lists its episodes, besides the newest / oldest order. */\nenum class EpisodeFilter {\n    /** Spotify's own order. */\n    ALL,\n    /** Episodes not played yet first, the played ones after them (each group keeps its order). */\n    UNPLAYED_FIRST,\n    /** Played episodes are left out. */\n    HIDE_PLAYED;\n\n    fun next(): EpisodeFilter = entries[(ordinal + 1) % entries.size]\n\n    /** [episodes] in this filter's order; [played] says which of them are finished. */\n    fun apply(episodes: List<SongsModel>, played: (SongsModel) -> Boolean): List<SongsModel> = when (this) {\n        ALL -> episodes\n        UNPLAYED_FIRST -> episodes.sortedBy { if (played(it)) 1 else 0 }\n        HIDE_PLAYED -> episodes.filterNot(played)\n    }\n}\n\n/**\n * What the app remembers about podcasts on this phone: the episode filter chosen on a show page\n * (per show, the last choice for the shows not chosen yet), when each show was last opened, and\n * the date of the newest episode seen, for the \"new episode\" marks. Nothing is sent anywhere.\n */\nobject PodcastPrefs {\n    private const val FILE = \"podcast_state\"\n    /** The cheap \"newest episode\" check of a show is repeated at most this often. */\n    private const val CHECK_EVERY_MS = 6 * 3_600_000L\n\n    private fun prefs() = Graph.app.getSharedPreferences(FILE, Context.MODE_PRIVATE)\n\n    /** Bumped on every change a mark depends on, so a composable reading [hasNew] redraws. */\n    private var tick by mutableIntStateOf(0)\n\n    fun filter(showId: String): EpisodeFilter {\n        val p = prefs()\n        val v = p.getString(\"filter:$showId\", null) ?: p.getString(\"filter\", null)\n        return EpisodeFilter.entries.firstOrNull { it.name == v } ?: EpisodeFilter.ALL\n    }\n\n    fun setFilter(showId: String, filter: EpisodeFilter) {\n        prefs().edit().putString(\"filter:$showId\", filter.name).putString(\"filter\", filter.name).apply()\n    }\n\n    /** The filter of \"Your Episodes\" (remembered on its own). */\n    fun libraryFilter(): EpisodeFilter {\n        val v = prefs().getString(\"filter:library\", null)\n        return EpisodeFilter.entries.firstOrNull { it.name == v } ?: EpisodeFilter.ALL\n    }\n\n    fun setLibraryFilter(filter: EpisodeFilter) {\n        prefs().edit().putString(\"filter:library\", filter.name).apply()\n    }\n\n    /** When [showId] was last opened (ms), 0 when never. */\n    fun lastOpened(showId: String): Long = prefs().getLong(\"opened:$showId\", 0L)\n\n    /** The show page was opened: [newest] is its newest episode's release date seen there. */\n    fun markOpened(showId: String, newest: String, followed: Boolean) {\n        if (showId.isBlank()) return\n        prefs().edit().apply {\n            putLong(\"opened:$showId\", System.currentTimeMillis())\n            if (newest.isNotBlank()) putString(\"latest:$showId\", newest)\n            putBoolean(\"followed:$showId\", followed)\n        }.apply()\n        tick++\n    }\n\n    /** The follow button was used on the show page. */\n    fun setFollowed(showId: String, followed: Boolean) {\n        if (showId.isBlank()) return\n        prefs().edit().putBoolean(\"followed:$showId\", followed).apply()\n        tick++\n    }\n\n    fun isFollowed(showId: String): Boolean = prefs().getBoolean(\"followed:$showId\", false)\n\n    /** Release date of the newest episode known for [showId] (\"\" when never seen). */\n    fun latest(showId: String): String = prefs().getString(\"latest:$showId\", \"\").orEmpty()\n\n    /** The cheap check is due: never done, or older than a few hours. */\n    fun checkDue(showId: String): Boolean = System.currentTimeMillis() - prefs().getLong(\"checked:$showId\", 0L) > CHECK_EVERY_MS\n\n    /** The cheap check answered: [newest] is the newest episode's release date. */\n    fun checked(showId: String, newest: String) {\n        prefs().edit().apply {\n            putLong(\"checked:$showId\", System.currentTimeMillis())\n            if (newest > latest(showId)) putString(\"latest:$showId\", newest)\n        }.apply()\n        tick++\n    }\n\n    /** True when [release] is after [since] (ms); a date without a time counts from its start. */\n    fun releasedAfter(release: String, since: Long): Boolean {\n        if (release.isBlank() || since <= 0L) return false\n        // Spotify gives a plain date (\"2026-10-27\") nearly always: no exception for the common case.\n        val ms = (if (release.length > 10) runCatching { Instant.parse(release).toEpochMilli() }.getOrNull() else null)\n            ?: runCatching { LocalDate.parse(release.take(10)).atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli() }.getOrNull()\n            ?: return false\n        return ms > since\n    }\n\n    /** The cheap check for [showId] when it is due: one episode asked for, at most every few hours. */\n    suspend fun refresh(showId: String) {\n        if (!isFollowed(showId) || lastOpened(showId) == 0L || !checkDue(showId)) return\n        checked(showId, Graph.api.latestEpisodeDate(showId))\n    }\n\n    /** A followed show has an episode released since the user last opened it. */\n    fun hasNew(showId: String): Boolean {\n        @Suppress(\"UNUSED_VARIABLE\") val read = tick\n        if (!isFollowed(showId)) return false\n        return releasedAfter(latest(showId), lastOpened(showId))\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/ProfilePrefs.kt",
+      "source": "/* SPDX-License-Identifier: GPL-3.0-only */\npackage com.music.spotui.data.preferences\n\nimport android.content.SharedPreferences\n\n/**\n * Settings that belong to the Spotify account in use (the accounts kept on the phone, each its\n * WebView profile): the first account keeps the keys it always had, another one reads and writes\n * `key@profile`, and goes on with the first account's value until it sets its own. Asked: the\n * quality and the extensions' settings follow the account, not the phone.\n */\nobject ProfilePrefs {\n    /** The active account's profile; the first one before the engine has started. */\n    fun profile(): String = runCatching {\n        val runtime = app.myspoti.host.android.MyspotiRuntime\n        if (runtime.isStarted) runtime.host.accounts.list.value.active else null\n    }.getOrNull() ?: app.myspoti.host.android.AccountList.DEFAULT_PROFILE\n\n    /** [base] as the active account stores it. */\n    fun key(base: String): String = profile().let { if (it == app.myspoti.host.android.AccountList.DEFAULT_PROFILE) base else \"$base@$it\" }\n\n    fun getString(p: SharedPreferences, base: String, default: String?): String? {\n        val k = key(base)\n        return if (k != base && p.contains(k)) p.getString(k, default) else p.getString(base, default)\n    }\n\n    fun getBoolean(p: SharedPreferences, base: String, default: Boolean): Boolean {\n        val k = key(base)\n        return if (k != base && p.contains(k)) p.getBoolean(k, default) else p.getBoolean(base, default)\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/QualityPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\n/*\n * Sound quality: what the Web Player streams, and how downloads are saved.\n */\n\nimport android.content.Context\nimport kotlinx.coroutines.launch\n\nprivate const val PREF = \"settings_prefs\"\nprivate const val KEY_STREAMING = \"streaming_quality\"\nprivate const val KEY_CHOSEN = \"quality_chosen\"\nprivate const val KEY_STREAMING_CELL = \"streaming_quality_cellular\"\nprivate const val KEY_CANVAS_WIFI = \"canvas_wifi_only\"\n\n/**\n * The Web Player's own streaming levels (its \"Streaming quality\" setting): 24, 96 and\n * 160 kbit/s. Only the levels a free account gets; \"very_high\" (320) is Premium's.\n */\nenum class StreamingQuality(val level: String) {\n    AUTO(\"auto\"), LOW(\"low\"), NORMAL(\"normal\"), HIGH(\"high\"),\n    /** 256 kbit/s: the Web Player gives it to Premium accounts only (offered then, see StreamingQualityPicker). */\n    VERY_HIGH(\"very_high\");\n\n    companion object {\n        fun of(level: String?): StreamingQuality = entries.firstOrNull { it.level == level } ?: AUTO\n    }\n}\n\n/**\n * How a downloaded song is saved: not at all, small (AAC re-encoded from the checked FLAC),\n * FLAC 16-bit (CD), or FLAC 24-bit when it exists.\n */\nenum class DownloadQuality {\n    OFF, SMALL, CD, HI_RES,\n    /** Asked when a download starts (once for a whole playlist or album). */\n    ASK;\n\n    companion object {\n        /** A quality a file can be saved in ([ASK] and [OFF] are not); null when unknown. */\n        fun saved(name: String?): DownloadQuality? = entries.firstOrNull { it.name == name }?.takeIf { it != ASK && it != OFF }\n    }\n}\n\n/**\n * The level for Wi-Fi, or for mobile data ([cellular]), as the official app's two settings.\n * Mobile data follows the Wi-Fi level until it is set on its own.\n */\nfun getStreamingQuality(c: Context, cellular: Boolean = false): StreamingQuality {\n    // The account's own levels (see ProfilePrefs).\n    val wifi = ProfilePrefs.getString(prefs(c), KEY_STREAMING, null)\n    return StreamingQuality.of(if (cellular) ProfilePrefs.getString(prefs(c), KEY_STREAMING_CELL, null) ?: wifi else wifi)\n}\n\n/** Saves the level for that network and hands the one for the current network to the player. */\nfun setStreamingQuality(c: Context, q: StreamingQuality, cellular: Boolean = false) {\n    prefs(c).edit().putString(ProfilePrefs.key(if (cellular) KEY_STREAMING_CELL else KEY_STREAMING), q.level).apply()\n    applyStreamingQuality(c)\n}\n\n/** Gives the current network's level to the Web Player (at start and when the network changes); harmless before it is up. */\nfun applyStreamingQuality(c: Context) {\n    val runtime = app.myspoti.host.android.MyspotiRuntime\n    if (!runtime.isStarted) return\n    val q = getStreamingQuality(c, cellular = com.music.spotui.data.DataSaver.metered)\n    runtime.scope.launch { runtime.spotify.player.setAudioQuality(q.level) }\n}\n\n/** Canvas (the looping videos) only on Wi-Fi: they cost data on every song. */\nfun isCanvasWifiOnly(c: Context): Boolean = prefs(c).getBoolean(KEY_CANVAS_WIFI, false)\nfun setCanvasWifiOnly(c: Context, on: Boolean) = prefs(c).edit().putBoolean(KEY_CANVAS_WIFI, on).apply()\n\nfun getDownloadQuality(c: Context): DownloadQuality = when {\n    !isDownloadsEnabled(c) -> DownloadQuality.OFF\n    isAskDownloadQuality(c) -> DownloadQuality.ASK\n    isSmallDownloads(c) -> DownloadQuality.SMALL\n    isHiRes(c) -> DownloadQuality.HI_RES\n    else -> DownloadQuality.CD\n}\n\nfun setDownloadQuality(c: Context, q: DownloadQuality) {\n    setDownloadsEnabled(c, q != DownloadQuality.OFF)\n    setHiRes(c, q == DownloadQuality.HI_RES)\n    setSmallDownloads(c, q == DownloadQuality.SMALL)\n    setAskDownloadQuality(c, q == DownloadQuality.ASK)\n}\n\n/** The quality step of the onboarding was seen (new installs and updates alike). */\nfun isQualityChosen(c: Context): Boolean = prefs(c).getBoolean(KEY_CHOSEN, false)\nfun setQualityChosen(c: Context) = prefs(c).edit().putBoolean(KEY_CHOSEN, true).apply()\n\nprivate fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/RecentItemsPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport org.json.JSONArray\nimport org.json.JSONObject\n\n/**\n * One \"Recent searches\" entry — Spotify-style: not the typed query but the\n * actual item the user opened from the results (song / artist / album / show).\n * Carries enough payload to re-launch the item on tap.\n */\ndata class RecentItem(\n    val type: String,            // \"song\" | \"artist\" | \"album\" | \"show\"\n    val key: String,             // stable id for dedupe (spotify id, or name)\n    val name: String,\n    val singer: String = \"\",     // artist line (songs/albums)\n    val image: String = \"\",\n    // Song-only payload so a tap can replay it.\n    val songId: Int = -1,\n    val songAlbum: String = \"\",\n    val songUrl: String = \"\",\n    val spotifyTrackId: String = \"\",\n    val explicit: Boolean = false,\n    val durationMs: Int = 0,\n)\n\n/** [this], a search's song the user played, as the recent search to keep. */\nfun com.music.spotui.data.entity.SongsModel.toRecentItem() = RecentItem(\n    type = \"song\",\n    key = spotifyTrackId.ifBlank { url },\n    name = title,\n    singer = singer,\n    image = coverUri,\n    songId = id,\n    songAlbum = album,\n    songUrl = url,\n    spotifyTrackId = spotifyTrackId,\n    explicit = explicit,\n    durationMs = durationMs,\n)\n\n/**\n * A recent song as the song to play or queue again; null for any other kind of item. A song kept\n * with its Spotify id is played by that id, whatever play key was saved with it.\n */\nfun RecentItem.toSong(): com.music.spotui.data.entity.SongsModel? {\n    if (type != \"song\") return null\n    val byId = { com.music.spotui.di.SongPlayer.buildSpotifyPlayQuery(spotifyTrackId, name, singer) }\n    val url = when {\n        songUrl.isBlank() -> byId()\n        spotifyTrackId.isNotBlank() && !songUrl.startsWith(\"spotify:track:\") -> byId()\n        else -> songUrl\n    }\n    return com.music.spotui.data.entity.SongsModel(\n        songId, name, songAlbum, singer, image, url, spotifyTrackId,\n        explicit = explicit, durationMs = durationMs,\n    )\n}\n\nprivate const val PREF = \"RecentItems\"\nprivate const val KEY = \"items\"\nprivate const val MAX_ITEMS = 20\n\nprivate fun RecentItem.toJson(): JSONObject = JSONObject().apply {\n    put(\"type\", type); put(\"key\", key); put(\"name\", name); put(\"singer\", singer)\n    put(\"image\", image); put(\"songId\", songId); put(\"songAlbum\", songAlbum)\n    put(\"songUrl\", songUrl); put(\"spotifyTrackId\", spotifyTrackId)\n    put(\"explicit\", explicit); put(\"durationMs\", durationMs)\n}\n\nprivate fun JSONObject.toRecentItem(): RecentItem = RecentItem(\n    type = optString(\"type\"), key = optString(\"key\"), name = optString(\"name\"),\n    singer = optString(\"singer\"), image = optString(\"image\"),\n    songId = optInt(\"songId\", -1), songAlbum = optString(\"songAlbum\"),\n    songUrl = optString(\"songUrl\"), spotifyTrackId = optString(\"spotifyTrackId\"),\n    explicit = optBoolean(\"explicit\", false), durationMs = optInt(\"durationMs\", 0),\n)\n\nfun getRecentItems(context: Context): List<RecentItem> {\n    val raw = context.getSharedPreferences(PREF, Context.MODE_PRIVATE).getString(KEY, null)\n        ?: return emptyList()\n    return runCatching {\n        val arr = JSONArray(raw)\n        (0 until arr.length()).map { arr.getJSONObject(it).toRecentItem() }\n    }.getOrDefault(emptyList())\n}\n\nprivate fun save(context: Context, items: List<RecentItem>) {\n    val arr = JSONArray().also { a -> items.forEach { a.put(it.toJson()) } }\n    context.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n        .edit().putString(KEY, arr.toString()).apply()\n}\n\nfun addRecentItem(context: Context, item: RecentItem) {\n    if (item.name.isBlank()) return\n    val rest = getRecentItems(context).filterNot { it.type == item.type && it.key == item.key }\n    save(context, (listOf(item) + rest).take(MAX_ITEMS))\n}\n\nfun removeRecentItem(context: Context, item: RecentItem) {\n    save(context, getRecentItems(context).filterNot { it.type == item.type && it.key == item.key })\n}\n\nfun clearRecentItems(context: Context) {\n    context.getSharedPreferences(PREF, Context.MODE_PRIVATE).edit().remove(KEY).apply()\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/SettingsPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.setValue\n\n// Trimmed from Spotui: stream quality, YouTube and web-playback settings are gone (the Web\n// Player engine streams Spotify's own audio). Crossfade is ours: a fade, not an overlap.\n\nprivate const val PREF = \"settings_prefs\"\nprivate const val KEY_LIBRARY_GRID = \"library_grid_view\"\nprivate const val KEY_LYRIC_TRANSLATE_LANG = \"lyric_translate_lang\"\nprivate const val KEY_LYRICS_EXTRA = \"lyrics_extra_sources\"\nprivate const val KEY_CROSSFADE = \"crossfade_seconds\"\n\n/** Extra lyrics sources (NetEase, Genius) when Spotify and LRCLIB have none. On by default: more songs have words. */\nfun isLyricsExtraSources(c: Context): Boolean = prefs(c).getBoolean(KEY_LYRICS_EXTRA, true)\nfun setLyricsExtraSources(c: Context, v: Boolean) = prefs(c).edit().putBoolean(KEY_LYRICS_EXTRA, v).apply()\n/** The extra sources were turned off by hand (never touched: Genius is still the last resort). */\nfun isLyricsExtraSourcesOff(c: Context): Boolean = prefs(c).let { it.contains(KEY_LYRICS_EXTRA) && !it.getBoolean(KEY_LYRICS_EXTRA, false) }\n\n/** Lyrics timed word by word first (karaoke); off: line by line, Spotify's first. */\nfun isLyricsWordSync(c: Context): Boolean = prefs(c).getBoolean(\"lyrics_word_sync\", true)\nfun setLyricsWordSync(c: Context, v: Boolean) = prefs(c).edit().putBoolean(\"lyrics_word_sync\", v).apply()\n\nprivate fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n\n/**\n * Genius (on by default): what a song means and the notes on its lines, and Genius's plain-text\n * lyrics as a last resort. Off: nothing is asked of genius.com and the Genius parts (the light\n * bulb, the underlined lines, the \"Meaning\" row, Genius among the lyrics sources) are gone. Read as\n * state by both looks; read off the main thread by GeniusMeaning and LyricsApi (true before the\n * app is set up, in tests).\n */\nobject GeniusPref {\n    private const val KEY = \"genius\"\n    var on by androidx.compose.runtime.mutableStateOf(\n        runCatching { prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true) }.getOrDefault(true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n        if (!value) com.music.spotui.data.api.GeniusMeaning.forget()\n        // Lyrics read from Genius before are not kept: the song is read again from the others.\n        com.music.spotui.data.api.LyricsApi.forgetAll()\n    }\n}\n\n/**\n * \"Show romanization\" under the lyrics' lines (the song in Latin letters), offered when the lyrics\n * carry one. Off by default; read as state by both looks, so the menu and the lines agree.\n */\nobject LyricsRomanizationPref {\n    private const val KEY = \"lyrics_romanization\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, false))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/** The bottom bar: fading into the list (the default), or solid black. Read by the bar as state. */\nobject SolidNavBar {\n    private const val KEY = \"solid_nav_bar\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, false))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/** \"When your music ends, keep playing similar songs\" (on by default). Read by the player. */\nobject AutoplayPref {\n    private const val KEY = \"autoplay_similar\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Myspoti shuffle\" (on by default: Spotify's replayed songs before the end of the list, reported): with shuffle on, a list plays every one of its songs once, in\n * an order Myspoti draws, before it starts over, instead of Spotify's shuffle (see\n * [com.music.spotui.di.AppShuffle]). Off: Spotify shuffles, as before.\n */\nobject AppShufflePref {\n    private const val KEY = \"myspoti_shuffle\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n        if (!value) com.music.spotui.di.AppShuffle.forget()\n    }\n}\n\n/**\n * \"Count extension plays on your music account\": a song an extension streams live is played by the\n * chosen account provider's web player too ([AccountProviderPref]: Spotify's Web Player, YouTube\n * Music's web app), unheard, so the provider counts it (and Spotify Connect sees and controls it; see\n * [com.music.spotui.di.AccountSync]). Off: the extension's stream alone. Off for a new install; an\n * install from before this default keeps what it had (on, the earlier default, when never changed),\n * and the value read the first time is stored so a later update keeps it. Downloads are never\n * synced (the earlier \"Sync downloaded songs with Spotify\" key, `download_spotify_sync`, is no\n * longer read).\n */\nobject ConnectMirrorPref {\n    private const val KEY = \"connect_mirror\"\n    var on by androidx.compose.runtime.mutableStateOf(initial(com.music.spotui.di.Graph.app))\n        private set\n\n    private fun initial(c: Context): Boolean {\n        val p = prefs(c)\n        if (p.contains(KEY)) return p.getBoolean(KEY, false)\n        // Never set: an update of an older install had it on by default, a new install starts off.\n        val updated = runCatching { c.packageManager.getPackageInfo(c.packageName, 0).let { it.lastUpdateTime > it.firstInstallTime } }\n            .getOrDefault(false)\n        p.edit().putBoolean(KEY, updated).apply()\n        return updated\n    }\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n        com.music.spotui.di.AccountSync.listen.refresh()\n    }\n}\n\n/**\n * The automatic update check at launch (on by default: the app behaved that way before this\n * option existed). Off means no check when the app starts — a check asked for in Settings still\n * works, it reads the same release list.\n */\nobject AutoUpdateCheckPref {\n    private const val KEY = \"auto_update_check\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/** Screen rotation: portrait (the default), automatic (follows the system), or landscape. */\nobject OrientationPref {\n    private const val KEY = \"screen_orientation\"\n    const val PORTRAIT = \"portrait\"\n    const val AUTO = \"auto\"\n    const val LANDSCAPE = \"landscape\"\n    var mode by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getString(KEY, PORTRAIT) ?: PORTRAIT)\n        private set\n\n    fun set(c: Context, value: String) {\n        mode = value\n        prefs(c).edit().putString(KEY, value).apply()\n    }\n\n    /** The [android.content.pm.ActivityInfo] value for the chosen mode. */\n    fun requested(): Int = when (mode) {\n        AUTO -> android.content.pm.ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED\n        LANDSCAPE -> android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE\n        else -> android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT\n    }\n}\n\n/** Library layout: false = rows (default), true = Spotify-style 3-column grid. */\nfun isLibraryGridView(c: Context): Boolean = prefs(c).getBoolean(KEY_LIBRARY_GRID, false)\nfun setLibraryGridView(c: Context, v: Boolean) = prefs(c).edit().putBoolean(KEY_LIBRARY_GRID, v).apply()\n\n/**\n * Crossfade length in seconds, 0 = off (the default: nothing changes unless asked for).\n *\n * It is a fade, not an overlap: the page plays one media element, so the next song cannot\n * start before this one ends. The song fades out over its last N seconds, the next one fades\n * in. The value is Compose state, so the settings row redraws when it changes.\n */\nobject CrossfadePref {\n    const val MAX = 12\n    var seconds by androidx.compose.runtime.mutableStateOf(\n        prefs(com.music.spotui.di.Graph.app).getInt(KEY_CROSSFADE, 0).coerceIn(0, MAX),\n    )\n        private set\n\n    /** Saves it and hands it to the player: the change applies to the song playing now. */\n    fun set(c: Context, value: Int) {\n        val v = value.coerceIn(0, MAX)\n        seconds = v\n        prefs(c).edit().putInt(KEY_CROSSFADE, v).apply()\n        applyCrossfade(v)\n    }\n}\n\n/**\n * How the local player's songs follow each other: one choice over [CrossfadePref] and AutoMix,\n * which never run together (AutoMix on, the crossfade's length is kept for later but unused).\n * Spotify songs, which AutoMix cannot mix (the app never has the Web Player's audio), then change\n * with a short fade of [SPOTIFY_FADE_SECONDS] rather than with that kept length (up to 12 s).\n */\nobject TransitionPref {\n    enum class Mode { OFF, CROSSFADE, AUTOMIX }\n\n    /** The Spotify songs' fade while AutoMix is on, seconds. */\n    const val SPOTIFY_FADE_SECONDS = 3\n\n    val mode: Mode get() = when {\n        com.music.spotui.automix.AutoMix.on -> Mode.AUTOMIX\n        CrossfadePref.seconds > 0 -> Mode.CROSSFADE\n        else -> Mode.OFF\n    }\n\n    fun set(c: Context, mode: Mode) {\n        val automix = mode == Mode.AUTOMIX\n        if (automix != com.music.spotui.automix.AutoMix.on) {\n            com.music.spotui.automix.AutoMix.set(automix)\n            com.music.spotui.di.LocalPlayer.autoMixChanged(automix)\n        }\n        when (mode) {\n            Mode.OFF -> CrossfadePref.set(c, 0)\n            // Back to the crossfade: its last length, 6 s the first time.\n            Mode.CROSSFADE -> if (CrossfadePref.seconds == 0) CrossfadePref.set(c, 6)\n            Mode.AUTOMIX -> Unit\n        }\n    }\n}\n\n/**\n * \"Music videos\": the video button in the player, the lookup behind it and a clip that starts\n * by itself on the next song. On by default; off, the player is audio (and Canvas) only.\n */\nobject MusicVideoPref {\n    private const val KEY = \"music_video_enabled\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n        if (!value) com.music.spotui.video.MusicVideoController.setOn(false)\n    }\n}\n\n/**\n * \"Hide the DJ\" on Home (off by default): Spotify's DJ, which comes in the home feed as a\n * playlist card, leaves the shelves. Read by both Home screens as state.\n */\nobject HideDjPref {\n    private const val KEY = \"hide_dj\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, false))\n        private set\n\n    /** Hidden here or by an extension's look (`home.dj`). */\n    val hidden: Boolean get() = on || com.music.spotui.extensions.ExtensionLook.hides(app.myspoti.extensions.UiPart.HOME_DJ)\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\nfun getCrossfadeSeconds(c: Context): Int =\n    prefs(c).getInt(KEY_CROSSFADE, 0).coerceIn(0, CrossfadePref.MAX)\n\n/** Gives the saved length to the player (at start, and at every change); 0 stops a fade at once. */\nfun applyCrossfade(seconds: Int) {\n    // The local player: its audio offload is allowed only without a crossfade, its fade timer follows.\n    com.music.spotui.di.LocalPlayer.crossfadeChanged()\n    val runtime = app.myspoti.host.android.MyspotiRuntime\n    if (!runtime.isStarted) return\n    // AutoMix on: the crossfade length is only kept for later, the Spotify songs get a short fade.\n    runtime.spotify.player.crossfadeSeconds = if (com.music.spotui.automix.AutoMix.on) TransitionPref.SPOTIFY_FADE_SECONDS else seconds\n}\n\nfun getLyricTranslateLang(c: Context): String =\n    prefs(c).getString(KEY_LYRIC_TRANSLATE_LANG, \"\").orEmpty()\n\nfun setLyricTranslateLang(c: Context, code: String) =\n    prefs(c).edit().putString(KEY_LYRIC_TRANSLATE_LANG, code.trim()).apply()\n\n/**\n * Liquid Glass in the Immersive look (Settings > Display, under Look): the floating bars refract\n * the page through a lens instead of only frosting it. On by default; it only takes effect on\n * Android 12+ and when the phone does not ask for less blur or motion (see\n * [com.music.spotui.ui.immersive.shell.rememberLiquidGlassActive]).\n */\nobject LiquidGlassPref {\n    private const val KEY = \"immersive_liquid_glass\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Lyrics preview in the player\" (Settings > Display, Classic look): the lyrics card under the\n * player. On by default; off, the lyrics still open with a flick up on the cover.\n */\nobject PlayerLyricsCardPref {\n    private const val KEY = \"player_lyrics_card\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    /** Shown: on here and not hidden by an extension's look (`player.lyrics-card`). */\n    val shown: Boolean get() = on && !com.music.spotui.extensions.ExtensionLook.hides(app.myspoti.extensions.UiPart.PLAYER_LYRICS_CARD)\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Source and quality in the player\" (Settings > Display, both looks): the line that says what\n * plays and how (under the title in the Immersive look, under the device in the Classic one). On\n * by default; off, the player's menu has the Sound quality row (and Stats for nerds) instead.\n */\nobject PlayerSourceLinePref {\n    private const val KEY = \"player_source_line\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    /** Shown: on here and not hidden by an extension's look (`player.source`). */\n    val shown: Boolean get() = on && !com.music.spotui.extensions.ExtensionLook.hides(app.myspoti.extensions.UiPart.PLAYER_SOURCE)\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Capsule in the player\" (Settings > Display, Immersive look): the capsule at the bottom of the\n * player (devices, with shuffle and repeat when [PlayerModesPref] is on). On by default; off, the\n * player's menu has a Listen on row for the devices.\n */\nobject PlayerCapsulePref {\n    private const val KEY = \"immersive_player_capsule\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    /** Shown: on here and not hidden by an extension's look (`player.capsule`). */\n    val shown: Boolean get() = on && !com.music.spotui.extensions.ExtensionLook.hides(app.myspoti.extensions.UiPart.PLAYER_CAPSULE)\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Shuffle and repeat in the player\" (Settings > Display, Immersive look): on, the player's\n * bottom capsule holds shuffle, repeat and devices (2.2); off, only devices, as in 2.1.0 (the\n * queue panel keeps shuffle and repeat). Off by default: the owner's call, and asked on Discord.\n */\nobject PlayerModesPref {\n    private const val KEY = \"immersive_player_modes\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, false))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Volume bar in the player\" (Settings > Display, Immersive look): the volume slider under the\n * transport. On by default; off, the phone's volume keys still do it, and the bottom row moves up\n * into its place while the cover and the other controls stay where they are (#186).\n */\nobject PlayerVolumePref {\n    private const val KEY = \"immersive_player_volume\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Keep the screen on with lyrics\" (Settings > Playback, both looks): while the lyrics are open\n * the screen does not go dark, so the lines can be followed, for 10 minutes after the last touch\n * (no limit while charging). On by default. Read as state by the lyrics of both looks.\n */\nobject LyricsKeepAwakePref {\n    private const val KEY = \"lyrics_keep_screen_on\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, true))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n\n/**\n * \"Picture-in-picture\" (Settings > Display, both looks): leaving the app while a song plays opens\n * a small window with its cover, the line being sung and previous, play/pause and next buttons\n * ([com.music.spotui.ui.components.SongPip]). Off by default: asked for on Discord, and \"keep it\n * optional\" there too. A music video keeps its own window whatever this says.\n */\nobject SongPipPref {\n    private const val KEY = \"song_pip\"\n    var on by androidx.compose.runtime.mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY, false))\n        private set\n\n    fun set(c: Context, value: Boolean) {\n        on = value\n        prefs(c).edit().putBoolean(KEY, value).apply()\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/data/preferences/SponsorBlockPref.kt",
+      "source": "package com.music.spotui.data.preferences\n\nimport android.content.Context\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.setValue\nimport com.music.spotui.di.Graph\nimport com.music.spotui.podcast.SponsorSegments\n\n/**\n * SponsorBlock for podcasts ([com.music.spotui.podcast.SponsorSkip]): off by default, since it\n * asks sponsor.ajay.app (and YouTube) about the episodes played. Which parts it skips: sponsor\n * reads on, the rest off until chosen.\n */\nobject SponsorBlockPref {\n    private const val PREF = \"sponsorblock\"\n    private fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)\n\n    var on by mutableStateOf(prefs(Graph.app).getBoolean(\"on\", false))\n        private set\n    var sponsor by mutableStateOf(prefs(Graph.app).getBoolean(\"sponsor\", true))\n        private set\n    var selfPromo by mutableStateOf(prefs(Graph.app).getBoolean(\"selfpromo\", false))\n        private set\n    var introOutro by mutableStateOf(prefs(Graph.app).getBoolean(\"intro_outro\", false))\n        private set\n    var interaction by mutableStateOf(prefs(Graph.app).getBoolean(\"interaction\", false))\n        private set\n\n    fun set(c: Context, value: Boolean) { on = value; prefs(c).edit().putBoolean(\"on\", value).apply() }\n    fun setSponsor(c: Context, value: Boolean) { sponsor = value; prefs(c).edit().putBoolean(\"sponsor\", value).apply() }\n    fun setSelfPromo(c: Context, value: Boolean) { selfPromo = value; prefs(c).edit().putBoolean(\"selfpromo\", value).apply() }\n    fun setIntroOutro(c: Context, value: Boolean) { introOutro = value; prefs(c).edit().putBoolean(\"intro_outro\", value).apply() }\n    fun setInteraction(c: Context, value: Boolean) { interaction = value; prefs(c).edit().putBoolean(\"interaction\", value).apply() }\n\n    /** The categories to skip, as the server names them. */\n    fun categories(): Set<String> = buildSet {\n        if (sponsor) add(SponsorSegments.SPONSOR)\n        if (selfPromo) add(SponsorSegments.SELF_PROMO)\n        if (introOutro) { add(SponsorSegments.INTRO); add(SponsorSegments.OUTRO) }\n        if (interaction) add(SponsorSegments.INTERACTION)\n    }\n}\n"
+    }
+  ],
+  "routes": [
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/MainBottomNavigation.kt",
+      "source": "package com.music.spotui.ui.navigation\n\nimport com.music.spotui.ui.theme.AppText\nimport com.music.spotui.ui.theme.AppMuted\nimport com.music.spotui.ui.theme.AppShade\n\nimport androidx.navigation.NavGraph.Companion.findStartDestination\nimport androidx.compose.ui.res.stringResource\n\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.height\n\nimport androidx.compose.animation.AnimatedVisibility\nimport androidx.compose.animation.slideInVertically\nimport androidx.compose.animation.slideOutVertically\nimport androidx.compose.foundation.background\nimport androidx.compose.foundation.interaction.MutableInteractionSource\nimport androidx.compose.foundation.layout.Box\nimport androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.padding\nimport androidx.compose.foundation.layout.size\nimport androidx.compose.foundation.clickable\nimport androidx.compose.foundation.layout.Arrangement\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.RowScope\nimport androidx.compose.foundation.layout.fillMaxHeight\nimport androidx.compose.material3.Icon\nimport androidx.compose.material3.Text\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.MutableState\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.remember\nimport androidx.compose.runtime.setValue\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.graphics.Brush\nimport androidx.compose.ui.graphics.Color\nimport androidx.compose.ui.res.painterResource\nimport androidx.compose.ui.text.font.FontWeight\nimport androidx.compose.ui.unit.dp\nimport androidx.compose.ui.unit.sp\nimport androidx.navigation.NavHostController\nimport androidx.navigation.compose.currentBackStackEntryAsState\nimport com.music.spotui.ui.components.MiniPlayer\n\nimport androidx.compose.foundation.layout.navigationBarsPadding\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.layout.widthIn\nimport androidx.compose.foundation.layout.statusBarsPadding\n\n/**\n * What re-tapping the tab you are already on does in the official app: Home and Library\n * scroll their list back to the top without reloading anything, Search focuses its field.\n * The bar only sees the tap; the list state and the text field live inside the screens,\n * so the tap is published here and each screen collects its own event.\n */\nobject TabReselect {\n    // replay = 0 + a one-slot buffer: a tap is never held back, and a tap that lands while\n    // the screen is not composed is simply dropped rather than replayed on the next visit.\n    private val _home = kotlinx.coroutines.flow.MutableSharedFlow<Unit>(\n        extraBufferCapacity = 1, onBufferOverflow = kotlinx.coroutines.channels.BufferOverflow.DROP_OLDEST,\n    )\n    private val _library = kotlinx.coroutines.flow.MutableSharedFlow<Unit>(\n        extraBufferCapacity = 1, onBufferOverflow = kotlinx.coroutines.channels.BufferOverflow.DROP_OLDEST,\n    )\n    private val _search = kotlinx.coroutines.flow.MutableSharedFlow<Unit>(\n        extraBufferCapacity = 1, onBufferOverflow = kotlinx.coroutines.channels.BufferOverflow.DROP_OLDEST,\n    )\n\n    val home: kotlinx.coroutines.flow.SharedFlow<Unit> = _home\n    val library: kotlinx.coroutines.flow.SharedFlow<Unit> = _library\n    val search: kotlinx.coroutines.flow.SharedFlow<Unit> = _search\n\n    fun emit(route: String) {\n        when (route) {\n            Routes.Home.route -> _home.tryEmit(Unit)\n            Routes.Library.route -> _library.tryEmit(Unit)\n            Routes.Search.route -> _search.tryEmit(Unit)\n        }\n    }\n}\n\n@Composable\nfun MainBottomNavigation(navController: NavHostController) {\n\n    // Visibility follows the screen actually shown (not flags each screen sets,\n    // which raced during transitions and left the mini player over the full one).\n    val shownRoute = navController.currentBackStackEntryAsState().value?.destination?.route\n    val fullScreen = shownRoute == Routes.Player.route || shownRoute == Routes.Queue.route\n    val hasTrack = com.music.spotui.di.Graph.currentSongState.title.value.isNotBlank()\n    // No motion of its own: the bar sits above the pages, so sliding it while the\n    // player rises (or collapses behind it) made one gesture look like two.\n    AnimatedVisibility(\n        visible = !fullScreen,\n        enter = androidx.compose.animation.EnterTransition.None,\n        exit = androidx.compose.animation.ExitTransition.None,\n        content = {\n            Box(\n                contentAlignment = Alignment.BottomCenter,\n                modifier = Modifier\n                    .fillMaxWidth()\n                    // Settings, Display: the fade over the list (the default), or solid black (from #15).\n                    .then(\n                        if (com.music.spotui.data.preferences.SolidNavBar.on) Modifier.background(AppShade)\n                        // Like the official bar: clear above the mini player, near-opaque by the tab icons,\n                        // so covers scrolling underneath never compete with the labels.\n                        else Modifier.background(Brush.verticalGradient(\n                            0f to Color.Transparent,\n                            0.3f to AppShade.copy(alpha = 0.7f),\n                            0.6f to AppShade.copy(alpha = 0.92f),\n                            1f to AppShade,\n                        ))\n                    )\n            ) {\n\n                Column(modifier = Modifier.navigationBarsPadding()) {\n\n                    AnimatedVisibility(\n                        visible = hasTrack,\n                        enter = slideInVertically(initialOffsetY = { it }),\n                        exit = slideOutVertically(targetOffsetY = { it }),\n                        content = {\n                            // Beside the rail (large windows, a phone on its side): a capped, centred\n                            // capsule, not a bar across a desktop window.\n                            Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {\n                                Box(if (com.music.spotui.ui.components.windowSize().navigationRail) Modifier.widthIn(max = com.music.spotui.ui.components.WindowSize.MaxMiniPlayerWidth) else Modifier) {\n                                    MiniPlayer()\n                                }\n                            }\n                        }\n                    )\n\n\n\n                    Spacer(modifier = Modifier.height(4.dp))\n                    val tabs = rememberTabNavigation(navController)\n                    // Large windows and a phone on its side: the tabs are in the rail at the side (MainNavigationRail).\n                    if (!com.music.spotui.ui.components.windowSize().navigationRail) {\n                    // Official bar proportions: a 58 dp strip (the gesture inset is added by\n                    // navigationBarsPadding above), equal shares edge to edge, so the\n                    // tabs spread over the full width instead of clustering in the middle.\n                    Row(\n                        modifier = Modifier\n                            .fillMaxWidth()\n                            .height(NavBarHeight),\n                        verticalAlignment = Alignment.CenterVertically,\n                    ) {\n                        TabItems.forEach { item ->\n                            NavBarTab(\n                                iconRes = item.icon,\n                                label = if (item.labelRes != 0) stringResource(item.labelRes) else item.label,\n                                selected = tabs.selected == item.route,\n                                onClick = { tabs.open(item) },\n                            )\n                        }\n                    }\n                    }\n\n\n\n                }\n\n\n\n            }\n        }\n    )\n}\n\n// Friend activity opens from Home's header (as in Spotify), not from a tab.\n/** The tabs, in the order an extension's look sets (`ui.order.nav`) or the app's own. */\nprivate val TabItems: List<Routes>\n    get() {\n        val tabs = mapOf(\"home\" to Routes.Home, \"search\" to Routes.Search, \"library\" to Routes.Library)\n        return com.music.spotui.extensions.ExtensionLook.navOrder?.mapNotNull { tabs[it] }?.takeIf { it.size == tabs.size }\n            ?: listOf(Routes.Home, Routes.Search, Routes.Library)\n    }\n\n/** The tab shown (also on its sub-pages) and what a tap on a tab does; shared by the bar and the rail. */\nprivate class TabNavigation(private val navController: NavHostController, private val state: androidx.compose.runtime.MutableState<String>, private val currentRoute: String?) {\n    val selected: String get() = state.value\n\n    fun open(item: Routes) {\n        // Standard bottom-tab navigation: each tab keeps its\n        // state (no reload, scroll kept) when you come back.\n        if (item.route == state.value) {\n            if (currentRoute == item.route) {\n                // Already on the tab's own page: nothing to reload, only\n                // the re-tap shortcut (scroll to top, or focus search).\n                TabReselect.emit(item.route)\n            } else if (!navController.popBackStack(item.route, inclusive = false)) {\n                // On one of its sub-pages: back to its root page first.\n                navController.navigate(item.route) { launchSingleTop = true }\n            }\n        } else {\n            state.value = item.route\n            navController.navigate(item.route) {\n                popUpTo(navController.graph.findStartDestination().id) { saveState = true }\n                launchSingleTop = true\n                // Home always opens Home itself (its scroll kept), not the\n                // page last left open from it (a playlist, an artist…).\n                restoreState = item.route != Routes.Home.route\n            }\n        }\n    }\n}\n\n@Composable\nprivate fun rememberTabNavigation(navController: NavHostController): TabNavigation {\n    val navStack by navController.currentBackStackEntryAsState()\n    val currentRoute = navStack?.destination?.route\n    // The tab the user is in, even on one of its sub-pages (album, artist…).\n    val selectedTab = androidx.compose.runtime.saveable.rememberSaveable { androidx.compose.runtime.mutableStateOf(Routes.Home.route) }\n    if (currentRoute in TabItems.map { it.route }) selectedTab.value = currentRoute!!\n    return TabNavigation(navController, selectedTab, currentRoute)\n}\n\n/**\n * Large windows (tablets, foldables, DeX) and a phone on its side: the three tabs in a rail down\n * the left side instead of a phone bar stretched across the window (or, in landscape, eating a\n * third of its height). Hidden with the bar on the full-screen routes.\n */\n@Composable\nfun MainNavigationRail(navController: NavHostController) {\n    val shownRoute = navController.currentBackStackEntryAsState().value?.destination?.route\n    if (shownRoute == Routes.Player.route || shownRoute == Routes.Queue.route) return\n    val tabs = rememberTabNavigation(navController)\n    Column(\n        modifier = Modifier\n            .fillMaxHeight()\n            .width(88.dp)\n            .background(AppShade)\n            .statusBarsPadding()\n            .navigationBarsPadding()\n            .padding(top = 24.dp),\n        horizontalAlignment = Alignment.CenterHorizontally,\n        verticalArrangement = Arrangement.spacedBy(12.dp),\n    ) {\n        TabItems.forEach { item ->\n            Row(Modifier.fillMaxWidth().height(72.dp)) {\n                NavBarTab(\n                    iconRes = item.icon,\n                    label = if (item.labelRes != 0) stringResource(item.labelRes) else item.label,\n                    selected = tabs.selected == item.route,\n                    onClick = { tabs.open(item) },\n                )\n            }\n        }\n    }\n}\n\n// Official app metrics. Material3's NavigationBarItem measures its icon slot at a\n// fixed 24 dp, so a 28 dp Icon there was clipped back down: the bar is drawn by hand.\nprivate val NavBarHeight = 58.dp\nprivate val NavIconSize = 28.dp\n\n/**\n * One tab of the bottom bar: a 28 dp glyph above an 11 sp medium label, the two\n * centred as a single block inside an equal third of the bar's width.\n */\n@Composable\nprivate fun RowScope.NavBarTab(\n    iconRes: Int,\n    label: String,\n    selected: Boolean,\n    onClick: () -> Unit,\n) {\n    // Spotify's idle grey, lighter than Color.Gray which read as \"disabled\".\n    val tint = if (selected) AppText else AppMuted\n    Box(\n        modifier = Modifier\n            .weight(1f)\n            .fillMaxHeight()\n            // No ripple: the bar is a plain strip of tabs, and the tint is the feedback.\n            .clickable(\n                interactionSource = remember { MutableInteractionSource() },\n                indication = null,\n                onClickLabel = label,\n                onClick = onClick,\n            ),\n        contentAlignment = Alignment.Center,\n    ) {\n        Column(\n            horizontalAlignment = Alignment.CenterHorizontally,\n            verticalArrangement = Arrangement.Center,\n        ) {\n            Icon(\n                painter = painterResource(id = iconRes),\n                // The label right below already names the tab for TalkBack.\n                contentDescription = null,\n                tint = tint,\n                modifier = Modifier.size(NavIconSize),\n            )\n            Spacer(modifier = Modifier.height(4.dp))\n            Text(\n                text = label,\n                color = tint,\n                fontSize = 11.sp,\n                lineHeight = 12.sp,\n                fontWeight = FontWeight.Medium,\n                letterSpacing = 0.2.sp,\n                maxLines = 1,\n                // Four tabs: a long label (Bibliothèque, with large text) shrinks a little instead of being cut.\n                autoSize = androidx.compose.foundation.text.TextAutoSize.StepBased(minFontSize = 8.sp, maxFontSize = 11.sp, stepSize = 0.5.sp),\n            )\n        }\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/MyNavHost.kt",
+      "source": "package com.music.spotui.ui.navigation\n\nimport androidx.compose.animation.AnimatedContentScope\nimport androidx.compose.ui.graphics.graphicsLayer\nimport androidx.compose.animation.core.animateFloat\nimport androidx.compose.animation.EnterTransition\nimport androidx.compose.animation.ExitTransition\nimport androidx.compose.animation.core.CubicBezierEasing\nimport androidx.compose.animation.core.tween\nimport androidx.compose.animation.fadeIn\nimport androidx.compose.animation.fadeOut\nimport androidx.compose.animation.slideInHorizontally\nimport androidx.compose.animation.slideInVertically\nimport androidx.compose.animation.slideOutHorizontally\nimport androidx.compose.animation.slideOutVertically\nimport androidx.compose.foundation.background\nimport androidx.compose.foundation.layout.Box\nimport androidx.compose.foundation.layout.fillMaxSize\nimport androidx.compose.foundation.layout.fillMaxHeight\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.widthIn\nimport androidx.compose.foundation.layout.wrapContentWidth\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.navigation.NamedNavArgument\nimport androidx.navigation.NavBackStackEntry\nimport androidx.navigation.NavGraphBuilder\nimport com.music.spotui.ui.theme.AppBackground\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.LaunchedEffect\nimport androidx.compose.ui.platform.LocalContext\nimport androidx.navigation.NavHostController\nimport androidx.navigation.compose.NavHost\nimport androidx.navigation.compose.composable\nimport androidx.navigation.navArgument\nimport com.music.spotui.ui.screens.AlbumByIdScreen\nimport com.music.spotui.ui.screens.ContextScreen\nimport com.music.spotui.ui.screens.ArtistReleasesScreen\nimport com.music.spotui.ui.screens.ArtistScreen\nimport com.music.spotui.ui.screens.CategoryScreen\nimport com.music.spotui.ui.screens.HomeScreen\nimport com.music.spotui.ui.screens.LibraryScreen\nimport com.music.spotui.ui.screens.ShowScreen\nimport com.music.spotui.ui.screens.QueueScreen\nimport com.music.spotui.ui.screens.SearchScreen\nimport com.music.spotui.ui.immersive.motion.ImmersiveMotion.Pages as IPages\nimport com.music.spotui.ui.immersive.motion.ImmersiveMotion.PageFade as IFade\n\n@Composable\nfun MyNavHost(\n    navHostController: NavHostController,\n    modifier: Modifier = Modifier,\n) {\n\n    val context = LocalContext.current\n    val startDestination = Routes.Home.route\n    // The look (Settings > Display) is read through State objects: the graph builder and the\n    // transitions keep the same lambdas, so a switch never rebuilds the graph (or the back stack).\n    val immersiveState = androidx.compose.runtime.rememberUpdatedState(isImmersive())\n    val reduceState = androidx.compose.runtime.rememberUpdatedState(com.music.spotui.ui.look.rememberReduceMotion())\n\n    com.music.spotui.ui.components.ArtistChooserHost()\n    NavHost(\n        navController = navHostController,\n        startDestination = startDestination,\n        modifier = modifier,\n        // Pages: a short shift with a fade-through, tabs fade in, the player and queue rise\n        // from the bottom (see navEnter). The fades put a page in an offscreen layer for\n        // their 0.1-0.2 s: the owner's call, a page change read as a hard block without them.\n        // The Immersive look pushes pages like a navigation stack (ImmersiveMotion.Pages).\n        enterTransition = { if (immersiveState.value) IPages.enter(reduceState.value)(this) else if (reduceState.value) EnterTransition.None else navEnter(initialState, targetState) },\n        exitTransition = { if (immersiveState.value) IPages.exit(reduceState.value)(this) else if (reduceState.value) ExitTransition.None else navExit(initialState, targetState) },\n        popEnterTransition = { if (immersiveState.value) IPages.popEnter(reduceState.value)(this) else if (reduceState.value) EnterTransition.None else navPopEnter(initialState, targetState) },\n        popExitTransition = { if (immersiveState.value) IPages.popExit(reduceState.value)(this) else if (reduceState.value) ExitTransition.None else navPopExit(initialState, targetState) },\n    ){\n        page(Routes.Home.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveHomeScreen(navHostController) else HomeScreen(navHostController)\n        }\n        page(Routes.Search.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveSearchScreen(navHostController) else SearchScreen(navHostController)\n        }\n        page(Routes.Library.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveLibraryScreen(navHostController) else LibraryScreen(navHostController)\n        }\n        // Older links to the player route open the player sheet over the page instead.\n        page(Routes.Player.route){\n            LaunchedEffect(Unit) {\n                navHostController.popBackStack(Routes.Player.route, inclusive = true)\n                PlayerSheet.show()\n            }\n        }\n\n        page(Routes.Queue.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveQueueScreen(navHostController) else QueueScreen(navHostController)\n        }\n\n        page(Routes.LocalFiles.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveLocalFilesScreen(navHostController) else com.music.spotui.ui.screens.LocalFilesScreen(navHostController)\n        }\n\n        // Live Radio (see com.music.spotui.radio): plays through LocalPlayer, as a Local Files song does.\n        page(Routes.LiveRadio.route){\n            if (isImmersive()) com.music.spotui.radio.ui.ImmersiveLiveRadioScreen(navHostController) else com.music.spotui.radio.ui.LiveRadioScreen(navHostController)\n        }\n\n        page(Routes.Downloads.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveDownloadsScreen(navHostController) else com.music.spotui.ui.screens.DownloadsScreen(navHostController)\n        }\n\n        page(Routes.HiddenSongs.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveHiddenSongsScreen(navHostController) else com.music.spotui.ui.screens.HiddenSongsScreen(navHostController)\n        }\n\n        // The local player's equalizer, speed and silence skipping (Settings > Playback, the player's menu).\n        page(Routes.Equalizer.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveEqualizerScreen(navHostController) else com.music.spotui.ui.screens.EqualizerScreen(navHostController)\n        }\n\n        page(Routes.NewReleases.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveNewReleasesScreen(navHostController) else com.music.spotui.ui.screens.NewReleasesScreen(navHostController)\n        }\n\n        page(Routes.Episodes.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveEpisodesScreen(navHostController) else com.music.spotui.ui.screens.EpisodesScreen(navHostController)\n        }\n\n        page(Routes.NewEpisodes.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveNewEpisodesScreen(navHostController) else com.music.spotui.ui.screens.NewEpisodesScreen(navHostController)\n        }\n\n        page(Routes.Recap.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveRecapScreen(navHostController) else com.music.spotui.ui.screens.RecapScreen(navHostController)\n        }\n\n        page(Routes.Friends.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveFriendsScreen(navHostController) else com.music.spotui.ui.screens.FriendActivityScreen(navHostController)\n        }\n\n        // Spotify's own list for the account (every device), not this phone's counter.\n        page(Routes.Recent.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveRecentlyPlayedScreen(navHostController) else com.music.spotui.ui.screens.RecentlyPlayedScreen(navHostController)\n        }\n\n        // New releases and episodes of what the account follows (the bell on Home).\n        page(Routes.WhatsNew.route) {\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveWhatsNewScreen(navHostController) else com.music.spotui.ui.screens.WhatsNewScreen(navHostController)\n        }\n\n        page(Routes.Liked.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveContextScreen(navHostController, type = \"liked\", id = \"\") else ContextScreen(navHostController, type = \"liked\", id = \"\")\n        }\n\n        // Settings: sound quality, downloads, data, display, language.\n        page(Routes.Settings.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveSettingsScreen(navHostController) else com.music.spotui.ui.screens.SettingsScreen(navHostController)\n        }\n\n        // Extensions: the Store and Installed tabs; one installed extension's page; a repository's extension before install.\n        page(Routes.Extensions.route){\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveExtensionsScreen(navHostController) else com.music.spotui.ui.screens.ExtensionsScreen(navHostController)\n        }\n        page(\"${Routes.Extension.route}/{id}\", arguments = listOf(navArgument(\"id\") { defaultValue = \"\" })){ entry ->\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveExtensionScreen(navHostController, entry.arguments?.getString(\"id\").orEmpty()) else com.music.spotui.ui.screens.ExtensionScreen(navHostController, entry.arguments?.getString(\"id\").orEmpty())\n        }\n        page(\"${Routes.ExtensionEntry.route}/{id}\", arguments = listOf(navArgument(\"id\") { defaultValue = \"\" })){ entry ->\n            if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveExtensionEntryScreen(navHostController, entry.arguments?.getString(\"id\").orEmpty()) else com.music.spotui.ui.screens.ExtensionEntryScreen(navHostController, entry.arguments?.getString(\"id\").orEmpty())\n        }\n        // An extension's own page (webview.page), sandboxed.\n        page(\"extension-page/{id}\", arguments = listOf(navArgument(\"id\") { defaultValue = \"\" })){ entry ->\n            com.music.spotui.ui.screens.ExtensionPageScreen(navHostController, entry.arguments?.getString(\"id\").orEmpty())\n        }\n\n\n\n\n\n\n        page(\n            \"${Routes.Category.route}/{genre}?title={title}\",\n            arguments = listOf(navArgument(\"title\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n            val genre = navBackStackEntry.arguments?.getString(\"genre\").orEmpty()\n            val title = navBackStackEntry.arguments?.getString(\"title\").orEmpty()\n            if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveCategoryScreen(navHostController, genre = genre, title = title.ifBlank { genre }) else CategoryScreen(navHostController, genre = genre, title = title.ifBlank { genre })\n        }\n\n        page(\n            \"${Routes.Album.route}/{uString}?artist={artist}&id={albumId}\",\n            arguments = listOf(\n                navArgument(\"artist\") { defaultValue = \"\" },\n                navArgument(\"albumId\") { defaultValue = \"\" },\n            ),\n        ) { navBackStackEntry ->\n\n            /* Extracting the id from the route */\n            val uId = navBackStackEntry.arguments?.getString(\"uString\")\n            val artist = navBackStackEntry.arguments?.getString(\"artist\").orEmpty()\n            /* We check if it's not null */\n            val albumId = navBackStackEntry.arguments?.getString(\"albumId\").orEmpty()\n            uId?.let { name ->\n                if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveAlbumByIdScreen(navHostController, name = name, artist = artist, id = albumId) else AlbumByIdScreen(navHostController, name = name, artist = artist, id = albumId)\n            }\n        }\n\n        page(\n            \"${Routes.Playlist.route}/{pId}?name={name}\",\n            arguments = listOf(navArgument(\"name\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n            val pId = navBackStackEntry.arguments?.getString(\"pId\")\n            val name = navBackStackEntry.arguments?.getString(\"name\").orEmpty()\n            pId?.let { if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveContextScreen(navHostController, type = \"playlist\", id = it) else ContextScreen(navHostController, type = \"playlist\", id = it) }\n        }\n\n        page(\n            \"${Routes.Profile.route}/{uId}?name={name}\",\n            arguments = listOf(navArgument(\"name\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n            val uId = navBackStackEntry.arguments?.getString(\"uId\")\n            val name = navBackStackEntry.arguments?.getString(\"name\").orEmpty()\n            uId?.let { if (isImmersive()) com.music.spotui.ui.immersive.people.ImmersiveProfileScreen(navHostController, userId = it, userName = name) else com.music.spotui.ui.screens.ProfileScreen(navHostController, userId = it, userName = name) }\n        }\n\n        page(\"$LIKED_BY_ARTIST_ROUTE/{key}\") { navBackStackEntry ->\n            navBackStackEntry.arguments?.getString(\"key\")?.let { if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveContextScreen(navHostController, type = \"liked-artist\", id = it) else ContextScreen(navHostController, type = \"liked-artist\", id = it) }\n        }\n\n        page(\n            \"${com.music.spotui.ui.screens.FOLLOW_LIST_ROUTE}/{uId}/{mode}\",\n        ) { navBackStackEntry ->\n            val uId = navBackStackEntry.arguments?.getString(\"uId\")\n            val mode = navBackStackEntry.arguments?.getString(\"mode\")\n            uId?.let { if (isImmersive()) com.music.spotui.ui.immersive.people.ImmersiveFollowListScreen(navHostController, userId = it, followers = mode == \"followers\") else com.music.spotui.ui.screens.FollowListScreen(navHostController, userId = it, followers = mode == \"followers\") }\n        }\n\n        page(\n            \"${Routes.Show.route}/{sId}?name={name}\",\n            arguments = listOf(navArgument(\"name\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n            val sId = navBackStackEntry.arguments?.getString(\"sId\")\n            val name = navBackStackEntry.arguments?.getString(\"name\").orEmpty()\n            sId?.let { if (isImmersive()) com.music.spotui.ui.immersive.podcast.ImmersiveShowScreen(navHostController, showId = it, showName = name) else ShowScreen(navHostController, showId = it, showName = name) }\n        }\n\n        page(\n            \"${Routes.Episode.route}/{eId}?name={name}\",\n            arguments = listOf(navArgument(\"name\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n            val eId = navBackStackEntry.arguments?.getString(\"eId\")\n            val name = navBackStackEntry.arguments?.getString(\"name\").orEmpty()\n            eId?.let { if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveEpisodeScreen(navHostController, episodeId = it, fallbackName = name) else com.music.spotui.ui.screens.EpisodeScreen(navHostController, episodeId = it, fallbackName = name) }\n        }\n\n        page(\n            \"${Routes.Folder.route}/{uri}?name={name}\",\n            arguments = listOf(navArgument(\"name\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n            val uri = navBackStackEntry.arguments?.getString(\"uri\")\n            val name = navBackStackEntry.arguments?.getString(\"name\").orEmpty()\n            uri?.let { if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveFolderScreen(navHostController, it, name) else com.music.spotui.ui.screens.FolderScreen(navHostController, it, name) }\n        }\n\n        page(\"${Routes.LocalPlaylist.route}/{id}\") { navBackStackEntry ->\n            navBackStackEntry.arguments?.getString(\"id\")?.let { if (isImmersive()) com.music.spotui.ui.immersive.pages.ImmersiveLocalPlaylistScreen(navHostController, it) else com.music.spotui.ui.screens.LocalPlaylistScreen(navHostController, it) }\n        }\n\n        page(\n            \"${Routes.ArtistReleases.route}/{aString}?id={artistId}\",\n            arguments = listOf(navArgument(\"artistId\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n            val aId = navBackStackEntry.arguments?.getString(\"aString\")\n            val artistId = navBackStackEntry.arguments?.getString(\"artistId\").orEmpty()\n            aId?.let { if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveArtistReleasesScreen(navHostController, it, artistId) else ArtistReleasesScreen(navHostController, it, artistId) }\n        }\n\n        page(\n            \"${Routes.Artist.route}/{aString}?id={artistId}\",\n            arguments = listOf(navArgument(\"artistId\") { defaultValue = \"\" }),\n        ) { navBackStackEntry ->\n\n            /* Extracting the id from the route */\n            val aId = navBackStackEntry.arguments?.getString(\"aString\")\n            val artistId = navBackStackEntry.arguments?.getString(\"artistId\").orEmpty()\n            /* We check if it's not null */\n            aId?.let { aid->\n                if (isImmersive()) com.music.spotui.ui.immersive.screens.ImmersiveArtistScreen(navHostController, aid, artistId) else ArtistScreen(navHostController, aid, artistId)\n            }\n        }\n    }\n}\n\nprivate val tabRoutes = setOf(Routes.Home.route, Routes.Search.route, Routes.Library.route)\n// Full-height sheets over the current page (the official player / queue).\nprivate val sheetRoutes = setOf(Routes.Player.route, Routes.Queue.route)\n\nprivate fun isTabSwitch(from: NavBackStackEntry, to: NavBackStackEntry) =\n    from.destination.route in tabRoutes && to.destination.route in tabRoutes\nprivate fun NavBackStackEntry.isSheet() = destination.route in sheetRoutes\n\n// Material 3 emphasized curves: quick start, long soft landing (and the reverse to leave).\ninternal val Decelerate = CubicBezierEasing(0.05f, 0.7f, 0.1f, 1f)\ninternal val Accelerate = CubicBezierEasing(0.3f, 0f, 0.8f, 0.15f)\nprivate const val PAGE_MS = 300\nprivate const val TAB_MS = 150\ninternal const val SHEET_IN_MS = 340\ninternal const val SHEET_OUT_MS = 240\n\n// Pages: Material's shared axis with a fade-through. The page leaving fades out over the first\n// 90 ms while it moves a step aside; the page coming in moves the same short step and fades in\n// over the rest. Two opaque pages sliding across the whole screen (as before) read as a heavy\n// block with a hard edge running over the content; a short shift and a fade at the hand-over\n// read as the official apps' quick page change. Tabs: the new one fades in, nothing moves.\nprivate const val SHIFT = 0.08f\nprivate const val FADE_OUT_MS = 90\nprivate val Standard = CubicBezierEasing(0.2f, 0f, 0f, 1f)\n\nprivate fun pageIn(fromRight: Boolean): EnterTransition =\n    slideInHorizontally(tween(PAGE_MS, easing = Standard)) { (it * SHIFT).toInt() * if (fromRight) 1 else -1 } +\n        fadeIn(tween(PAGE_MS - FADE_OUT_MS, delayMillis = FADE_OUT_MS, easing = Decelerate))\n\nprivate fun pageOut(toLeft: Boolean): ExitTransition =\n    slideOutHorizontally(tween(PAGE_MS, easing = Standard)) { (it * SHIFT).toInt() * if (toLeft) -1 else 1 } +\n        fadeOut(tween(FADE_OUT_MS, easing = Accelerate))\n\nprivate fun navEnter(from: NavBackStackEntry, to: NavBackStackEntry): EnterTransition = when {\n    isTabSwitch(from, to) -> fadeIn(tween(TAB_MS, easing = Decelerate))\n    to.isSheet() -> slideInVertically(tween(SHEET_IN_MS, easing = Decelerate)) { it }\n    else -> pageIn(fromRight = true)\n}\n\nprivate fun navExit(from: NavBackStackEntry, to: NavBackStackEntry): ExitTransition = when {\n    isTabSwitch(from, to) -> ExitTransition.None\n    // The page stays still under the rising sheet until it covers it.\n    to.isSheet() -> fadeOut(tween(durationMillis = 1, delayMillis = SHEET_IN_MS))\n    else -> pageOut(toLeft = true)\n}\n\nprivate fun navPopEnter(from: NavBackStackEntry, to: NavBackStackEntry): EnterTransition = when {\n    isTabSwitch(from, to) -> fadeIn(tween(TAB_MS, easing = Decelerate))\n    from.isSheet() -> EnterTransition.None\n    else -> pageIn(fromRight = false)\n}\n\nprivate fun navPopExit(from: NavBackStackEntry, to: NavBackStackEntry): ExitTransition = when {\n    isTabSwitch(from, to) -> ExitTransition.None\n    from.isSheet() -> slideOutVertically(tween(SHEET_OUT_MS, easing = Accelerate)) { it }\n    else -> pageOut(toLeft = false)\n}\n\n/** A destination on an opaque background, so sliding pages never show through each other. */\nprivate fun NavGraphBuilder.page(\n    route: String,\n    arguments: List<NamedNavArgument> = emptyList(),\n    content: @Composable AnimatedContentScope.(NavBackStackEntry) -> Unit,\n) = composable(route, arguments = arguments) { entry ->\n    val scope = this\n    val settled = androidx.compose.runtime.remember {\n        androidx.compose.runtime.derivedStateOf {\n            scope.transition.currentState == scope.transition.targetState\n        }\n    }\n    val immersive = isImmersive()\n    // Immersive: the page runs its own fade (ImmersiveMotion.PageFade) and hands it to the Liquid\n    // Glass recording it, which then fades with it on every frame of the transition.\n    val fade = if (!immersive) null else scope.transition.animateFloat(\n        transitionSpec = {\n            val ms = if (targetState == androidx.compose.animation.EnterExitState.Visible) IFade.enterMs else IFade.exitMs\n            tween(ms)\n        },\n        label = \"pageFade\",\n    ) { if (it == androidx.compose.animation.EnterExitState.Visible) 1f else 0f }\n    val alpha = androidx.compose.runtime.remember(fade) { { fade?.value ?: 1f } }\n    androidx.compose.runtime.CompositionLocalProvider(\n        LocalPageSettled provides settled,\n        com.music.spotui.ui.immersive.shell.backdrop.backdrops.LocalBackdropSourceAlpha provides alpha,\n    ) {\n        // Large windows: detail pages (album, playlist, artist, settings…) keep a readable width,\n        // centred, instead of rows 2000 px wide; the tab pages and grids use the whole width\n        // (more columns). The inner box is always there, so a resize never rebuilds the page.\n        val capped = com.music.spotui.ui.components.windowSize().large &&\n            entry.destination.route?.substringBefore('/')?.substringBefore('?') !in FullWidthRoutes\n        // Immersive look: every page (Classic fallbacks too) sits on its black page colour.\n        Box(Modifier.fillMaxSize()\n            .then(if (fade == null) Modifier else Modifier.graphicsLayer { this.alpha = fade.value })\n            .background(if (immersive) com.music.spotui.ui.immersive.Immersive.Page else AppBackground)) {\n            Box(\n                Modifier.fillMaxHeight().then(\n                    if (capped) Modifier.fillMaxWidth().wrapContentWidth(Alignment.CenterHorizontally)\n                        .widthIn(max = com.music.spotui.ui.components.WindowSize.MaxPageWidth)\n                    else Modifier.fillMaxWidth()\n                )\n            ) { scope.content(entry) }\n        }\n    }\n}\n\n/** Pages that use a large window's whole width (grids, the tabs' own pages, the player). */\nprivate val FullWidthRoutes = setOf(\n    Routes.Home.route, Routes.Search.route, Routes.Library.route, Routes.Player.route, Routes.Queue.route,\n    Routes.Category.route, Routes.NewReleases.route,\n)\n\n/**\n * false while this page is sliding in or out. Heavy views (video players, surfaces)\n * wait for it: built in the first frame, they stalled it and the motion jumped.\n */\nval LocalPageSettled = androidx.compose.runtime.staticCompositionLocalOf<androidx.compose.runtime.State<Boolean>> {\n    androidx.compose.runtime.mutableStateOf(true)\n}\n\n/** The Immersive look is on (Settings > Display, or the onboarding's look step). */\n@Composable\ninternal fun isImmersive(): Boolean =\n    com.music.spotui.ui.look.LocalLook.current == com.music.spotui.data.preferences.Look.IMMERSIVE\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/PlayerSheet.kt",
+      "source": "package com.music.spotui.ui.navigation\n\nimport androidx.activity.compose.BackHandler\nimport androidx.compose.animation.core.Animatable\nimport androidx.compose.animation.core.CubicBezierEasing\nimport androidx.compose.animation.core.tween\nimport androidx.compose.foundation.layout.Box\nimport androidx.compose.foundation.layout.fillMaxSize\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.CompositionLocalProvider\nimport androidx.compose.runtime.LaunchedEffect\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableFloatStateOf\nimport androidx.compose.runtime.mutableIntStateOf\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.remember\nimport androidx.compose.runtime.setValue\nimport androidx.compose.runtime.withFrameNanos\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.graphics.graphicsLayer\nimport androidx.compose.ui.layout.onSizeChanged\nimport androidx.navigation.NavController\nimport com.music.spotui.ui.screens.PlayerScreen\nimport kotlinx.coroutines.flow.drop\n\n/**\n * The full player, shown over the pages instead of being one of them, like the official\n * app: pulled down, it uncovers the page it was opened from, with the mini player and the\n * tabs already in place, and closing it leaves them there.\n */\nobject PlayerSheet {\n    val open = mutableStateOf(false)\n\n    fun show() { open.value = true }\n    fun close() { open.value = false }\n\n    /** The mini player's top edge in the window (px), where the player rises from and goes back to. */\n    var miniTop by mutableFloatStateOf(0f)\n}\n\n/**\n * How far the player's content has come in while it opens (0 .. 1), read in draw lambdas: the\n * cover, the titles and the controls fade in once the sheet is under way, after its background.\n */\nval LocalPlayerReveal = androidx.compose.runtime.staticCompositionLocalOf<() -> Float> { { 1f } }\n\n/*\n * Opening, as the official app: the player grows out of the mini player. Its background rises\n * from the mini player's top edge and fades in over the first part of the way, then the cover,\n * titles and controls fade in and settle a few dp up. Closing plays it backwards: the content\n * fades first, then the sheet sinks into the mini player and fades into it. No dimming of the\n * page behind: darker than the player's own background, it made the screen blink dark then light\n * on the first and last frames (measured on a recording, reported).\n *\n * It replaces a cover flown between the two players (a copy that ran out of step with the real\n * one: a ghost square during the slide, a lone cover crossing the page on the way down) and a\n * slide whose clock started on the frame that built the whole player (its first frames lost\n * to that work: the \"jump\" at the start).\n */\nprivate const val OPEN_MS = 380\nprivate const val CLOSE_MS = 300\n/** The sheet's background is fully there by this share of the way. */\nprivate const val SHEET_FADE = 0.3f\nprivate val CloseEasing = CubicBezierEasing(0.4f, 0f, 0.2f, 1f)\n\n@Composable\nfun PlayerOverlay(navController: NavController) {\n    // Any navigation from the player (album, artist, playlist…) lands on that page.\n    LaunchedEffect(navController) {\n        navController.currentBackStackEntryFlow.drop(1).collect { PlayerSheet.close() }\n    }\n    val open = PlayerSheet.open.value\n    val progress = remember { Animatable(0f) }\n    var shown by remember { mutableStateOf(false) }\n    val settled = remember { mutableStateOf(false) }\n    // \"Remove animations\": the player is there, or gone, at once.\n    val reduce = com.music.spotui.ui.look.rememberReduceMotion()\n    // The page under the player gives up the keyboard's focus: a search field kept it, and its\n    // cursor handle, drawn by the system in a window of its own, stayed over the player.\n    val focusManager = androidx.compose.ui.platform.LocalFocusManager.current\n    LaunchedEffect(open) {\n        if (open) {\n            focusManager.clearFocus(force = true)\n            shown = true\n            settled.value = false\n            // Two frames for the player's first composition and layout before the clock runs.\n            if (progress.value == 0f) { withFrameNanos { }; withFrameNanos { } }\n            if (reduce) progress.snapTo(1f) else progress.animateTo(1f, tween(OPEN_MS, easing = Decelerate))\n            settled.value = true\n        } else if (shown) {\n            settled.value = false\n            if (reduce) progress.snapTo(0f) else progress.animateTo(0f, tween(CLOSE_MS, easing = CloseEasing))\n            shown = false\n        }\n    }\n    if (!shown) return\n    BackHandler(enabled = open) { PlayerSheet.close() }\n    var heightPx by remember { mutableIntStateOf(0) }\n    val reveal = remember { { ((progress.value - 0.25f) / 0.6f).coerceIn(0f, 1f) } }\n    Box(\n        Modifier.fillMaxSize().onSizeChanged { heightPx = it.height }.graphicsLayer {\n            val p = progress.value\n            val from = PlayerSheet.miniTop.takeIf { it > 0f } ?: heightPx.toFloat()\n            translationY = (1f - p) * from\n            // A layer alpha only over the first part of the way: the open player draws plain.\n            alpha = (p / SHEET_FADE).coerceIn(0f, 1f)\n        },\n    ) {\n        CompositionLocalProvider(LocalPageSettled provides settled, LocalPlayerReveal provides reveal) {\n            // A podcast episode gets the podcast player (±15 s, speed, sleep timer, no shuffle);\n            // everything else keeps the music player.\n            // The player's bare texts use the body style as it is (no app-wide letter spacing).\n            androidx.compose.material3.ProvideTextStyle(com.music.spotui.ui.theme.Typography.bodyLarge) {\n                if (com.music.spotui.di.SongPlayer.isEpisode) {\n                    com.music.spotui.ui.screens.PodcastPlayerScreen(navController)\n                } else {\n                    PlayerScreen(navController)\n                }\n            }\n        }\n    }\n}\n"
+    },
+    {
+      "path": "base/app/src/main/java/com/music/spotui/ui/navigation/Routes.kt",
+      "source": "package com.music.spotui.ui.navigation\n\nimport androidx.annotation.DrawableRes\nimport app.myspoti.engine.R\n\nsealed class Routes(\n    @DrawableRes val icon : Int = 0,\n    val label : String,\n    val route : String,\n    /** Official label (per system language) for the bottom navigation, 0 = none. */\n    @androidx.annotation.StringRes val labelRes: Int = 0,\n) {\n    object Home : Routes(icon = R.drawable.ic_home_filled, label = \"Accueil\", route = \"home\", labelRes = R.string.navigationbar_musicappitems_home_title)\n    object Search : Routes(icon = R.drawable.ic_search_big, label = \"Rechercher\", route = \"search\", labelRes = R.string.navigationbar_musicappitems_search_title)\n    object Library : Routes(icon = R.drawable.ic_library_big, label = \"Bibliothèque\", route = \"library\", labelRes = R.string.navigationbar_musicappitems_yourlibrary_title)\n    object Album : Routes(0, \"Album\", \"album\")\n    object Player : Routes(0, \"Player\", \"player\")\n    object Artist : Routes(0, \"Artist\", \"artist\")\n    object ArtistReleases : Routes(0, \"ArtistReleases\", \"artistreleases\")\n    object Playlist : Routes(0, \"Playlist\", \"playlist\")\n    object Show : Routes(0, \"Show\", \"show\")\n    object Episode : Routes(0, \"Episode\", \"episode\")\n    object Queue : Routes(0, \"Queue\", \"queue\")\n    object Liked : Routes(0, \"Liked\", \"liked\")\n    object LocalFiles : Routes(0, \"LocalFiles\", \"localfiles\")\n    /** Live Radio (radio/ module): search radio-browser.info, favorites, playback. */\n    object LiveRadio : Routes(0, \"LiveRadio\", \"liveradio\")\n    object Downloads : Routes(0, \"Downloads\", \"downloads\")\n    object HiddenSongs : Routes(0, \"HiddenSongs\", \"hiddensongs\")\n    object Equalizer : Routes(0, \"Equalizer\", \"equalizer\")\n    object Folder : Routes(0, \"Folder\", \"folder\")\n    object LocalPlaylist : Routes(0, \"LocalPlaylist\", \"localplaylist\")\n    object Category : Routes(0, \"Category\", \"category\")\n    object NewReleases : Routes(0, \"NewReleases\", \"newreleases\")\n    object Episodes : Routes(0, \"Episodes\", \"episodes\")\n    object NewEpisodes : Routes(0, \"NewEpisodes\", \"newepisodes\")\n    object Recap : Routes(0, \"Recap\", \"recap\")\n    object Recent : Routes(0, \"Recent\", \"recent\")\n    /** The \"What's New\" feed behind the bell on Home. */\n    object WhatsNew : Routes(0, \"WhatsNew\", \"whatsnew\")\n    object Friends : Routes(icon = R.drawable.ic_friends_big, label = \"Amis\", route = \"friends\", labelRes = R.string.friends_tab)\n    object Settings : Routes(0, \"Settings\", \"settings\")\n    object Extensions : Routes(0, \"Extensions\", \"extensions\")\n    object Extension : Routes(0, \"Extension\", \"extension\")\n    /** A repository's extension, before it is installed (by id). */\n    object ExtensionEntry : Routes(0, \"ExtensionEntry\", \"extension-store\")\n    object Profile : Routes(0, \"Profile\", \"profile\")\n}\n\n/** A Spotify user's profile, by user id (the part after spotify:user:). */\nfun profileRoute(userId: String, name: String = \"\"): String =\n    \"${Routes.Profile.route}/${android.net.Uri.encode(userId)}?name=${android.net.Uri.encode(name)}\"\n\n/** Builds a Browse-category route carrying the search genre and a display title. */\nfun categoryRoute(genre: String, title: String): String =\n    \"${Routes.Category.route}/${android.net.Uri.encode(genre)}?title=${android.net.Uri.encode(title)}\"\n\n/** An artist's liked songs, their own page (see Api.getLikedByArtistPage). */\nconst val LIKED_BY_ARTIST_ROUTE = \"liked_by_artist\"\nfun likedByArtistRoute(artistId: String, artistName: String): String =\n    \"$LIKED_BY_ARTIST_ROUTE/${android.net.Uri.encode(\"$artistId|$artistName\")}\"\n\n/** Builds a playlist route carrying the Spotify playlist id (and a display name). */\nfun playlistRoute(id: String, name: String = \"\"): String =\n    \"${Routes.Playlist.route}/${android.net.Uri.encode(id)}?name=${android.net.Uri.encode(name)}\"\n\n/** A Spotify library folder, by its full uri (and name for the header). */\nfun folderRoute(uri: String, name: String): String =\n    \"${Routes.Folder.route}/${android.net.Uri.encode(uri)}?name=${android.net.Uri.encode(name)}\"\n\n/** A playlist kept on this phone (LocalPlaylists id). */\nfun localPlaylistRoute(id: String): String = \"${Routes.LocalPlaylist.route}/${android.net.Uri.encode(id)}\"\n\n/** Builds a podcast-show route carrying the Spotify show id (and a display name). */\nfun showRoute(id: String, name: String = \"\"): String =\n    \"${Routes.Show.route}/${android.net.Uri.encode(id)}?name=${android.net.Uri.encode(name)}\"\n\n/** A podcast episode (or a book chapter), by raw Spotify id. */\nfun episodeRoute(id: String, name: String = \"\"): String =\n    \"${Routes.Episode.route}/${android.net.Uri.encode(id)}?name=${android.net.Uri.encode(name)}\"\n\n/**\n * Builds an artist route. When the exact Spotify artist id is known it is\n * carried along so the artist page opens the exact artist instead of\n * re-resolving the name via a fuzzy search (\"RAM\" must not open \"Rammstein\").\n */\nfun artistRoute(name: String, id: String = \"\"): String {\n    val base = \"${Routes.Artist.route}/${android.net.Uri.encode(name)}\"\n    return if (id.isBlank()) base\n    else \"$base?id=${android.net.Uri.encode(id)}\"\n}\n\n/**\n * Builds an album route, optionally carrying the artist so same-named albums by\n * different artists resolve to the right one. The artist value is URL-encoded.\n */\nfun albumRoute(name: String, artist: String = \"\", id: String = \"\"): String =\n    \"${Routes.Album.route}/${android.net.Uri.encode(name.ifBlank { \"album\" })}\" +\n        \"?artist=${android.net.Uri.encode(artist)}&id=${android.net.Uri.encode(id)}\"\n\n/**\n * Opens a page from outside the page's own UI (a shared link): a second link to the page already\n * on top reuses it instead of stacking a duplicate.\n */\nfun androidx.navigation.NavController.navigateSingleTop(route: String) =\n    navigate(route) { launchSingleTop = true }\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "revera-badge-functions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "author": "carunodev",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.0.0"
+  }
+}
