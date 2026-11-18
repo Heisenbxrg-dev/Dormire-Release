@@ -178,7 +178,7 @@ fun ImmersiveSearchScreen(navController: NavController) {
         vm.updateSongState(song.coverUri, song.title, song.singer, true, song.id, 0, song.album)
     }
 
-    androidx.compose.foundation.layout.BoxWithConstraints(Modifier.fillMaxSize().background(Immersive.Page)) {
+    androidx.compose.foundation.layout.BoxWithConstraints(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage)) {
         // Wide windows: more browse tiles per row (two on phones), counted in the list's capped width.
         val browseCols = com.music.spotui.ui.components.WindowSize.columnsIn(
             minOf(maxWidth, com.music.spotui.ui.components.WindowSize.MaxPageWidth), 2, 220.dp)
@@ -191,7 +191,7 @@ fun ImmersiveSearchScreen(navController: NavController) {
         ) {
             immersiveLargeTitle(title)
             stickyHeader(key = "search:field") {
-                Column(Modifier.fillMaxWidth().background(Immersive.Page).padding(top = 4.dp, bottom = 6.dp)) {
+                Column(Modifier.fillMaxWidth().background(com.music.spotui.ui.theme.AppPage).padding(top = 4.dp, bottom = 6.dp)) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth().padding(horizontal = Immersive.Gutter),
@@ -610,7 +610,7 @@ private fun SongResultRow(
             current = current,
             onClick = onClick,
             onMore = onMore,
-            modifier = Modifier.background(Immersive.Page),
+            modifier = Modifier.background(com.music.spotui.ui.theme.AppPage),
             showAlbum = true,
         )
     }

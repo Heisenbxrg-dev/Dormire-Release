@@ -381,7 +381,7 @@ private fun NavGraphBuilder.page(
         // Immersive look: every page (Classic fallbacks too) sits on its black page colour.
         Box(Modifier.fillMaxSize()
             .then(if (fade == null) Modifier else Modifier.graphicsLayer { this.alpha = fade.value })
-            .background(if (immersive) com.music.spotui.ui.immersive.Immersive.Page else AppBackground)) {
+            .background(com.music.spotui.ui.theme.AppPage)) {
             Box(
                 Modifier.fillMaxHeight().then(
                     if (capped) Modifier.fillMaxWidth().wrapContentWidth(Alignment.CenterHorizontally)

@@ -179,7 +179,7 @@ fun ImmersiveContextScreen(navController: NavController, type: String, id: Strin
     // During composition, so a cached page is there for the very first frame.
     remember(type, id) { vm.load(type, id) }
     val resp by vm.page.collectAsState()
-    BoxWithConstraints(Modifier.fillMaxSize().background(Immersive.Page)) {
+    BoxWithConstraints(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage)) {
         val sleeve = albumSleeve(maxWidth, maxHeight, com.music.spotui.ui.components.windowSize().large)
         when (val r = resp) {
             is Response.Loading -> ContextLoading(navController, sleeve)
@@ -758,7 +758,7 @@ private fun ContextHeader(
             ) {
                 Box(Modifier.width((24 + 16 * (members.size.coerceAtMost(4) - 1)).dp).height(24.dp)) {
                     members.take(4).forEachIndexed { n, m ->
-                        Box(Modifier.padding(start = (16 * n).dp).size(24.dp).clip(CircleShape).background(Immersive.Page).padding(1.dp)) {
+                        Box(Modifier.padding(start = (16 * n).dp).size(24.dp).clip(CircleShape).background(com.music.spotui.ui.theme.AppPage).padding(1.dp)) {
                             com.music.spotui.ui.components.ProfileAvatar(m.imageUrl, m.name, 22.dp)
                         }
                     }

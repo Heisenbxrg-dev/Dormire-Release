@@ -82,7 +82,7 @@ fun SettingsScreen(navController: NavController) {
     // Settings' search: null while closed.
     var query by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf<String?>(null) }
     androidx.activity.compose.BackHandler(enabled = query != null) { query = null }
-    Column(Modifier.fillMaxSize().background(AppBackground).statusBarsPadding()) {
+    Column(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage).statusBarsPadding()) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth().padding(4.dp)) {
             IconButton(onClick = { if (sub != null) sub = null else navController.popBackStack() }) {
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.accessibility_navigate_back), tint = AppText)

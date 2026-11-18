@@ -1,28 +1,22 @@
-# Dormire – modifiche (sovrascrivi questi file nel tuo repository)
+# Dormire – versione 2
 
-## Cosa è cambiato
-- Nome visibile ovunque: "Dormire" (etichetta app, testi in tutte le lingue).
-- Discord rimosso: niente popup community, niente bottone, niente riga Discord in "Info".
-  (CommunityMenuButton / CommunityAnnouncement ora non mostrano nulla.)
-- Riga "GitHub" in Info: compare solo se imposti tu UPDATE_REPO (gradle property `updateRepo`).
-- Nuova icona: note musicali rosse su sfondo nero (vector, disegno originale).
-- Impostazioni > Aspetto/Display:
-  - "Colori app": popup con DUE colori (pulsanti/accenti + sfondo). Default rosso #E50914 + nero.
-  - "Immagine di sfondo": scegli una foto dalla galleria, regola l'oscuramento, rimuovila.
-- Tutte le funzioni esistenti restano invariate (motore, Spotify, automix, estensioni, download, ecc.).
+## Novità
+- Icona: le note musicali in fiamme su nero ondulato (la tua immagine).
+- Avvio: ~2 secondi di "DORMIRE" che va a fuoco sul nero ondulato, con sotto
+  "Il sonno profondo prima di GtaVI". Poi dissolvenza nell'app.
+- Sfondo app: nero ondulato (stessa texture dell'icona) con un bagliore che "respira"
+  nel colore accento; ogni tocco accende una luce morbida sotto il dito.
+- Barra in basso: linea luminosa nel colore accento, tab selezionata che si illumina.
+- Impostazioni > Aspetto > "Colore accento": cambi solo il rosso (il nero ondulato resta).
+  Scorri il dito su tre barre (colore, intensità, luminosità) o sul carosello di colori rapidi;
+  anteprima dal vivo, "Ripristina rosso Dormire".
+- Immagine di sfondo: CORRETTA (prima veniva coperta dallo sfondo delle pagine).
+  Se la rimuovi torna il nero ondulato.
 
-## Restano (licenza GPL-3.0, obbligatorio)
-LICENSE, AGENTS.md, THIRD_PARTY_NOTICES.md, header di copyright e la riga
-"Origin: Myspoti (GPL-3.0)" nella schermata Info.
-I nomi interni del codice (package app.myspoti, chiavi delle preferenze) NON sono stati rinominati:
-cambiarli cancellerebbe login, download offline cifrati e impostazioni salvate.
+## Come aggiornare il repository
+Opzione semplice: sostituisci tutto il contenuto del repo con lo zip "progetto completo".
+Opzione file modificati: copia lo zip "modifiche" sopra il repo (sovrascrivi).
+Poi commit + push su main → Actions → Artifacts → APK.
 
-## Unica dipendenza esterna rimasta del vecchio autore
-Il catalogo estensioni scarica l'indice da
-raw.githubusercontent.com/kota-zo/myspoti-extensions (ExtensionStore.kt, OFFICIAL_REPO).
-Se vuoi renderlo tuo: fai un fork di quel repo sul tuo GitHub e cambia quella riga.
-
-## Build con GitHub
-1. Copia la cartella `base/` di questo zip sopra la tua (sovrascrivi).
-2. Commit + push su main → GitHub Actions "Android Build" crea l'APK.
-3. Scaricalo da Actions > ultimo run > Artifacts > dormire-debug-apk.
+## Licenza
+LICENSE, AGENTS.md, THIRD_PARTY_NOTICES.md e la riga "Origin: Myspoti" in Info restano (GPL-3.0).

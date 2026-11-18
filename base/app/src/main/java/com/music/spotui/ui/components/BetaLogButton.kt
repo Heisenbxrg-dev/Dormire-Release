@@ -133,7 +133,7 @@ private fun LogsDialog(onDismiss: () -> Unit) {
     var text by remember { mutableStateOf<String?>(null) }
     LaunchedEffect(Unit) { text = BetaLogs.recent() }
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
-        Column(Modifier.fillMaxSize().background(AppBackground).statusBarsPadding().navigationBarsPadding()) {
+        Column(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage).statusBarsPadding().navigationBarsPadding()) {
             Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp), verticalAlignment = Alignment.CenterVertically) {
                 Text(stringResource(R.string.beta_logs_title, BetaLogs.MINUTES), color = AppText, fontSize = 17.sp,
                     modifier = Modifier.weight(1f).padding(start = 8.dp))

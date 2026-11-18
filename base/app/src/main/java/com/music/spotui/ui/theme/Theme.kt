@@ -13,6 +13,7 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
@@ -25,9 +26,9 @@ import androidx.core.view.WindowCompat
  */
 private fun spotifyColorScheme(accent: Color, background: Color) = darkColorScheme(
     primary = accent,
-    onPrimary = Color.Black,
+    onPrimary = if (accent.luminance() > 0.55f) Color.Black else Color.White,
     primaryContainer = accent,
-    onPrimaryContainer = Color.Black,
+    onPrimaryContainer = if (accent.luminance() > 0.55f) Color.Black else Color.White,
     secondary = Color.White,
     onSecondary = Color.Black,
     secondaryContainer = Color(0xFF2A2A2A),
@@ -73,8 +74,8 @@ fun SpotuiTheme(
     // Dark only, like Spotify: a saved choice from the withdrawn light palette is ignored.
     // AppBackground may be Color.Transparent when the user picked a background image; feed the
     // scheme a solid black in that case so Material surfaces keep readable contrast.
-    val imageBg = com.music.spotui.data.preferences.BackgroundImagePref.active
-    val schemeBg = if (imageBg) Color.Black else AppBackground
+    // Pages are transparent over Dormire's backdrop (AppPage); Material surfaces stay solid black.
+    val schemeBg = AppBackground
     val visualScheme: ColorScheme = spotifyColorScheme(AppAccent, schemeBg)
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -93,7 +94,7 @@ fun SpotuiTheme(
             WindowCompat.getInsetsController(window, view).isAppearanceLightNavigationBars = false
             // Behind the first frame and under overscroll: the palette's page colour (always a solid
             // colour here; the custom image is drawn on top of it by AppBackdrop).
-            val windowBg = if (imageBg) Color.Black else AppBackground
+            val windowBg = Color.Black
             window.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(windowBg.toArgb()))
         }
     }
@@ -117,16 +118,7 @@ fun SpotuiTheme(
                     fontFamily = Montserrat,
                     letterSpacing = (-0.2).sp,
                 ),
-                content = {
-                    // The user's chosen background image, dimmed, sits behind every screen. Without
-                    // an image the content is drawn exactly as before (no extra wrapper).
-                    if (imageBg) {
-                        Box(Modifier.fillMaxSize()) {
-                            com.music.spotui.ui.components.AppBackdrop()
-                            content()
-                        }
-                    } else content()
-                },
+                content = content,
             )
         }
     }

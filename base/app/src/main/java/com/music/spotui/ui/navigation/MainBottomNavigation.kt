@@ -36,6 +36,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -141,6 +142,10 @@ fun MainBottomNavigation(navController: NavHostController) {
                     // Official bar proportions: a 58 dp strip (the gesture inset is added by
                     // navigationBarsPadding above), equal shares edge to edge, so the
                     // tabs spread over the full width instead of clustering in the middle.
+                    // Dormire: a thin accent line that fades out at both ends, over the tabs.
+                    val line = com.music.spotui.ui.theme.AppAccent
+                    Box(Modifier.fillMaxWidth().height(1.dp).background(Brush.horizontalGradient(
+                        listOf(Color.Transparent, line.copy(alpha = 0.7f), Color.Transparent))))
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -267,8 +272,11 @@ private fun RowScope.NavBarTab(
     selected: Boolean,
     onClick: () -> Unit,
 ) {
-    // Spotify's idle grey, lighter than Color.Gray which read as "disabled".
-    val tint = if (selected) AppText else AppMuted
+    // Dormire: the selected tab glows in the accent colour, the others stay a soft grey.
+    val accent = com.music.spotui.ui.theme.AppAccent
+    val tint by androidx.compose.animation.animateColorAsState(if (selected) accent else AppMuted, label = "tab-tint")
+    val labelTint by androidx.compose.animation.animateColorAsState(if (selected) AppText else AppMuted, label = "tab-label")
+    val glow by androidx.compose.animation.core.animateFloatAsState(if (selected) 1f else 0f, label = "tab-glow")
     Box(
         modifier = Modifier
             .weight(1f)
@@ -291,12 +299,19 @@ private fun RowScope.NavBarTab(
                 // The label right below already names the tab for TalkBack.
                 contentDescription = null,
                 tint = tint,
-                modifier = Modifier.size(NavIconSize),
+                modifier = Modifier
+                    .drawBehind {
+                        if (glow > 0f) drawCircle(
+                            Brush.radialGradient(listOf(accent.copy(alpha = 0.45f * glow), Color.Transparent)),
+                            radius = size.minDimension * 1.1f,
+                        )
+                    }
+                    .size(NavIconSize),
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = label,
-                color = tint,
+                color = labelTint,
                 fontSize = 11.sp,
                 lineHeight = 12.sp,
                 fontWeight = FontWeight.Medium,

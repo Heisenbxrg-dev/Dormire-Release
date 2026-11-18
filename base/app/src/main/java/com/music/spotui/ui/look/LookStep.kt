@@ -76,7 +76,7 @@ fun LookStep(onNext: () -> Unit, offer: LookOffer? = null) {
             if (it == Look.IMMERSIVE) {
                 MeshGradientBackground(cyclingMeshPalette(LookMeshPalettes), colorFadeMillis = MESH_CYCLE_MILLIS)
             } else {
-                Box(Modifier.fillMaxSize().background(AppBackground))
+                Box(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage))
             }
         }
         Column(

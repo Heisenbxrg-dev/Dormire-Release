@@ -4,31 +4,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
 
 /**
- * The page background colour.
- *
- * Priority (high to low):
- *  1. A background image picked by the user -> transparent (the image is drawn by AppBackdrop).
- *  2. The Dormire custom background colour (Settings -> Colori app).
- *  3. The AMOLED black setting.
- *  4. An extension's look background.
- *  5. The default #121212.
+ * Dormire's solid "ink" black: text on accent buttons, icon tints, rows that must hide what is
+ * under them (swipe actions). Pages themselves use [AppPage] so the wavy backdrop shows through.
  */
-val AppBackground: Color get() {
-    if (com.music.spotui.data.preferences.BackgroundImagePref.active) return Color.Transparent
-    val custom = com.music.spotui.data.preferences.CustomBackgroundPref
-    if (custom.enabled) return custom.color
-    if (app.myspoti.power.EnergySettings.oledBlack) return Color.Black
-    return com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.BACKGROUND) ?: Color(0xFF121212)
-}
-val GridBackground: Color get() = com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.SURFACE) ?: tone(0xFF2A2A2A)
+val AppBackground: Color get() =
+    com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.BACKGROUND) ?: Color.Black
+
 /**
- * The accent (buttons, active tabs, sliders).
- *
- * Priority (high to low):
- *  1. The Dormire custom accent (Settings -> Colori app) -> red by default.
- *  2. An extension's look accent.
- *  3. Material You wallpaper accent (see DynamicColorPref).
- *  4. The stock accent chosen from the preset palette.
+ * The colour a whole page paints under its content: transparent, so the app-wide backdrop
+ * (Dormire's wavy black, or the user's image) is visible behind every screen.
+ */
+val AppPage: Color get() = Color.Transparent
+
+val GridBackground: Color get() = com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.SURFACE) ?: tone(0xFF2A2A2A)
+
+/**
+ * The accent (buttons, active tabs, sliders, glows).
+ * Priority: Dormire custom accent (red by default) -> extension look -> Material You -> stock preset.
  */
 val AppPalette: Color get() = AppAccent
 val AppAccent: Color get() {

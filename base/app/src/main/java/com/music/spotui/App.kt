@@ -142,6 +142,8 @@ fun App() {
         if (rail && !immersive) com.music.spotui.ui.navigation.MainNavigationRail(navController)
         Scaffold(
             modifier = Modifier.weight(1f),
+            // Transparent: Dormire's backdrop (wavy black or the user's image) shows under the pages.
+            containerColor = androidx.compose.ui.graphics.Color.Transparent,
             bottomBar = {
                 if (!immersive) MainBottomNavigation(navController)
             }
@@ -150,7 +152,7 @@ fun App() {
                 navHostController = navController,
                 // Immersive: each page marks its own list as what the glass bars blur (a source on
                 // the whole host would hold the pages' own top bars too).
-                modifier = if (immersive) Modifier.background(com.music.spotui.ui.immersive.Immersive.Page) else Modifier,
+                modifier = if (immersive) Modifier.background(com.music.spotui.ui.theme.AppPage) else Modifier,
             )
         }
       }
@@ -293,7 +295,7 @@ private fun UpdateDialog(
                 .padding(horizontal = 24.dp, vertical = 28.dp),
         ) {
             androidx.compose.foundation.Image(
-                painter = androidx.compose.ui.res.painterResource(app.myspoti.engine.R.drawable.ic_launcher_foreground),
+                painter = androidx.compose.ui.res.painterResource(app.myspoti.engine.R.drawable.dormire_icon),
                 contentDescription = null,
                 modifier = Modifier.size(72.dp).clip(androidx.compose.foundation.shape.RoundedCornerShape(20.dp))
                     .background(tone(0xFF181818)),

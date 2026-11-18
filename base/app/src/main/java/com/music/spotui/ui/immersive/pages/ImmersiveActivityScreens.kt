@@ -388,7 +388,7 @@ fun ImmersiveQueueScreen(navController: NavController) {
             itemsIndexed(q.queued, key = { i, it -> "q" + i + it.uid + it.uri }) { _, item ->
                 Column(immersiveItemPlacement()) {
                     ImmersiveSwipeToRemove(item.uid + item.uri, onRemove = { SongPlayer.removeFromQueue(item) }) {
-                        Box(Modifier.background(Immersive.Page)) { ImmersiveSongRow(song = item.song, playing = false, onClick = { SongPlayer.skipTo(item) }, onMore = null) }
+                        Box(Modifier.background(com.music.spotui.ui.theme.AppPage)) { ImmersiveSongRow(song = item.song, playing = false, onClick = { SongPlayer.skipTo(item) }, onMore = null) }
                     }
                 }
             }
@@ -398,7 +398,7 @@ fun ImmersiveQueueScreen(navController: NavController) {
             itemsIndexed(q.nextUp, key = { i, it -> "n" + i + it.uid + it.uri }) { _, item ->
                 Column(immersiveItemPlacement()) {
                     ImmersiveSwipeToRemove(item.uid + item.uri, onRemove = { SongPlayer.removeFromQueue(item) }) {
-                        Box(Modifier.background(Immersive.Page)) { ImmersiveSongRow(song = item.song, playing = false, onClick = { SongPlayer.skipTo(item) }, onMore = null) }
+                        Box(Modifier.background(com.music.spotui.ui.theme.AppPage)) { ImmersiveSongRow(song = item.song, playing = false, onClick = { SongPlayer.skipTo(item) }, onMore = null) }
                     }
                 }
             }

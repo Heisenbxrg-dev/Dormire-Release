@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -138,7 +139,20 @@ class MainActivity : AppCompatActivity() {
                     androidx.compose.runtime.LaunchedEffect(orientation, config.smallestScreenWidthDp, config.screenLayout) {
                         requestedOrientation = orientationFor(config)
                     }
-                    androidx.compose.foundation.layout.Box(androidx.compose.ui.Modifier.fillMaxSize()) {
+                    var dormireSplash by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf(true) }
+                    androidx.compose.foundation.layout.Box(androidx.compose.ui.Modifier.fillMaxSize()
+                        // Every touch lights the backdrop softly where the finger lands (observed, never consumed).
+                        .pointerInput(Unit) {
+                            awaitPointerEventScope {
+                                while (true) {
+                                    val e = awaitPointerEvent(androidx.compose.ui.input.pointer.PointerEventPass.Initial)
+                                    if (e.type == androidx.compose.ui.input.pointer.PointerEventType.Press)
+                                        e.changes.firstOrNull()?.let { com.music.spotui.ui.components.BackdropTouch.touched(it.position) }
+                                }
+                            }
+                        }) {
+                        // Dormire's wavy black (or the user's image) under every page.
+                        if (!inPip) com.music.spotui.ui.components.AppBackdrop()
                         // The music account first, Spotify's sign-in only when Spotify is the one chosen.
                         val entry = com.music.spotui.ui.screens.Onboarding.entry(
                             signedIn, accountChosen, com.music.spotui.data.preferences.AccountProviderPref.id,
@@ -218,6 +232,8 @@ class MainActivity : AppCompatActivity() {
                         if (inPip) {
                             if (pipSong) com.music.spotui.ui.components.PipSong() else com.music.spotui.ui.components.PipVideo()
                         }
+                        // Dormire launch screen: ~2 s of "DORMIRE" on fire over the wavy black, once per launch.
+                        if (dormireSplash && !inPip && !tv) com.music.spotui.ui.components.DormireSplash(onFinished = { dormireSplash = false })
                     }
                 } } }
             }
@@ -731,7 +747,7 @@ class MainActivity : AppCompatActivity() {
 @androidx.compose.runtime.Composable
 private fun ConnectingScreen() {
     androidx.compose.foundation.layout.Box(
-        androidx.compose.ui.Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppBackground),
+        androidx.compose.ui.Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage),
         contentAlignment = androidx.compose.ui.Alignment.Center,
     ) {
         androidx.compose.material3.CircularProgressIndicator(color = com.music.spotui.ui.theme.AppAccent)
@@ -747,7 +763,7 @@ private fun ConnectingScreen() {
 @androidx.compose.runtime.Composable
 private fun LoginProblemScreen(onRetry: () -> Unit) {
     Column(
-        Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppBackground).systemBarsPadding().padding(28.dp),
+        Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage).systemBarsPadding().padding(28.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {

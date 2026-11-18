@@ -176,7 +176,7 @@ internal fun ImmersiveSwipeToRemove(key: Any, onRemove: () -> Unit, content: @Co
         Box(
             modifier = Modifier
                 .offset { IntOffset(offset.value.roundToInt(), 0) }
-                .background(Immersive.Page)
+                .background(com.music.spotui.ui.theme.AppPage)
                 .pointerInput(key) {
                     detectHorizontalDragGestures(
                         onDragEnd = {
@@ -300,6 +300,6 @@ internal fun ImmersiveSheetRow(
 @Composable
 internal fun ImmersivePageFrame(content: @Composable BoxScope.() -> Unit) {
     CompositionLocalProvider(LocalOverscrollFactory provides rememberImmersiveOverscrollFactory()) {
-        Box(Modifier.fillMaxSize().background(Immersive.Page), content = content)
+        Box(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage), content = content)
     }
 }

@@ -108,11 +108,11 @@ private fun accentName(a: Accent) = when (a) {
 }
 
 private fun iconMark(a: Accent) = when (a) {
-    Accent.GREEN -> R.drawable.ic_launcher_foreground
-    Accent.BLUE -> R.drawable.ic_launcher_foreground_blue
-    Accent.PURPLE -> R.drawable.ic_launcher_foreground_purple
-    Accent.PINK -> R.drawable.ic_launcher_foreground_pink
-    Accent.ORANGE -> R.drawable.ic_launcher_foreground_orange
+    Accent.GREEN -> R.drawable.dormire_icon
+    Accent.BLUE -> R.drawable.dormire_icon
+    Accent.PURPLE -> R.drawable.dormire_icon
+    Accent.PINK -> R.drawable.dormire_icon
+    Accent.ORANGE -> R.drawable.dormire_icon
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

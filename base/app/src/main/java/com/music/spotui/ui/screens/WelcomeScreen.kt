@@ -84,7 +84,7 @@ fun WelcomeScreen(onLogin: () -> Unit) {
         alpha = v
         translationY = (1f - v) * 24.dp.toPx()
     }
-    Box(Modifier.fillMaxSize().background(AppBackground)) {
+    Box(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage)) {
         Glow(Modifier.fillMaxSize())
         Box(Modifier.fillMaxSize().systemBarsPadding().padding(horizontal = 28.dp, vertical = 24.dp)) {
             Column(
@@ -93,7 +93,7 @@ fun WelcomeScreen(onLogin: () -> Unit) {
                 modifier = Modifier.fillMaxWidth().align(Alignment.Center).padding(bottom = 120.dp),
             ) {
                 Image(
-                    painter = painterResource(R.drawable.ic_launcher_foreground),
+                    painter = painterResource(R.drawable.dormire_icon),
                     contentDescription = null,
                     modifier = Modifier
                         .size(120.dp)

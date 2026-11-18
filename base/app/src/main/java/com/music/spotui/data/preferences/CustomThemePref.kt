@@ -1,9 +1,9 @@
 package com.music.spotui.data.preferences
 
 /*
- * Dormire custom theme: the user picks a pair of colours (accent + surface tint) and, optionally,
- * an image used as the app's background. All three are kept as Compose state so every screen
- * redraws when one changes. When nothing is set the app falls back to the stock palette.
+ * Dormire custom theme: the accent colour (red by default) and, optionally, an image used as the
+ * app's background. The page itself is always Dormire's wavy black (see WavyBackdrop) unless an
+ * image is picked. Kept as Compose state so every screen redraws when one changes.
  */
 
 import android.content.Context
@@ -18,26 +18,31 @@ private const val PREF = "dormire_theme"
 
 private fun prefs(c: Context) = c.getSharedPreferences(PREF, Context.MODE_PRIVATE)
 
+/** Dormire's signature red. */
+val DORMIRE_RED = Color(0xFFE50914)
+
 /**
- * The accent colour (buttons, active tabs, highlights) chosen in Settings. Defaults to
- * Dormire's signature red. Overrides the Material You dynamic colour and the stock accent
- * palette when [enabled].
+ * The accent colour (buttons, active tabs, sliders, glows) chosen in Settings. Overrides the
+ * Material You colour and the stock accent palette while [enabled].
  */
 object CustomAccentPref {
     private const val KEY_ENABLED = "custom_accent_enabled"
     private const val KEY_COLOR = "custom_accent_color"
 
-    private const val DEFAULT = 0xFFE50914.toInt()
-
     var enabled by mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY_ENABLED, true))
         private set
 
-    var color by mutableStateOf(Color(prefs(com.music.spotui.di.Graph.app).getInt(KEY_COLOR, DEFAULT)))
+    var color by mutableStateOf(Color(prefs(com.music.spotui.di.Graph.app).getInt(KEY_COLOR, DORMIRE_RED.toArgb())))
         private set
 
     fun setEnabled(c: Context, value: Boolean) {
         enabled = value
         prefs(c).edit().putBoolean(KEY_ENABLED, value).apply()
+    }
+
+    /** Live change while the finger slides on the picker (not saved yet). */
+    fun preview(newColor: Color) {
+        color = newColor
     }
 
     fun setColor(c: Context, newColor: Color) {
@@ -47,35 +52,8 @@ object CustomAccentPref {
 }
 
 /**
- * The page background colour chosen in Settings. Defaults to pure black. Only used when
- * [enabled] AND no [BackgroundImagePref] is set.
- */
-object CustomBackgroundPref {
-    private const val KEY_ENABLED = "custom_bg_enabled"
-    private const val KEY_COLOR = "custom_bg_color"
-
-    private const val DEFAULT = 0xFF000000.toInt()
-
-    var enabled by mutableStateOf(prefs(com.music.spotui.di.Graph.app).getBoolean(KEY_ENABLED, true))
-        private set
-
-    var color by mutableStateOf(Color(prefs(com.music.spotui.di.Graph.app).getInt(KEY_COLOR, DEFAULT)))
-        private set
-
-    fun setEnabled(c: Context, value: Boolean) {
-        enabled = value
-        prefs(c).edit().putBoolean(KEY_ENABLED, value).apply()
-    }
-
-    fun setColor(c: Context, newColor: Color) {
-        color = newColor
-        prefs(c).edit().putInt(KEY_COLOR, newColor.toArgb()).apply()
-    }
-}
-
-/**
- * The image picked by the user in Settings, drawn behind every screen. Content URI, persisted
- * via content-resolver permission so it survives reboots. Clearing it goes back to a flat colour.
+ * The image picked by the user in Settings, drawn behind every screen instead of the wavy black.
+ * Content URI with a persisted read permission so it survives reboots.
  */
 object BackgroundImagePref {
     private const val KEY_URI = "custom_bg_image"
@@ -86,7 +64,7 @@ object BackgroundImagePref {
     )
         private set
 
-    /** 0f = image untouched, 1f = fully dark overlay. Default 0.45f so text stays readable. */
+    /** 0f = image untouched, 0.9f = almost black. Default 0.45f so text stays readable. */
     var dim by mutableStateOf(prefs(com.music.spotui.di.Graph.app).getFloat(KEY_DIM, 0.45f))
         private set
 
@@ -102,6 +80,5 @@ object BackgroundImagePref {
         prefs(c).edit().putFloat(KEY_DIM, dim).apply()
     }
 
-    /** True when the user picked an image. */
     val active: Boolean get() = uri != null
 }

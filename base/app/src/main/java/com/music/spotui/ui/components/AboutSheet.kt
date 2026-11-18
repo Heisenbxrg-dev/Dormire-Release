@@ -60,7 +60,7 @@ fun AboutSheet(onDismiss: () -> Unit) {
         Column(Modifier.navigationBarsPadding().verticalScroll(rememberScrollState()).padding(bottom = 20.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(horizontal = 20.dp)) {
                 Image(
-                    painterResource(R.drawable.ic_launcher_foreground), contentDescription = null,
+                    painterResource(R.drawable.dormire_icon), contentDescription = null,
                     modifier = Modifier.size(56.dp).clip(RoundedCornerShape(14.dp)).background(tone(0xFF121212)),
                 )
                 Column(Modifier.padding(start = 14.dp)) {

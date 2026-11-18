@@ -142,7 +142,7 @@ fun SetupScreen(onDone: () -> Unit) {
     // Back goes to the previous step (the look can be changed again from there).
     androidx.activity.compose.BackHandler(enabled = index > 0) { index-- }
     val immersive = isImmersive()
-    Box(Modifier.fillMaxSize().background(if (immersive) Immersive.Page else AppBackground)) {
+    Box(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage)) {
         // The page takes the look picked in the look step, live.
         androidx.compose.animation.Crossfade(immersive, animationSpec = tween(350), label = "setupBackdrop") { imm ->
             if (imm) Box(Modifier.fillMaxSize()) {
@@ -205,7 +205,7 @@ internal const val STEP_ACCOUNT = 5
 fun AccountChoiceScreen(onBack: () -> Unit, onDone: () -> Unit) {
     androidx.activity.compose.BackHandler(onBack = onBack)
     val immersive = isImmersive()
-    Box(Modifier.fillMaxSize().background(if (immersive) Immersive.Page else AppBackground)) {
+    Box(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage)) {
         if (immersive) Box(Modifier.fillMaxSize()) {
             com.music.spotui.ui.look.MeshGradientBackground(com.music.spotui.ui.look.LookMeshPalettes.first(), animated = false)
             Box(Modifier.fillMaxSize().background(Color.Black.copy(alpha = 0.35f)))

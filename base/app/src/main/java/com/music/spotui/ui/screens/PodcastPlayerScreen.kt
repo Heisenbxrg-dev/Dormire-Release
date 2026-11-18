@@ -199,7 +199,7 @@ fun PodcastPlayerScreen(navController: NavController) {
             .fillMaxSize()
             .pullToDismiss(pullToClose)
             .graphicsLayer { translationY = pullToClose.offset }
-            .background(Brush.verticalGradient(listOf(tint, AppBackground))),
+            .background(Brush.verticalGradient(listOf(tint, com.music.spotui.ui.theme.AppPage))),
     ) {
         Column(Modifier.fillMaxSize().statusBarsPadding()) {
             // Top bar: down chevron, "playing from the podcast", the episode's own menu.
