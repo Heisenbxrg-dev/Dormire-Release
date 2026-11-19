@@ -5,6 +5,9 @@ on:
     branches: [master, main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 defaults:
   run:
     working-directory: base
@@ -14,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       KS_B64: ${{ secrets.MYSPOTI_STABLE_KEYSTORE_BASE64 }}
+      # Where the app looks for updates (GitHub Releases). Same repo by default; to keep the code private,
+      # make a public repo that only holds releases and set the variable UPDATE_REPO (owner/name) + secret UPDATE_TOKEN.
+      REPO: ${{ vars.UPDATE_REPO || github.repository }}
     steps:
       - uses: actions/checkout@v4
 
@@ -51,10 +57,19 @@ jobs:
 
       # Release = ottimizzata (R8, risorse ridotte): molto piu' fluida della debug.
       - name: Build Release APK
-        run: ./gradlew assembleRelease :app:collectApks -PappVersionName="$VERSION" -PappVersionCode="$((1000 + GITHUB_RUN_NUMBER))"
+        run: ./gradlew assembleRelease :app:collectApks -PappVersionName="$VERSION" -PappVersionCode="$((1000 + GITHUB_RUN_NUMBER))" -PupdateRepo="$REPO"
 
       - uses: actions/upload-artifact@v4
         with:
           name: dormire-apk
           path: base/app/build/release-apks/*.apk
           retention-days: 14
+
+      # The release the app's update window finds: tag v<version>, one APK per phone type.
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.UPDATE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          PRE=""
+          case "$VERSION" in *-beta*) PRE="--prerelease" ;; esac
+          gh release create "v$VERSION" app/build/release-apks/*.apk --repo "$REPO" --title "Dormire $VERSION" --notes "Dormire $VERSION" $PRE

@@ -1,6 +1,9 @@
 package com.music.spotui
 
 import com.music.spotui.ui.theme.tone
+import androidx.compose.foundation.border
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.rotate
 import com.music.spotui.ui.theme.AppText
 
 import androidx.compose.foundation.layout.fillMaxSize
@@ -275,12 +278,22 @@ private fun UpdatePrompt() {
     )
 }
 
-/** The update card, in the app's own style (dark sheet, green pill), not a system dialog. */
+/**
+ * The update card: a dark sheet lit softly from the top, the version in the title face between two
+ * fine rules, the release notes, and one rounded button that downloads and installs it in place.
+ */
 @Composable
 private fun UpdateDialog(
     version: String, notes: String, status: String?, progress: Float?, button: String,
     onUpdate: () -> Unit, onLater: () -> Unit,
 ) {
+    val accent = com.music.spotui.ui.theme.AppAccent
+    val shape = androidx.compose.foundation.shape.RoundedCornerShape(28.dp)
+    val display = androidx.compose.ui.text.font.FontFamily(
+        androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, androidx.compose.ui.text.font.FontWeight.Bold),
+    )
+    val white = androidx.compose.ui.graphics.Color.White
+    val clear = androidx.compose.ui.graphics.Color.Transparent
     // Only the buttons close it: a touch outside must not (the back gesture still means "Later").
     androidx.compose.ui.window.Dialog(
         onDismissRequest = onLater,
@@ -290,70 +303,93 @@ private fun UpdateDialog(
             horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(androidx.compose.foundation.shape.RoundedCornerShape(16.dp))
-                .background(tone(0xFF242424))
-                .padding(horizontal = 24.dp, vertical = 28.dp),
+                .clip(shape)
+                .background(androidx.compose.ui.graphics.Brush.verticalGradient(listOf(tone(0xFF202026), tone(0xFF111115))))
+                .drawBehind {
+                    drawRect(
+                        androidx.compose.ui.graphics.Brush.radialGradient(
+                            listOf(accent.copy(alpha = 0.20f), clear),
+                            center = androidx.compose.ui.geometry.Offset(size.width / 2f, 0f),
+                            radius = size.width * 0.85f,
+                        ),
+                    )
+                }
+                .border(1.dp, androidx.compose.ui.graphics.Brush.verticalGradient(listOf(white.copy(alpha = 0.20f), white.copy(alpha = 0.05f))), shape)
+                .padding(horizontal = 26.dp, vertical = 30.dp),
         ) {
             androidx.compose.foundation.Image(
                 painter = androidx.compose.ui.res.painterResource(app.myspoti.engine.R.drawable.dormire_icon),
                 contentDescription = null,
-                modifier = Modifier.size(72.dp).clip(androidx.compose.foundation.shape.RoundedCornerShape(20.dp))
+                modifier = Modifier.size(64.dp)
+                    .clip(androidx.compose.foundation.shape.RoundedCornerShape(18.dp))
+                    .border(1.dp, white.copy(alpha = 0.14f), androidx.compose.foundation.shape.RoundedCornerShape(18.dp))
                     .background(tone(0xFF181818)),
             )
             androidx.compose.material3.Text(
-                androidx.compose.ui.res.stringResource(app.myspoti.engine.R.string.main_update_available),
-                color = AppText, fontFamily = com.music.spotui.ui.theme.AppSans,
-                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 20.sp,
+                androidx.compose.ui.res.stringResource(app.myspoti.engine.R.string.main_update_available).uppercase(),
+                color = accent, fontFamily = com.music.spotui.ui.theme.AppSans,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold, fontSize = 11.sp, letterSpacing = 2.2.sp,
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                modifier = Modifier.padding(top = 18.dp),
+                modifier = Modifier.padding(top = 20.dp),
             )
             androidx.compose.material3.Text(
-                "Dormire $version", color = AppText.copy(alpha = 0.7f),
-                fontFamily = com.music.spotui.ui.theme.AppSans, fontSize = 15.sp, modifier = Modifier.padding(top = 6.dp),
+                version, color = AppText, fontFamily = display, fontSize = 34.sp, letterSpacing = 1.sp,
+                modifier = Modifier.padding(top = 6.dp),
             )
+            // Two fine rules around a small diamond.
+            androidx.compose.foundation.layout.Row(
+                verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+                modifier = Modifier.padding(top = 14.dp).fillMaxWidth(0.55f),
+            ) {
+                androidx.compose.foundation.layout.Box(Modifier.weight(1f).height(1.dp)
+                    .background(androidx.compose.ui.graphics.Brush.horizontalGradient(listOf(clear, accent.copy(alpha = 0.75f)))))
+                androidx.compose.foundation.layout.Box(Modifier.padding(horizontal = 10.dp).size(6.dp).rotate(45f).background(accent))
+                androidx.compose.foundation.layout.Box(Modifier.weight(1f).height(1.dp)
+                    .background(androidx.compose.ui.graphics.Brush.horizontalGradient(listOf(accent.copy(alpha = 0.75f), clear))))
+            }
             // What's new (the release's CHANGELOG section), scrollable if long.
             if (notes.isNotBlank()) androidx.compose.material3.Text(
-                notes, color = AppText.copy(alpha = 0.8f),
-                fontFamily = com.music.spotui.ui.theme.AppSans, fontSize = 14.sp, lineHeight = 20.sp,
-                modifier = Modifier.padding(top = 16.dp).fillMaxWidth().heightIn(max = 240.dp)
+                notes, color = AppText.copy(alpha = 0.78f),
+                fontFamily = com.music.spotui.ui.theme.AppSans, fontSize = 14.sp, lineHeight = 21.sp,
+                modifier = Modifier.padding(top = 18.dp).fillMaxWidth().heightIn(max = 220.dp)
                     .verticalScroll(androidx.compose.foundation.rememberScrollState()),
             )
             // The download and install, under the notes.
             if (status != null) androidx.compose.material3.Text(
-                status, color = AppText.copy(alpha = 0.8f),
-                fontFamily = com.music.spotui.ui.theme.AppSans, fontSize = 14.sp,
+                status, color = AppText.copy(alpha = 0.85f),
+                fontFamily = com.music.spotui.ui.theme.AppSans, fontSize = 13.sp, letterSpacing = 0.3.sp,
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                modifier = Modifier.padding(top = 16.dp).fillMaxWidth(),
+                modifier = Modifier.padding(top = 18.dp).fillMaxWidth(),
             )
             if (progress != null) {
-                val bar = Modifier.padding(top = 10.dp).fillMaxWidth().height(4.dp).clip(androidx.compose.foundation.shape.RoundedCornerShape(50))
+                val bar = Modifier.padding(top = 10.dp).fillMaxWidth().height(3.dp).clip(androidx.compose.foundation.shape.RoundedCornerShape(50))
                 if (progress < 0f) androidx.compose.material3.LinearProgressIndicator(
-                    modifier = bar, color = com.music.spotui.ui.theme.AppAccent, trackColor = AppText.copy(alpha = 0.15f))
+                    modifier = bar, color = accent, trackColor = white.copy(alpha = 0.12f))
                 else androidx.compose.material3.LinearProgressIndicator(
-                    progress = { progress }, modifier = bar, color = com.music.spotui.ui.theme.AppAccent,
-                    trackColor = AppText.copy(alpha = 0.15f), drawStopIndicator = {})
+                    progress = { progress }, modifier = bar, color = accent,
+                    trackColor = white.copy(alpha = 0.12f), drawStopIndicator = {})
             }
             androidx.compose.foundation.layout.Box(
                 contentAlignment = androidx.compose.ui.Alignment.Center,
                 modifier = Modifier
-                    .padding(top = 24.dp)
+                    .padding(top = 26.dp)
                     .fillMaxWidth()
-                    .height(48.dp)
-                    .pressable(0.96f, onClick = onUpdate)
+                    .height(52.dp)
+                    .pressable(0.97f, onClick = onUpdate)
                     .clip(androidx.compose.foundation.shape.RoundedCornerShape(50))
-                    .background(com.music.spotui.ui.theme.AppAccent),
+                    .background(androidx.compose.ui.graphics.Brush.horizontalGradient(listOf(accent, accent.copy(alpha = 0.80f)))),
             ) {
                 androidx.compose.material3.Text(
                     button,
                     color = androidx.compose.ui.graphics.Color.Black, fontFamily = com.music.spotui.ui.theme.AppSans,
-                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 16.sp,
+                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 16.sp, letterSpacing = 0.4.sp,
                 )
             }
             androidx.compose.material3.Text(
                 androidx.compose.ui.res.stringResource(app.myspoti.engine.R.string.age_assurance_intro_cta_not_now),
-                color = AppText, fontFamily = com.music.spotui.ui.theme.AppSans,
-                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 15.sp,
-                modifier = Modifier.padding(top = 8.dp).pressable(0.96f, onClick = onLater).padding(horizontal = 24.dp, vertical = 12.dp),
+                color = AppText.copy(alpha = 0.6f), fontFamily = com.music.spotui.ui.theme.AppSans,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Medium, fontSize = 14.sp,
+                modifier = Modifier.padding(top = 6.dp).pressable(0.96f, onClick = onLater).padding(horizontal = 24.dp, vertical = 12.dp),
             )
         }
     }

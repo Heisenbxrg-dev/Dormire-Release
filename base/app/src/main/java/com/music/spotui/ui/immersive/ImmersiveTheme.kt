@@ -24,13 +24,17 @@ import com.music.spotui.ui.look.ImmersiveSans
  * a black page, Inter, large bold titles, rounded covers, translucent "glass" bars and an
  * accent taken from the playing cover where there is one.
  */
+private val LuxuryDisplay = androidx.compose.ui.text.font.FontFamily(
+    androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, FontWeight.Bold),
+)
+
 object Immersive {
     // Colours.
     /** Black, or an extension's look background (unless the AMOLED setting is on). */
     val Page: Color get() = if (app.myspoti.power.EnergySettings.oledBlack) Color.Black
         else com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.BACKGROUND) ?: Color.Black
     val Raised: Color get() = com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.SURFACE) ?: Color(0xFF1C1C1E)
-    val Separator = Color.White.copy(alpha = 0.10f)
+    val Separator = Color.White.copy(alpha = 0.08f)
     val Text = Color.White
     val TextSecondary = Color.White.copy(alpha = 0.60f)
     val TextTertiary = Color.White.copy(alpha = 0.38f)
@@ -57,22 +61,26 @@ object Immersive {
 
     // Shapes.
     val CoverSmall: Shape = RoundedCornerShape(6.dp)
-    val CoverMedium: Shape = RoundedCornerShape(10.dp)
-    val CoverLarge: Shape = RoundedCornerShape(14.dp)
-    val Card: Shape = RoundedCornerShape(14.dp)
-    val Button: Shape = RoundedCornerShape(14.dp)
+    val CoverMedium: Shape = RoundedCornerShape(12.dp)
+    val CoverLarge: Shape = RoundedCornerShape(18.dp)
+    val Card: Shape = RoundedCornerShape(18.dp)
+    val Button: Shape = RoundedCornerShape(18.dp)
 
     // Type (Inter, or the phone's system font when chosen in the settings: AppFontPref).
     private class Type(val sans: androidx.compose.ui.text.font.FontFamily, display: androidx.compose.ui.text.font.FontFamily) {
         private val base = TextStyle(fontFamily = sans, color = Text)
         private val shown = TextStyle(fontFamily = display, color = Text)
-        val largeTitle = shown.copy(fontSize = 32.sp, lineHeight = 38.sp, fontWeight = FontWeight.Bold)
+        // The big page titles in the title face of the launch screen (Cinzel), a little open; the phone's own font when chosen.
+        val largeTitle = shown.copy(
+            fontFamily = if (display === androidx.compose.ui.text.font.FontFamily.Default) display else LuxuryDisplay,
+            fontSize = 30.sp, lineHeight = 38.sp, fontWeight = FontWeight.Bold, letterSpacing = 0.6.sp,
+        )
         val title = shown.copy(fontSize = 22.sp, lineHeight = 28.sp, fontWeight = FontWeight.Bold)
         val headline = shown.copy(fontSize = 20.sp, lineHeight = 25.sp, fontWeight = FontWeight.SemiBold)
         val body = base.copy(fontSize = 16.sp, lineHeight = 21.sp)
         val bodyStrong = body.copy(fontWeight = FontWeight.SemiBold)
         val subhead = base.copy(fontSize = 14.sp, lineHeight = 19.sp, color = TextSecondary)
-        val caption = base.copy(fontSize = 12.sp, lineHeight = 16.sp, color = TextSecondary)
+        val caption = base.copy(fontSize = 12.sp, lineHeight = 16.sp, color = TextSecondary, letterSpacing = 0.2.sp)
         val lyric = shown.copy(fontSize = 30.sp, lineHeight = 36.sp, fontWeight = FontWeight.Bold)
     }
     // The styles of the font in use, made again only when the font changes. Reading the font reads
@@ -100,4 +108,9 @@ object Immersive {
 
 /** A translucent bar or capsule (tab bar, mini player, menus). */
 fun Modifier.glass(shape: Shape = CircleShape): Modifier =
-    this.background(Immersive.GlassFill, shape).border(1.dp, Immersive.GlassEdge, shape)
+    // The edge catches light at the top and fades toward the bottom, like the rim of a glass pane.
+    this.background(Immersive.GlassFill, shape).border(
+        1.dp,
+        androidx.compose.ui.graphics.Brush.verticalGradient(listOf(Color.White.copy(alpha = 0.22f), Color.White.copy(alpha = 0.06f))),
+        shape,
+    )
