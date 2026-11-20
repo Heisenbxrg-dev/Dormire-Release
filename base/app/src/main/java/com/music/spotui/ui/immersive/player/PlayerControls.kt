@@ -4,6 +4,9 @@
  */
 package com.music.spotui.ui.immersive.player
 
+import androidx.compose.foundation.border
+import androidx.compose.foundation.background
+import androidx.compose.ui.draw.clip
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -665,47 +668,56 @@ internal fun TransportRow(
     onNext: () -> Unit,
     compact: Boolean = false,
 ) {
-    val playSize = if (compact) 58.dp else 74.dp
-    val playTouch = if (compact) 76.dp else 92.dp
-    val skipSize = if (compact) 44.dp else PLAYER_SKIP_ICON_SIZE
+    // Play is a lit circle in the theme red, the skips sit close beside it (not spread to the edges).
+    val circle = if (compact) 68.dp else 84.dp
+    val playIcon = if (compact) 34.dp else 42.dp
+    val skipSize = if (compact) 38.dp else 46.dp
+    val accent = com.music.spotui.ui.theme.AppAccent
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceAround,
+        horizontalArrangement = Arrangement.spacedBy(if (compact) 22.dp else 34.dp, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         TransportGlyph(
             iconRes = R.drawable.ic_bc_previous,
             contentDescription = stringResource(R.string.immersive_player_previous),
             size = skipSize,
-            touchSize = PLAYER_SKIP_TOUCH_SIZE,
+            touchSize = 58.dp,
             heightScale = PLAYER_SKIP_HEIGHT_SCALE,
             kickDirection = -1,
             onClick = onPrevious,
         )
-        com.music.spotui.ui.components.LoadedFade(isLoading) { loading ->
-            if (loading) {
-                Box(Modifier.size(playTouch), contentAlignment = Alignment.Center) {
+        Box(
+            modifier = Modifier
+                .size(circle)
+                .clip(androidx.compose.foundation.shape.CircleShape)
+                .background(androidx.compose.ui.graphics.Brush.verticalGradient(listOf(accent, accent.copy(alpha = 0.72f))))
+                .border(1.dp, Color.White.copy(alpha = 0.22f), androidx.compose.foundation.shape.CircleShape),
+            contentAlignment = Alignment.Center,
+        ) {
+            com.music.spotui.ui.components.LoadedFade(isLoading) { loading ->
+                if (loading) {
                     CircularProgressIndicator(
                         color = Color.White,
                         strokeWidth = 3.dp,
-                        modifier = Modifier.size(if (compact) 30.dp else 38.dp),
+                        modifier = Modifier.size(if (compact) 28.dp else 34.dp),
+                    )
+                } else {
+                    TransportGlyph(
+                        iconRes = if (isPlaying) R.drawable.ic_bc_pause else R.drawable.ic_bc_play,
+                        contentDescription = stringResource(if (isPlaying) R.string.immersive_player_pause else R.string.immersive_player_play),
+                        size = playIcon,
+                        touchSize = circle,
+                        onClick = onPlayPause,
                     )
                 }
-            } else {
-                TransportGlyph(
-                    iconRes = if (isPlaying) R.drawable.ic_bc_pause else R.drawable.ic_bc_play,
-                    contentDescription = stringResource(if (isPlaying) R.string.immersive_player_pause else R.string.immersive_player_play),
-                    size = playSize,
-                    touchSize = playTouch,
-                    onClick = onPlayPause,
-                )
             }
         }
         TransportGlyph(
             iconRes = R.drawable.ic_bc_next,
             contentDescription = stringResource(R.string.immersive_player_next),
             size = skipSize,
-            touchSize = PLAYER_SKIP_TOUCH_SIZE,
+            touchSize = 58.dp,
             heightScale = PLAYER_SKIP_HEIGHT_SCALE,
             kickDirection = 1,
             onClick = onNext,

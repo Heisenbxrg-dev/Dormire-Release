@@ -81,8 +81,8 @@ import kotlin.math.sign
 
 private val GLYPH_SLOT = 40.dp
 private val GLYPH_SIZE = 32.dp
-private val ART_CORNER = 8.dp
-private val MINI_HEIGHT = 56.dp
+private val ART_CORNER = 12.dp
+private val MINI_HEIGHT = 66.dp
 
 /** How far the capsule is swiped along to change track. */
 private val TRACK_SWIPE_THRESHOLD = 84.dp
@@ -107,7 +107,7 @@ fun ImmersiveMiniPlayer(modifier: Modifier = Modifier) {
     val playing = vm.currentSongPlayingState.value
     val adPlaying = SongPlayer.adPlaying
     val buffering = SongPlayer.isBuffering
-    val shape = RoundedCornerShape(MINI_HEIGHT / 2)
+    val shape = RoundedCornerShape(24.dp)
     val capsuleSource = remember { MutableInteractionSource() }
     val swipeScope = rememberCoroutineScope()
     val dragX = remember { Animatable(0f) }
@@ -141,7 +141,7 @@ fun ImmersiveMiniPlayer(modifier: Modifier = Modifier) {
             .clip(shape)
             .background(Brush.horizontalGradient(listOf(primaryGlow, secondaryGlow)))
             .clickable(interactionSource = capsuleSource, indication = null) { PlayerSheet.show() }
-            .padding(horizontal = 12.dp, vertical = 8.dp),
+            .padding(start = 9.dp, end = 12.dp, top = 9.dp, bottom = 9.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Row(
@@ -154,22 +154,22 @@ fun ImmersiveMiniPlayer(modifier: Modifier = Modifier) {
                 },
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Box(Modifier.size(40.dp).clip(RoundedCornerShape(ART_CORNER)).background(Color.Black.copy(alpha = 0.18f))) {
+            Box(Modifier.size(48.dp).clip(RoundedCornerShape(ART_CORNER)).background(Color.Black.copy(alpha = 0.18f))) {
                 GlideImage(
                     model = cover.takeIf { it.isNotBlank() },
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     loading = placeholder(R.drawable.placeholder),
                     failure = placeholder(R.drawable.placeholder),
-                    modifier = Modifier.size(40.dp),
+                    modifier = Modifier.size(48.dp),
                 )
-                com.music.spotui.ui.components.SongBlendCover(blend, Modifier.size(40.dp))
+                com.music.spotui.ui.components.SongBlendCover(blend, Modifier.size(48.dp))
             }
-            Spacer(Modifier.width(10.dp))
+            Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f).graphicsLayer { alpha = blend?.wordsAlpha() ?: 1f }) {
                 Text(
                     text = if (adPlaying) stringResource(R.string.immersive_player_ad) else title,
-                    style = Immersive.BodyStrong.copy(fontSize = 15.sp, lineHeight = 19.sp),
+                    style = Immersive.BodyStrong.copy(fontSize = 16.sp, lineHeight = 20.sp, letterSpacing = 0.1.sp),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.titleMarquee(iterations = 1),
@@ -185,42 +185,6 @@ fun ImmersiveMiniPlayer(modifier: Modifier = Modifier) {
                     )
                 }
             }
-        }
-        // The spinner and the button hand over in a short fade, not in one frame.
-        com.music.spotui.ui.components.LoadedFade(buffering) { loading ->
-        if (loading) {
-            Box(Modifier.size(GLYPH_SLOT), contentAlignment = Alignment.Center) {
-                CircularProgressIndicator(color = Immersive.Text, strokeWidth = 2.dp, modifier = Modifier.size(22.dp))
-            }
-        } else {
-            val playSource = remember { MutableInteractionSource() }
-            val playPressed by playSource.collectIsPressedAsState()
-            val playScale by animateFloatAsState(
-                targetValue = if (playPressed) 0.85f else 1f,
-                animationSpec = spring(dampingRatio = 0.60f, stiffness = 700f),
-                label = "miniPlayScale",
-            )
-            Box(
-                Modifier.size(GLYPH_SLOT).clickable(interactionSource = playSource, indication = null) {
-                    Haptics.click()
-                    if (playing) SongPlayer.pause() else SongPlayer.play()
-                    vm.updateSongState(cover, vm.currentSongTitle.value, vm.currentSongSinger.value, !playing, vm.currentSongId.value, vm.currentSongIndex.value, vm.currentSongAlbum.value)
-                },
-                contentAlignment = Alignment.Center,
-            ) {
-                com.music.spotui.ui.components.GlyphSwap(playing) { on ->
-                    Icon(
-                        imageVector = if (on) Icons.Rounded.Pause else Icons.Rounded.PlayArrow,
-                        contentDescription = stringResource(if (on) R.string.immersive_player_pause else R.string.immersive_player_play),
-                        tint = Immersive.Text,
-                        modifier = Modifier.size(GLYPH_SIZE).graphicsLayer {
-                            scaleX = playScale
-                            scaleY = playScale
-                        },
-                    )
-                }
-            }
-        }
         }
         val nextSource = remember { MutableInteractionSource() }
         val nextPressed by nextSource.collectIsPressedAsState()
@@ -250,13 +214,53 @@ fun ImmersiveMiniPlayer(modifier: Modifier = Modifier) {
                 imageVector = Icons.Rounded.SkipNext,
                 contentDescription = stringResource(R.string.immersive_player_next),
                 tint = Immersive.Text,
-                modifier = Modifier.size(GLYPH_SIZE).graphicsLayer {
+                modifier = Modifier.size(28.dp).graphicsLayer {
                     val s = nextPressScale * nextKickPop.value
                     translationX = nextKickX.value.dp.toPx()
                     scaleX = s
                     scaleY = s
                 },
             )
+        }
+        // The spinner and the button hand over in a short fade, not in one frame.
+        com.music.spotui.ui.components.LoadedFade(buffering) { loading ->
+        if (loading) {
+            Box(Modifier.size(GLYPH_SLOT), contentAlignment = Alignment.Center) {
+                CircularProgressIndicator(color = Immersive.Text, strokeWidth = 2.dp, modifier = Modifier.size(22.dp))
+            }
+        } else {
+            val playSource = remember { MutableInteractionSource() }
+            val playPressed by playSource.collectIsPressedAsState()
+            val playScale by animateFloatAsState(
+                targetValue = if (playPressed) 0.85f else 1f,
+                animationSpec = spring(dampingRatio = 0.60f, stiffness = 700f),
+                label = "miniPlayScale",
+            )
+            val accent = com.music.spotui.ui.theme.AppAccent
+            Box(
+                Modifier.size(46.dp)
+                    .clip(androidx.compose.foundation.shape.CircleShape)
+                    .background(Brush.verticalGradient(listOf(accent, accent.copy(alpha = 0.72f))))
+                    .clickable(interactionSource = playSource, indication = null) {
+                    Haptics.click()
+                    if (playing) SongPlayer.pause() else SongPlayer.play()
+                    vm.updateSongState(cover, vm.currentSongTitle.value, vm.currentSongSinger.value, !playing, vm.currentSongId.value, vm.currentSongIndex.value, vm.currentSongAlbum.value)
+                },
+                contentAlignment = Alignment.Center,
+            ) {
+                com.music.spotui.ui.components.GlyphSwap(playing) { on ->
+                    Icon(
+                        imageVector = if (on) Icons.Rounded.Pause else Icons.Rounded.PlayArrow,
+                        contentDescription = stringResource(if (on) R.string.immersive_player_pause else R.string.immersive_player_play),
+                        tint = Immersive.Text,
+                        modifier = Modifier.size(28.dp).graphicsLayer {
+                            scaleX = playScale
+                            scaleY = playScale
+                        },
+                    )
+                }
+            }
+        }
         }
     }
 }

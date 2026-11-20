@@ -34,7 +34,7 @@ object Immersive {
     val Page: Color get() = if (app.myspoti.power.EnergySettings.oledBlack) Color.Black
         else com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.BACKGROUND) ?: Color.Black
     val Raised: Color get() = com.music.spotui.extensions.ExtensionLook.color(app.myspoti.extensions.UiStyle.SURFACE) ?: Color(0xFF1C1C1E)
-    val Separator = Color.White.copy(alpha = 0.08f)
+    val Separator = Color.White.copy(alpha = 0.07f)
     val Text = Color.White
     val TextSecondary = Color.White.copy(alpha = 0.60f)
     val TextTertiary = Color.White.copy(alpha = 0.38f)
@@ -63,8 +63,8 @@ object Immersive {
     val CoverSmall: Shape = RoundedCornerShape(6.dp)
     val CoverMedium: Shape = RoundedCornerShape(12.dp)
     val CoverLarge: Shape = RoundedCornerShape(18.dp)
-    val Card: Shape = RoundedCornerShape(18.dp)
-    val Button: Shape = RoundedCornerShape(18.dp)
+    val Card: Shape = RoundedCornerShape(20.dp)
+    val Button: Shape = RoundedCornerShape(20.dp)
 
     // Type (Inter, or the phone's system font when chosen in the settings: AppFontPref).
     private class Type(val sans: androidx.compose.ui.text.font.FontFamily, display: androidx.compose.ui.text.font.FontFamily) {
