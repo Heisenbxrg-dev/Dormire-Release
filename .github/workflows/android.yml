@@ -59,7 +59,7 @@ jobs:
       - name: Build Release APK
         run: ./gradlew assembleRelease :app:collectApks -PappVersionName="$VERSION" -PappVersionCode="$((1000 + GITHUB_RUN_NUMBER))" -PupdateRepo="$REPO"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: dormire-apk
           path: base/app/build/release-apks/*.apk
