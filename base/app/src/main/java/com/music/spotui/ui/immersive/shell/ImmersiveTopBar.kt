@@ -453,6 +453,7 @@ fun ImmersiveFloatingHeader(
     modifier: Modifier = Modifier,
     hazeState: HazeState? = LocalImmersiveHaze.current,
     collapse: () -> Float = { 1f },
+    leading: (@Composable RowScope.() -> Unit)? = null,
     trailing: (@Composable RowScope.() -> Unit)? = null,
 ) {
     Box(modifier.fillMaxWidth().holdsTouches()) {
@@ -465,9 +466,10 @@ fun ImmersiveFloatingHeader(
                 .padding(start = Immersive.Gutter, end = Immersive.Gutter - 4.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
+            if (leading != null) AnimatedHeaderActions(leading)
             Text(
                 text = title,
-                style = Immersive.Title,
+                style = Immersive.Title.copy(fontFamily = com.music.spotui.ui.immersive.LuxuryDisplay, letterSpacing = 0.8.sp),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 // The row's height is fixed: a long greeting with large text ("Good evening" at 130 %

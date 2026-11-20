@@ -24,7 +24,7 @@ import com.music.spotui.ui.look.ImmersiveSans
  * a black page, Inter, large bold titles, rounded covers, translucent "glass" bars and an
  * accent taken from the playing cover where there is one.
  */
-private val LuxuryDisplay = androidx.compose.ui.text.font.FontFamily(
+internal val LuxuryDisplay = androidx.compose.ui.text.font.FontFamily(
     androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, FontWeight.Bold),
 )
 

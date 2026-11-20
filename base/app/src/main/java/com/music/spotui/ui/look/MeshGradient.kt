@@ -57,11 +57,12 @@ import kotlin.math.cos
 import kotlin.math.min
 import kotlin.math.sin
 
+/** The app's one palette: deep reds on near-black, whatever the cover (the look is red and black throughout). */
 private val FallbackColors = listOf(
-    Color(0xFF3A1C71),
-    Color(0xFFD76D77),
-    Color(0xFF2B5876),
-    Color(0xFFFFAF7B),
+    Color(0xFF8E1220),
+    Color(0xFF3B070C),
+    Color(0xFFB3202F),
+    Color(0xFF14080A),
 )
 
 /** Where the four blobs sit, and how fast each orbits (irrational multiples, so they never line up). */
@@ -240,29 +241,7 @@ fun cyclingMeshPalette(palettes: List<MeshPalette>, stepMillis: Int = MESH_CYCLE
  * 4-colour palette out of it. Recomputes when [imageUrl] changes.
  */
 @Composable
-fun rememberArtworkColors(imageUrl: String?): MeshPalette {
-    val context = LocalContext.current
-    // Not reset when the url changes: the last cover's colours stay until the new ones are known,
-    // so a song change goes straight from one palette to the next, not through the stock purple.
-    var palette by remember { mutableStateOf(MeshPalette(FallbackColors)) }
-
-    val scope = androidx.compose.runtime.rememberCoroutineScope()
-    DisposableEffect(imageUrl) {
-        if (imageUrl == null) palette = MeshPalette(FallbackColors)
-        var job: kotlinx.coroutines.Job? = null
-        val target = if (imageUrl == null) null else loadArtwork(context, imageUrl) { bitmap ->
-            // The quantising off the main thread (it held it ~160 ms at each song change), on a
-            // small copy of its own: Glide may recycle its bitmap once the target is cleared.
-            val small = Bitmap.createScaledBitmap(bitmap, PALETTE_PX, PALETTE_PX, true)
-            job = scope.launch(kotlinx.coroutines.Dispatchers.Default) {
-                val colors = artworkMeshColors(small)
-                kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) { palette = MeshPalette(colors) }
-            }
-        }
-        onDispose { job?.cancel(); target?.let { Glide.with(context.applicationContext).clear(it) } }
-    }
-    return palette
-}
+fun rememberArtworkColors(imageUrl: String?): MeshPalette = remember { MeshPalette(FallbackColors) }
 
 private fun loadArtwork(context: Context, imageUrl: String, onLoaded: (Bitmap) -> Unit): CustomTarget<Bitmap> =
     Glide.with(context.applicationContext)

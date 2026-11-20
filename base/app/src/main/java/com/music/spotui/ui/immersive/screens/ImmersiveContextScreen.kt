@@ -253,7 +253,7 @@ private fun ImmersiveContextContent(navController: NavController, vm: ContextVie
     LaunchedEffect(p.coverUri) {
         if (p.coverUri.isNotBlank()) Palette().extractSecondColorFromCoverUrl(context, p.coverUri) { tintTarget = it }
     }
-    val tint by animateColorAsState(if (isLiked) LikedTint else tintTarget, tween(350), label = "context tint")
+    val tint by animateColorAsState(Color(0xFF7A1019), tween(350), label = "context tint")
 
     var menuSong by remember { mutableStateOf<SongsModel?>(null) }
     // "Find in Liked Songs / in playlist", opened from the top bar.

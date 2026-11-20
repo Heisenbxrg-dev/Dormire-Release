@@ -5,6 +5,13 @@
  */
 package com.music.spotui.ui.immersive.shell
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.LibraryMusic
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material.icons.rounded.LibraryMusic
+import androidx.compose.material.icons.rounded.Search
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
@@ -72,7 +79,8 @@ private val TabLabel = TextStyle(
     fontFamily = ImmersiveSans,
     fontSize = 10.sp,
     lineHeight = 12.sp,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.SemiBold,
+    letterSpacing = 1.2.sp,
 )
 
 /** The tab the user is in, how to switch tabs, and whether the bar hides (player, queue). */
@@ -135,7 +143,8 @@ internal fun TabBarContent(
 ) {
     // Held for the same reason the content lambda below is keyed: it is captured once per key.
     val currentOnTabClick by androidx.compose.runtime.rememberUpdatedState(onTabClick)
-    val pillShape = remember { RoundedCornerShape(percent = 50) }
+    // A rounded bar, not a pill: squarer than the old capsule, the tabs inside with softer corners.
+    val pillShape = remember { RoundedCornerShape(26.dp) }
     val reduceMotion = rememberReduceMotion()
 
     // A factory, not a value: each of the two surfaces gets its own glass modifier.
@@ -148,7 +157,11 @@ internal fun TabBarContent(
             tabBarContentModifier = glassSurface,
             colors = FloatingTabBarDefaults.colors(
                 backgroundColor = Color.Transparent,
-                indicatorColor = Color.White.copy(alpha = 0.12f),
+                indicatorColor = Immersive.Accent.copy(alpha = 0.24f),
+            ),
+            shapes = FloatingTabBarDefaults.shapes(
+                tabBarShape = pillShape,
+                tabShape = RoundedCornerShape(20.dp),
             ),
             sizes = FloatingTabBarDefaults.sizes(
                 tabBarContentPadding = PaddingValues(PILL_INSET),
@@ -157,38 +170,27 @@ internal fun TabBarContent(
             reduceMotion = reduceMotion,
             contentKey = selectedTab,
         ) {
-            // Search is the odd one out: a circle of its own beside the pill.
-            listOf(Routes.Home, Routes.Library).forEach { item ->
-                val tint = if (selectedTab == item.route) Immersive.Accent else Immersive.Text.copy(alpha = 0.65f)
+            // One bar with the three tabs, Home in the middle (Library left, Search right).
+            listOf(Routes.Library, Routes.Home, Routes.Search).forEach { item ->
+                val selected = selectedTab == item.route
+                val tint = if (selected) Immersive.Accent else Immersive.Text.copy(alpha = 0.6f)
                 tab(
                     key = item.route,
-                    icon = { TabIcon(item, tint) },
+                    icon = { TabIcon(item, tint, selected) },
                     title = {
                         Text(
-                            text = tabLabel(item),
+                            text = tabLabel(item).uppercase(),
                             style = TabLabel,
                             color = tint,
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
-                            // Three tabs in the pill: a long label (Bibliothèque, with large text) shrinks a little before it is cut,
-                            // and keeps clear of the tab's rounded ends, which clip its first and last letters.
-                            autoSize = androidx.compose.foundation.text.TextAutoSize.StepBased(minFontSize = 8.sp, maxFontSize = 10.sp, stepSize = 0.5.sp),
+                            autoSize = androidx.compose.foundation.text.TextAutoSize.StepBased(minFontSize = 7.sp, maxFontSize = 9.sp, stepSize = 0.5.sp),
                             modifier = Modifier.padding(top = TAB_ICON_LABEL_GAP).padding(horizontal = 6.dp),
                         )
                     },
                     onClick = { currentOnTabClick(item) },
                 )
             }
-            standaloneTab(
-                key = Routes.Search.route,
-                icon = {
-                    TabIcon(
-                        Routes.Search,
-                        if (selectedTab == Routes.Search.route) Immersive.Accent else Immersive.Text.copy(alpha = 0.65f),
-                    )
-                },
-                onClick = { currentOnTabClick(Routes.Search) },
-            )
         }
     }
 }
@@ -198,12 +200,17 @@ private fun tabLabel(item: Routes): String =
     if (item.labelRes != 0) stringResource(item.labelRes) else item.label
 
 @Composable
-private fun TabIcon(item: Routes, tint: Color) {
+private fun TabIcon(item: Routes, tint: Color, selected: Boolean) {
+    // Solid glyph for the tab you are in, an outline for the others.
+    val vector = when (item.route) {
+        Routes.Home.route -> if (selected) Icons.Rounded.Home else Icons.Outlined.Home
+        Routes.Library.route -> if (selected) Icons.Rounded.LibraryMusic else Icons.Outlined.LibraryMusic
+        else -> if (selected) Icons.Rounded.Search else Icons.Outlined.Search
+    }
     Icon(
-        painter = painterResource(item.icon),
-        // The label right below names the tab for TalkBack; the standalone one has none.
-        contentDescription = if (item == Routes.Search) tabLabel(item) else null,
+        imageVector = vector,
+        contentDescription = null,
         tint = tint,
-        modifier = Modifier.size(22.dp),
+        modifier = Modifier.size(24.dp),
     )
 }

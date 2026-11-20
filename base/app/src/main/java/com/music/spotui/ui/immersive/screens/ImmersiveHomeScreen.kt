@@ -5,6 +5,7 @@
  */
 package com.music.spotui.ui.immersive.screens
 
+import androidx.compose.foundation.border
 import com.music.spotui.ui.immersive.shell.immersiveHazeSource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -203,8 +204,32 @@ fun ImmersiveHomeScreen(navController: NavController) {
             }
         }
         // The greeting, the bell and the profile disc on floating glass; the feed scrolls under it.
-        ImmersiveFloatingHeader(title, collapse = rememberTopBarCollapse(listState, 24.dp)) {
-            // Friend activity, out of the tab bar: beside the profile, as Spotify has it.
+        // The profile now opens the page from the left, as a rounded square with a red ring; friends and
+        // the bell sit on the right.
+        ImmersiveFloatingHeader(
+            title,
+            collapse = rememberTopBarCollapse(listState, 24.dp),
+            leading = {
+                val size = LocalBarControlSize.current
+                val tile = androidx.compose.foundation.shape.RoundedCornerShape(14.dp)
+                Box(
+                    Modifier
+                        .height(ImmersiveHeaderContentHeight)
+                        .width(size + 14.dp)
+                        .immersiveClickable(onClick = { showProfile = true }),
+                    contentAlignment = Alignment.CenterStart,
+                ) {
+                    Box(
+                        Modifier.size(size).graphicsLayer { scaleX = size / 44.dp; scaleY = scaleX },
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        ProfileDisc(onClick = null, shape = tile)
+                        Box(Modifier.matchParentSize().border(1.5.dp, Immersive.Accent, tile))
+                    }
+                }
+            },
+        ) {
+            // Friend activity, out of the tab bar: beside the bell, as Spotify has it.
             com.music.spotui.ui.immersive.shell.ImmersiveBarAction(
                 androidx.compose.ui.graphics.vector.ImageVector.vectorResource(R.drawable.ic_friends_big),
                 contentDescription = stringResource(R.string.friends_title),
@@ -212,22 +237,6 @@ fun ImmersiveHomeScreen(navController: NavController) {
             )
             val size = LocalBarControlSize.current
             WhatsNewBell(size) { navController.navigate(Routes.WhatsNew.route) }
-            // The tap area is the header's full height and reaches past the disc toward the
-            // title, so the small disc of the minimized bar is still easy to hit.
-            Box(
-                Modifier
-                    .height(ImmersiveHeaderContentHeight)
-                    .width(size + 20.dp)
-                    .immersiveClickable(onClick = { showProfile = true }),
-                contentAlignment = Alignment.CenterEnd,
-            ) {
-                Box(
-                    Modifier.size(size).graphicsLayer { scaleX = size / 44.dp; scaleY = scaleX },
-                    contentAlignment = Alignment.Center,
-                ) {
-                    ProfileDisc(onClick = null)
-                }
-            }
         }
     }
 }

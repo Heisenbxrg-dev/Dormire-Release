@@ -44,4 +44,4 @@ val AppShade: Color = Color.Black
 fun tone(argb: Long): Color = Color(argb)
 
 /** The cover's colour as a page header: darkened toward black, so the title stays readable. */
-fun headerTint(tint: Color, amount: Float): Color = lerp(tint, Color.Black, amount)
+fun headerTint(tint: Color, amount: Float): Color = lerp(Color(0xFF7A1019), Color.Black, amount)

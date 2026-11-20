@@ -57,7 +57,7 @@ import com.music.spotui.ui.screens.AccountBrowser
  * null when the caller takes the tap on a wider area around it.
  */
 @Composable
-internal fun ProfileDisc(onClick: (() -> Unit)?, modifier: Modifier = Modifier) {
+internal fun ProfileDisc(onClick: (() -> Unit)?, modifier: Modifier = Modifier, shape: androidx.compose.ui.graphics.Shape = CircleShape) {
     val avatar = ProfileCache.imageUrl
     val initial = ProfileCache.name?.trim()?.firstOrNull()?.uppercase() ?: "•"
     AvatarDisc(
@@ -66,6 +66,7 @@ internal fun ProfileDisc(onClick: (() -> Unit)?, modifier: Modifier = Modifier) 
         contentDescription = stringResource(R.string.recently_played_user_profile),
         onClick = onClick,
         modifier = modifier,
+        shape = shape,
     )
 }
 
@@ -78,20 +79,21 @@ internal fun AvatarDisc(
     onClick: (() -> Unit)?,
     modifier: Modifier = Modifier,
     size: Dp = 36.dp,
+    shape: androidx.compose.ui.graphics.Shape = CircleShape,
 ) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
             .size(size)
             .let { if (onClick != null) it.immersiveClickable(onClick = onClick) else it }
-            .clip(CircleShape)
+            .clip(shape)
             .background(Immersive.Accent),
     ) {
         if (!url.isNullOrBlank()) {
             ImmersiveCover(
                 url = url,
                 modifier = Modifier.size(size),
-                shape = CircleShape,
+                shape = shape,
                 contentDescription = contentDescription,
                 border = false,
             )
