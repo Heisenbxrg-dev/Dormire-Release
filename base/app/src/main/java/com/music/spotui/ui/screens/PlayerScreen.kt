@@ -1387,7 +1387,7 @@ fun PlayerFull(
             modifier = Modifier
                 // requiredSize forces an exact 64×64 square even if the parent Column
                 // constrains height — .size() alone let it get squished into an ellipse.
-                .requiredSize(64.dp)  // never below 56dp
+                .requiredSize(76.dp)  // never below 56dp
                 .pressable(pressedScale = 0.92f) {
                     if (songPlayingState) {
                         SongPlayer.pause()
@@ -1414,13 +1414,15 @@ fun PlayerFull(
                     }
                 }
                 .clip(CircleShape)
-                .background(Color.White)
+                // The play button is a lit circle in the theme red (it was white).
+                .background(androidx.compose.ui.graphics.Brush.verticalGradient(listOf(
+                    com.music.spotui.ui.theme.AppAccent, com.music.spotui.ui.theme.AppAccent.copy(alpha = 0.72f))))
             ,
             contentAlignment = Alignment.Center
         ) {
             com.music.spotui.ui.components.PlayPauseIcon(
-                modifier = Modifier.size(36.dp),
-                tint = Color.Black,
+                modifier = Modifier.size(40.dp),
+                tint = Color.White,
                 playing = songPlayingState,
                 contentDescription = stringResource(if (songPlayingState) R.string.notif_action_pause else R.string.notif_action_play))
         }

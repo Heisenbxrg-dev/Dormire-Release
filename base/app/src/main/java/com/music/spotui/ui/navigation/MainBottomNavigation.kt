@@ -1,5 +1,25 @@
 package com.music.spotui.ui.navigation
 
+import androidx.compose.foundation.border
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.LibraryMusic
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material.icons.rounded.LibraryMusic
+import androidx.compose.material.icons.rounded.Search
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
+import androidx.compose.material3.Text
+import androidx.compose.material3.Icon
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
 import com.music.spotui.ui.theme.AppText
 import com.music.spotui.ui.theme.AppMuted
 import com.music.spotui.ui.theme.AppShade
@@ -139,22 +159,24 @@ fun MainBottomNavigation(navController: NavHostController) {
                     val tabs = rememberTabNavigation(navController)
                     // Large windows and a phone on its side: the tabs are in the rail at the side (MainNavigationRail).
                     if (!com.music.spotui.ui.components.windowSize().navigationRail) {
-                    // Official bar proportions: a 58 dp strip (the gesture inset is added by
-                    // navigationBarsPadding above), equal shares edge to edge, so the
-                    // tabs spread over the full width instead of clustering in the middle.
-                    // Dormire: a thin accent line that fades out at both ends, over the tabs.
-                    val line = com.music.spotui.ui.theme.AppAccent
-                    Box(Modifier.fillMaxWidth().height(1.dp).background(Brush.horizontalGradient(
-                        listOf(Color.Transparent, line.copy(alpha = 0.7f), Color.Transparent))))
+                    // New bar: a floating rounded card with a red hairline edge, three tabs with Home as a raised
+                    // red button in the middle (Library left, Search right).
+                    val accent = com.music.spotui.ui.theme.AppAccent
+                    val barShape = RoundedCornerShape(28.dp)
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(NavBarHeight),
+                            .padding(horizontal = 18.dp)
+                            .padding(bottom = 10.dp)
+                            .height(NavBarHeight)
+                            .clip(barShape)
+                            .background(Brush.verticalGradient(listOf(Color(0xFF1E0D11), Color(0xFF0A0506))))
+                            .border(1.dp, Brush.verticalGradient(listOf(accent.copy(alpha = 0.6f), accent.copy(alpha = 0.12f))), barShape),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         TabItems.forEach { item ->
-                            NavBarTab(
-                                iconRes = item.icon,
+                            LuxuryBarTab(
+                                item = item,
                                 label = if (item.labelRes != 0) stringResource(item.labelRes) else item.label,
                                 selected = tabs.selected == item.route,
                                 onClick = { tabs.open(item) },
@@ -180,7 +202,7 @@ private val TabItems: List<Routes>
     get() {
         val tabs = mapOf("home" to Routes.Home, "search" to Routes.Search, "library" to Routes.Library)
         return com.music.spotui.extensions.ExtensionLook.navOrder?.mapNotNull { tabs[it] }?.takeIf { it.size == tabs.size }
-            ?: listOf(Routes.Home, Routes.Search, Routes.Library)
+            ?: listOf(Routes.Library, Routes.Home, Routes.Search)
     }
 
 /** The tab shown (also on its sub-pages) and what a tap on a tab does; shared by the bar and the rail. */
@@ -258,7 +280,7 @@ fun MainNavigationRail(navController: NavHostController) {
 
 // Official app metrics. Material3's NavigationBarItem measures its icon slot at a
 // fixed 24 dp, so a 28 dp Icon there was clipped back down: the bar is drawn by hand.
-private val NavBarHeight = 58.dp
+private val NavBarHeight = 66.dp
 private val NavIconSize = 28.dp
 
 /**
@@ -320,6 +342,62 @@ private fun RowScope.NavBarTab(
                 // Four tabs: a long label (Bibliothèque, with large text) shrinks a little instead of being cut.
                 autoSize = androidx.compose.foundation.text.TextAutoSize.StepBased(minFontSize = 8.sp, maxFontSize = 11.sp, stepSize = 0.5.sp),
             )
+        }
+    }
+}
+
+
+/**
+ * One tab of the new bar: a solid glyph (an outline when idle) over a small spaced label; Home is a
+ * raised red circle instead, lit with a white ring while it is the tab you are in.
+ */
+@Composable
+private fun RowScope.LuxuryBarTab(item: Routes, label: String, selected: Boolean, onClick: () -> Unit) {
+    val accent = com.music.spotui.ui.theme.AppAccent
+    val vector = when (item.route) {
+        Routes.Home.route -> if (selected) Icons.Rounded.Home else Icons.Outlined.Home
+        Routes.Library.route -> if (selected) Icons.Rounded.LibraryMusic else Icons.Outlined.LibraryMusic
+        else -> if (selected) Icons.Rounded.Search else Icons.Outlined.Search
+    }
+    Box(
+        modifier = Modifier
+            .weight(1f)
+            .fillMaxHeight()
+            .clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null,
+                onClickLabel = label,
+                onClick = onClick,
+            ),
+        contentAlignment = Alignment.Center,
+    ) {
+        if (item.route == Routes.Home.route) {
+            val ring = if (selected) Modifier.border(2.dp, Color.White.copy(alpha = 0.85f), CircleShape) else Modifier
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .size(52.dp)
+                    .clip(CircleShape)
+                    .background(Brush.verticalGradient(listOf(accent, accent.copy(alpha = 0.7f))))
+                    .then(ring),
+            ) {
+                Icon(vector, contentDescription = null, tint = Color.White, modifier = Modifier.size(27.dp))
+            }
+        } else {
+            val tint = if (selected) accent else AppMuted
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+                Icon(vector, contentDescription = null, tint = tint, modifier = Modifier.size(25.dp))
+                Spacer(Modifier.height(3.dp))
+                Text(
+                    text = label.uppercase(),
+                    color = tint,
+                    fontSize = 8.sp,
+                    letterSpacing = 1.2.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    maxLines = 1,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                )
+            }
         }
     }
 }

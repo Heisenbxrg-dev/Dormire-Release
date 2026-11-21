@@ -1,5 +1,6 @@
 package com.music.spotui.ui.screens
 
+import androidx.compose.foundation.border
 import com.music.spotui.ui.theme.tone
 import com.music.spotui.ui.theme.AppText
 import com.music.spotui.ui.theme.AppMuted
@@ -229,61 +230,66 @@ private fun HomeHeaderRow(navController: NavController, facet: String, onFacet: 
     androidx.compose.runtime.LaunchedEffect(Unit) {
         com.music.spotui.data.api.ProfileCache.ensure(context)
     }
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        // The row's 10 dp above and below sit in each child instead, so the avatar's tap area
-        // takes them in (and the margin up to the separator) without moving anything.
-        modifier = Modifier.fillMaxWidth(),
-    ) {
+    // New layout: the wordmark on the left, friends, news and the profile (a rounded square with a red
+    // ring) on the right, and the filter chips on a row of their own under them.
+    Column(Modifier.fillMaxWidth()) {
         val avatarUrl = com.music.spotui.data.api.ProfileCache.imageUrl
         val initial = com.music.spotui.data.api.ProfileCache.name
             ?.trim()?.firstOrNull()?.uppercase() ?: "•"
-        Box(
-            modifier = Modifier
-                .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) { showProfile = true }
-                .padding(start = 16.dp, end = 10.dp, top = 10.dp, bottom = 10.dp),
+        val accent = com.music.spotui.ui.theme.AppAccent
+        val tile = RoundedCornerShape(14.dp)
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.fillMaxWidth().padding(start = 18.dp, end = 14.dp, top = 12.dp),
         ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .size(34.dp)
-                .clip(CircleShape)
-                .background(Color(0xFFE8622C)),
-        ) {
-            if (avatarUrl != null) {
-                GlideImage(
-                    model = avatarUrl,
-                    contentScale = ContentScale.Crop,
-                    contentDescription = stringResource(R.string.recently_played_user_profile),
-                    modifier = Modifier.size(34.dp),
-                )
-            } else {
-                Text(
-                    text = initial,
-                    color = Color.Black,
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold,
-                )
+            Text(
+                text = "DORMIRE",
+                color = AppText,
+                fontSize = 20.sp,
+                letterSpacing = 3.sp,
+                fontFamily = androidx.compose.ui.text.font.FontFamily(
+                    androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, FontWeight.Bold),
+                ),
+                modifier = Modifier.weight(1f),
+            )
+            HomeHeaderTile(onClick = { navController.navigate(com.music.spotui.ui.navigation.Routes.Friends.route) }) {
+                Icon(androidx.compose.ui.res.painterResource(R.drawable.ic_friends_big), contentDescription = stringResource(R.string.friends_title),
+                    tint = AppText, modifier = Modifier.size(22.dp))
+            }
+            HomeHeaderTile(onClick = { navController.navigate(com.music.spotui.ui.navigation.Routes.WhatsNew.route) }) {
+                Icon(androidx.compose.material.icons.Icons.Outlined.Notifications, contentDescription = stringResource(R.string.whats_new_title),
+                    tint = AppText, modifier = Modifier.size(22.dp))
+            }
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .size(42.dp)
+                    .clip(tile)
+                    .background(accent)
+                    .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) { showProfile = true },
+            ) {
+                if (avatarUrl != null) {
+                    GlideImage(
+                        model = avatarUrl,
+                        contentScale = ContentScale.Crop,
+                        contentDescription = stringResource(R.string.recently_played_user_profile),
+                        modifier = Modifier.size(42.dp),
+                    )
+                } else {
+                    Text(text = initial, color = Color.Black, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                }
+                Box(Modifier.matchParentSize().border(1.5.dp, accent, tile))
             }
         }
-        }
-        WhatsNewBell { navController.navigate(com.music.spotui.ui.navigation.Routes.WhatsNew.route) }
-        // B31: a separator between the profile and the options, reported missing from this
-        // header (the sheets already carry one).
-        Box(
-            modifier = Modifier
-                .padding(vertical = 10.dp)
-                .size(width = 1.dp, height = 22.dp)
-                .background(tone(0xFF3E3E3E)),
-        )
         // Scrolls sideways if the pills don't fit, like Spotify's.
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .weight(1f)
+                .fillMaxWidth()
                 .horizontalScroll(androidx.compose.foundation.rememberScrollState())
-                .padding(start = 12.dp, end = 8.dp, top = 10.dp, bottom = 10.dp),
+                .padding(horizontal = 18.dp, vertical = 12.dp),
         ) {
             // Spotify's home chips. Once one is picked, as in Spotify: a close chip, the picked one,
             // and joined to it the chips it opens (Following: only what the user follows).
@@ -323,12 +329,22 @@ private fun HomeHeaderRow(navController: NavController, facet: String, onFacet: 
                 }
             }
         }
-        // Friend activity, out of the tab bar: at the end of the header, as Spotify has it.
-        IconButton(onClick = { navController.navigate(com.music.spotui.ui.navigation.Routes.Friends.route) }) {
-            Icon(androidx.compose.ui.res.painterResource(R.drawable.ic_friends_big), contentDescription = stringResource(R.string.friends_title),
-                tint = AppText, modifier = Modifier.size(24.dp))
-        }
     }
+}
+
+/** A header button: a rounded square with a hairline edge (friends, news). */
+@Composable
+private fun HomeHeaderTile(onClick: () -> Unit, content: @Composable () -> Unit) {
+    val shape = RoundedCornerShape(14.dp)
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .size(42.dp)
+            .clip(shape)
+            .background(Color.White.copy(alpha = 0.08f))
+            .border(1.dp, Color.White.copy(alpha = 0.12f), shape)
+            .clickable(onClick = onClick),
+    ) { content() }
 }
 
 /** The left half of two pills joined (a picked chip and the one it opened), and the right one. */
@@ -336,7 +352,7 @@ private val JoinedStart = RoundedCornerShape(topStartPercent = 50, bottomStartPe
 private val JoinedEnd = RoundedCornerShape(topStartPercent = 15, bottomStartPercent = 15, topEndPercent = 50, bottomEndPercent = 50)
 
 @Composable
-private fun HomePill(label: String, selected: Boolean = false, shape: androidx.compose.ui.graphics.Shape = RoundedCornerShape(50), onClick: () -> Unit) {
+private fun HomePill(label: String, selected: Boolean = false, shape: androidx.compose.ui.graphics.Shape = RoundedCornerShape(14.dp), onClick: () -> Unit) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier

@@ -192,10 +192,10 @@ fun MiniPlayer() {
     }
 
     // Card tint from the cover — extracted once per cover, not on every recomposition.
-    var tint by remember { mutableStateOf(Palette.cachedFirst(songCoverUri) ?: Color(0xFF2A2A2A)) }
+    var tint by remember { mutableStateOf(Color(0xFF2A0C12)) }
     LaunchedEffect(songCoverUri) {
         if (songCoverUri.isNotBlank()) {
-            Palette().extractFirstColorFromImageUrl(context, songCoverUri) { tint = it }
+            // The card stays deep red whatever the cover (the look is red and black throughout).
             // Warm the full player's background colour: it opens already tinted.
             Palette().extractSecondColorFromCoverUrl(context, songCoverUri) { }
         }
@@ -268,8 +268,8 @@ fun MiniPlayer() {
         modifier = Modifier.pressable(0.96f) { com.music.spotui.ui.navigation.PlayerSheet.show() }
             // Where the full player rises from and sinks back to.
             .onGloballyPositioned { com.music.spotui.ui.navigation.PlayerSheet.miniTop = it.boundsInWindow().top }
-            .padding(horizontal = 8.dp)
-            .clip(RoundedCornerShape(8.dp))
+            .padding(horizontal = 14.dp)
+            .clip(RoundedCornerShape(24.dp))
             // Drawn: the colour follows a crossfade frame by frame without recomposing the card.
             .drawBehind { drawRect(blend?.let { androidx.compose.ui.graphics.lerp(outgoingTint, animatedTint, it.progress()) } ?: animatedTint) }
     ) {
@@ -277,9 +277,38 @@ fun MiniPlayer() {
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(54.dp)
-                .padding(start = 8.dp, end = 3.dp)
+                .height(66.dp)
+                .padding(start = 10.dp, end = 6.dp)
         ) {
+            // Play is a lit circle in the theme red, now at the start of the card.
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .size(50.dp)
+                    .clip(androidx.compose.foundation.shape.CircleShape)
+                    .background(androidx.compose.ui.graphics.Brush.verticalGradient(listOf(
+                        com.music.spotui.ui.theme.AppAccent, com.music.spotui.ui.theme.AppAccent.copy(alpha = 0.72f),
+                    ))),
+            ) {
+            com.music.spotui.ui.components.PlayPauseIcon(
+                playing = songPlayingState,
+                contentDescription = if (songPlayingState) stringResource(R.string.content_description_pause_button) else stringResource(R.string.content_description_play_button),
+                tint = Color.White,
+                modifier = Modifier.size(50.dp).pressable(0.96f) {
+                        if (songPlayingState) {
+                            SongPlayer.pause()
+                            vm.updateSongState(songCoverUri, songTitle, songSinger, false, songId, vm.currentSongIndex.value, vm.currentSongAlbum.value)
+                        } else {
+                            SongPlayer.play()
+                            vm.updateSongState(songCoverUri, songTitle, songSinger, true, songId, vm.currentSongIndex.value, vm.currentSongAlbum.value)
+                        }
+                    }
+                    .wrapContentSize()
+                    .size(28.dp)
+                    
+            )
+            }
+            Spacer(modifier = Modifier.width(10.dp))
             androidx.compose.foundation.pager.HorizontalPager(
                 state = pager,
                 modifier = Modifier.weight(1f),
@@ -300,9 +329,9 @@ fun MiniPlayer() {
                     label = "miniSong",
                 ) { m ->
                 Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-                    Box(Modifier.size(40.dp).clip(RoundedCornerShape(4.dp))) {
+                    Box(Modifier.size(48.dp).clip(RoundedCornerShape(12.dp))) {
                         GlideImage(
-                            modifier = Modifier.size(40.dp),
+                            modifier = Modifier.size(48.dp),
                             model = m.cover,
                             contentScale = ContentScale.Crop,
                             failure = placeholder(R.drawable.placeholder),
@@ -310,14 +339,14 @@ fun MiniPlayer() {
                             contentDescription = ""
                         )
                         // The outgoing cover dissolving into this one, laid over it.
-                        if (page == 1) SongBlendCover(blend, Modifier.size(40.dp))
+                        if (page == 1) SongBlendCover(blend, Modifier.size(48.dp))
                     }
                     val remote = SongPlayer.activeDevice.value
                     Column(modifier = Modifier.padding(start = 12.dp, end = 8.dp)
                         .graphicsLayer { alpha = if (page == 1) blend?.wordsAlpha() ?: 1f else 1f }) {
                         if (remote == null) {
                             Text(
-                                text = if (adPlaying) stringResource(R.string.ad_playing) else (m.title), color = Color.White, fontSize = 13.sp, lineHeight = 15.sp, fontWeight = FontWeight.Bold, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                                text = if (adPlaying) stringResource(R.string.ad_playing) else (m.title), color = Color.White, fontSize = 15.sp, lineHeight = 18.sp, fontWeight = FontWeight.Bold, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
                                 // Once per song then rests: the mini player is always on screen.
                                 modifier = Modifier.titleMarquee(iterations = 1),
                             )
@@ -375,6 +404,7 @@ fun MiniPlayer() {
                 }
                 }
             }
+            if (SongPlayer.canLike) com.music.spotui.ui.screens.AddButton(song = { com.music.spotui.ui.screens.nowPlayingSong(vm) }, liked = liked, size = 24.dp, touch = MINI_TOUCH) { vm.updateLikeState(true) }
             Icon(
                 painter = painterResource(id = if (SongPlayer.activeDevice.value != null) R.drawable.ic_devices else R.drawable.ic_devices),
                 tint = if (SongPlayer.activeDevice.value != null) com.music.spotui.ui.theme.AppAccent else Color.White.copy(alpha = 0.8f),
@@ -387,32 +417,13 @@ fun MiniPlayer() {
                     ,
                 contentDescription = stringResource(R.string.mr_user_route_category_name),
             )
-            if (SongPlayer.canLike) com.music.spotui.ui.screens.AddButton(song = { com.music.spotui.ui.screens.nowPlayingSong(vm) }, liked = liked, size = 24.dp, touch = MINI_TOUCH) { vm.updateLikeState(true) }
-            Spacer(modifier = Modifier.width(1.dp))
-            com.music.spotui.ui.components.PlayPauseIcon(
-                playing = songPlayingState,
-                contentDescription = if (songPlayingState) stringResource(R.string.content_description_pause_button) else stringResource(R.string.content_description_play_button),
-                tint = Color.White,
-                modifier = Modifier.size(MINI_TOUCH).pressable(0.96f) {
-                        if (songPlayingState) {
-                            SongPlayer.pause()
-                            vm.updateSongState(songCoverUri, songTitle, songSinger, false, songId, vm.currentSongIndex.value, vm.currentSongAlbum.value)
-                        } else {
-                            SongPlayer.play()
-                            vm.updateSongState(songCoverUri, songTitle, songSinger, true, songId, vm.currentSongIndex.value, vm.currentSongAlbum.value)
-                        }
-                    }
-                    .wrapContentSize()
-                    .size(26.dp)
-                    
-            )
         }
         // Thin progress line at the bottom of the card.
         // Drawn every frame from the engine clock: smooth at the display refresh rate.
         androidx.compose.foundation.Canvas(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 8.dp)
+                .padding(horizontal = 22.dp)
                 .height(2.dp)
                 .clip(RoundedCornerShape(1.dp))
                 // Its own layer: a tick re-records these two rectangles, not the whole card.
@@ -422,8 +433,8 @@ fun MiniPlayer() {
             val o = blend?.takeIf { it.outgoingWords }
             val dur = (o?.song?.durationMs ?: SongPlayer.getDuration()).toFloat()
             val p = if (dur > 0f) ((o?.positionMs() ?: SongPlayer.getCurrentPosition()) / dur).coerceIn(0f, 1f) else 0f
-            drawRect(Color.White.copy(alpha = 0.25f))
-            drawRect(Color.White, size = size.copy(width = size.width * p))
+            drawRect(Color.White.copy(alpha = 0.18f))
+            drawRect(com.music.spotui.ui.theme.AppAccent, size = size.copy(width = size.width * p))
         }
     }
 }

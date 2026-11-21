@@ -1,5 +1,6 @@
 package com.music.spotui.ui.screens
 
+import androidx.compose.foundation.border
 import com.music.spotui.ui.components.cappedPageWidth
 import com.music.spotui.ui.theme.tone
 import com.music.spotui.ui.theme.AppText
@@ -154,23 +155,48 @@ fun LibraryScreen(navController: NavController) {
             .background(com.music.spotui.ui.theme.AppPage)
             .statusBarsPadding()
     ) {
-        // Header: title + account avatar. Built by hand (rather than a fixed-height
-        // TopAppBar) so the title isn't clipped under the status bar.
+        // Header, new layout: the account (a rounded square with a red ring) on the left, the title in
+        // the title face, and create / search as rounded square buttons on the right.
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp, 12.dp, 16.dp, 8.dp)
         ) {
+            val tile = RoundedCornerShape(14.dp)
+            val accent = Color(AppPalette.toArgb())
+            Box(
+                modifier = Modifier
+                    .size(42.dp)
+                    .clip(tile)
+                    .background(tone(0xFF3A3A3A))
+                    .clickable { showAccount = true },
+                contentAlignment = Alignment.Center
+            ) {
+                val avatar = (account as? Response.Success)?.data?.imageUrl.orEmpty()
+                if (avatar.isNotBlank()) {
+                    AccountAvatar(avatar, 42.dp)
+                } else {
+                    Icon(Icons.Default.Person, contentDescription = stringResource(R.string.account_title), tint = AppText, modifier = Modifier.size(22.dp))
+                }
+                Box(Modifier.matchParentSize().border(1.5.dp, accent, tile))
+            }
             Text(
                 text = stringResource(R.string.navigationbar_musicappitems_yourlibrary_title),
                 fontWeight = FontWeight.Bold,
                 color = AppText,
-                fontSize = 22.sp,
+                fontSize = 20.sp,
+                letterSpacing = 1.sp,
+                fontFamily = androidx.compose.ui.text.font.FontFamily(
+                    androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, FontWeight.Bold),
+                ),
+                maxLines = 1,
+                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
                 // The title itself scrolls the list to its top in the official app
                 // ("Appuyez pour faire défiler jusqu'en haut de la liste").
                 modifier = Modifier
                     .weight(1f)
+                    .padding(start = 14.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null,
@@ -178,38 +204,25 @@ fun LibraryScreen(navController: NavController) {
             )
             var creating by remember { mutableStateOf(false) }
             if (creating) LibraryCreateSheet(navController, onDismiss = { creating = false }, onLibraryChanged = { libraryViewModel.load() })
-            Icon(
-                painter = painterResource(R.drawable.ic_add),
-                contentDescription = stringResource(R.string.create_playlist_content_description),
-                tint = AppText,
-                modifier = Modifier.pressable(0.96f) { creating = true }.padding(end = 14.dp).size(22.dp),
-            )
-            Icon(
-                imageVector = Icons.Default.Search,
-                contentDescription = stringResource(R.string.library_search_text_hint),
-                tint = if (searchActive) Color(AppPalette.toArgb()) else AppText,
-                modifier = Modifier.pressable(0.96f) {
-                        searchActive = !searchActive
-                        if (!searchActive) searchQuery = ""
-                    }
-                    .padding(end = 14.dp)
-                    .size(22.dp)
-                    ,
-            )
-            Box(
-                modifier = Modifier
-                    .size(34.dp)
-                    .clip(CircleShape)
-                    .background(tone(0xFF3A3A3A))
-                    .clickable { showAccount = true },
-                contentAlignment = Alignment.Center
-            ) {
-                val avatar = (account as? Response.Success)?.data?.imageUrl.orEmpty()
-                if (avatar.isNotBlank()) {
-                    AccountAvatar(avatar, 34.dp)
-                } else {
-                    Icon(Icons.Default.Person, contentDescription = stringResource(R.string.account_title), tint = AppText, modifier = Modifier.size(20.dp))
-                }
+            LibraryHeaderTile(onClick = { creating = true }) {
+                Icon(
+                    painter = painterResource(R.drawable.ic_add),
+                    contentDescription = stringResource(R.string.create_playlist_content_description),
+                    tint = AppText,
+                    modifier = Modifier.size(22.dp),
+                )
+            }
+            Spacer(Modifier.width(8.dp))
+            LibraryHeaderTile(onClick = {
+                searchActive = !searchActive
+                if (!searchActive) searchQuery = ""
+            }) {
+                Icon(
+                    imageVector = Icons.Default.Search,
+                    contentDescription = stringResource(R.string.library_search_text_hint),
+                    tint = if (searchActive) accent else AppText,
+                    modifier = Modifier.size(22.dp),
+                )
             }
         }
 
@@ -224,15 +237,6 @@ fun LibraryScreen(navController: NavController) {
         ) {
             var sorting by remember { mutableStateOf(false) }
             if (sorting) LibrarySortSheet(onDismiss = { sorting = false })
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.pressable(0.96f) { sorting = true }.padding(vertical = 4.dp),
-            ) {
-                Icon(Icons.Default.SwapVert, contentDescription = null, tint = AppText, modifier = Modifier.size(18.dp))
-                Text(stringResource(sortLabel(LibraryOrder.sort)), color = AppText, fontSize = 13.sp, fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.padding(start = 6.dp))
-            }
-            Spacer(modifier = Modifier.weight(1f))
             Icon(
                 painter = painterResource(if (gridView) R.drawable.ic_view_list else R.drawable.ic_view_grid),
                 contentDescription = if (gridView) stringResource(R.string.list_view) else stringResource(R.string.grid_view),
@@ -241,9 +245,18 @@ fun LibraryScreen(navController: NavController) {
                         gridView = !gridView
                         setLibraryGridView(context, gridView)
                     }
-                    .size(18.dp)
+                    .size(22.dp)
                     
             )
+            Spacer(modifier = Modifier.weight(1f))
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.pressable(0.96f) { sorting = true }.padding(vertical = 4.dp),
+            ) {
+                Icon(Icons.Default.SwapVert, contentDescription = null, tint = AppText, modifier = Modifier.size(18.dp))
+                Text(stringResource(sortLabel(LibraryOrder.sort)), color = AppText, fontSize = 13.sp, fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.padding(start = 6.dp))
+            }
         }
 
         AnimatedVisibility(visible = searchActive) {
@@ -404,7 +417,7 @@ private fun LibraryChipRow(chosen: com.music.spotui.data.local.LibraryChip, onTa
                 fontSize = 13.sp,
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier
-                    .clip(RoundedCornerShape(50))
+                    .clip(RoundedCornerShape(14.dp))
                     .background(if (on) com.music.spotui.ui.theme.AppAccent else tone(0xFF2A2A2A))
                     .clickable { onTap(chip) }
                     .padding(horizontal = 14.dp, vertical = 7.dp),
@@ -1000,4 +1013,20 @@ private fun LibrarySortSheet(onDismiss: () -> Unit) {
                 modifier = Modifier.fillMaxWidth().clickable { LibraryOrder.reset(); onDismiss() }.padding(horizontal = 20.dp, vertical = 14.dp))
         }
     }
+}
+
+
+/** A library header button: a rounded square with a hairline edge (create, search). */
+@Composable
+private fun LibraryHeaderTile(onClick: () -> Unit, content: @Composable () -> Unit) {
+    val shape = RoundedCornerShape(14.dp)
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .size(42.dp)
+            .clip(shape)
+            .background(Color.White.copy(alpha = 0.08f))
+            .border(1.dp, Color.White.copy(alpha = 0.12f), shape)
+            .clickable(onClick = onClick),
+    ) { content() }
 }
