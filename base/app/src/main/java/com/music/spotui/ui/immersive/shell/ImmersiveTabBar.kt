@@ -6,12 +6,12 @@
 package com.music.spotui.ui.immersive.shell
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.LibraryMusic
-import androidx.compose.material.icons.outlined.Search
-import androidx.compose.material.icons.rounded.Home
-import androidx.compose.material.icons.rounded.LibraryMusic
-import androidx.compose.material.icons.rounded.Search
+import androidx.compose.material.icons.outlined.Home as HomeOutlined
+import androidx.compose.material.icons.outlined.LibraryMusic as LibraryMusicOutlined
+import androidx.compose.material.icons.outlined.Search as SearchOutlined
+import androidx.compose.material.icons.rounded.Home as HomeRounded
+import androidx.compose.material.icons.rounded.LibraryMusic as LibraryMusicRounded
+import androidx.compose.material.icons.rounded.Search as SearchRounded
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
@@ -203,9 +203,9 @@ private fun tabLabel(item: Routes): String =
 private fun TabIcon(item: Routes, tint: Color, selected: Boolean) {
     // Solid glyph for the tab you are in, an outline for the others.
     val vector = when (item.route) {
-        Routes.Home.route -> if (selected) Icons.Rounded.Home else Icons.Outlined.Home
-        Routes.Library.route -> if (selected) Icons.Rounded.LibraryMusic else Icons.Outlined.LibraryMusic
-        else -> if (selected) Icons.Rounded.Search else Icons.Outlined.Search
+        Routes.Home.route -> if (selected) Icons.Rounded.HomeRounded else Icons.Outlined.HomeOutlined
+        Routes.Library.route -> if (selected) Icons.Rounded.LibraryMusicRounded else Icons.Outlined.LibraryMusicOutlined
+        else -> if (selected) Icons.Rounded.SearchRounded else Icons.Outlined.SearchOutlined
     }
     Icon(
         imageVector = vector,

@@ -4,12 +4,12 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.LibraryMusic
-import androidx.compose.material.icons.outlined.Search
-import androidx.compose.material.icons.rounded.Home
-import androidx.compose.material.icons.rounded.LibraryMusic
-import androidx.compose.material.icons.rounded.Search
+import androidx.compose.material.icons.outlined.Home as HomeOutlined
+import androidx.compose.material.icons.outlined.LibraryMusic as LibraryMusicOutlined
+import androidx.compose.material.icons.outlined.Search as SearchOutlined
+import androidx.compose.material.icons.rounded.Home as HomeRounded
+import androidx.compose.material.icons.rounded.LibraryMusic as LibraryMusicRounded
+import androidx.compose.material.icons.rounded.Search as SearchRounded
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,6 @@ import com.music.spotui.ui.theme.AppShade
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.compose.ui.res.stringResource
 
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 
 import androidx.compose.animation.AnimatedVisibility
@@ -35,19 +34,11 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
@@ -59,9 +50,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.music.spotui.ui.components.MiniPlayer
@@ -355,9 +344,9 @@ private fun RowScope.NavBarTab(
 private fun RowScope.LuxuryBarTab(item: Routes, label: String, selected: Boolean, onClick: () -> Unit) {
     val accent = com.music.spotui.ui.theme.AppAccent
     val vector = when (item.route) {
-        Routes.Home.route -> if (selected) Icons.Rounded.Home else Icons.Outlined.Home
-        Routes.Library.route -> if (selected) Icons.Rounded.LibraryMusic else Icons.Outlined.LibraryMusic
-        else -> if (selected) Icons.Rounded.Search else Icons.Outlined.Search
+        Routes.Home.route -> if (selected) Icons.Rounded.HomeRounded else Icons.Outlined.HomeOutlined
+        Routes.Library.route -> if (selected) Icons.Rounded.LibraryMusicRounded else Icons.Outlined.LibraryMusicOutlined
+        else -> if (selected) Icons.Rounded.SearchRounded else Icons.Outlined.SearchOutlined
     }
     Box(
         modifier = Modifier
