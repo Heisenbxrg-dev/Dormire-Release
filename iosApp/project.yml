@@ -11,6 +11,9 @@ targets:
       - path: iosApp
     info:
       path: iosApp/Info.plist
+    dependencies:
+      - framework: ../base/shared-ios/build/bin/iosArm64/releaseFramework/Shared.framework
+        embed: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: app.myspoti.dormire
