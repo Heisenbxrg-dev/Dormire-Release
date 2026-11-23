@@ -1,0 +1,48 @@
+name: Build iOS (Unsigned IPA)
+
+on:
+  push:
+    branches: [ "kmp-ios" ]
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        working-directory: iosApp
+        run: xcodegen generate
+
+      - name: Build Unsigned iOS App
+        working-directory: iosApp
+        run: |
+          xcodebuild \
+            -project Dormire.xcodeproj \
+            -scheme Dormire \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: Package Unsigned IPA
+        working-directory: iosApp
+        run: |
+          mkdir -p Payload
+          cp -r build/Build/Products/Release-iphoneos/Dormire.app Payload/
+          zip -r Dormire-unsigned.ipa Payload
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Dormire-iOS-Unsigned
+          path: iosApp/Dormire-unsigned.ipa
