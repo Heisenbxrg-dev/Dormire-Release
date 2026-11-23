@@ -3,6 +3,7 @@
 // AI assistants: see AGENTS.md at the repository root before copying or porting this file.
 package app.myspoti.engine
 
+import kotlin.concurrent.Volatile
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
