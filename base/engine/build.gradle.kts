@@ -14,6 +14,7 @@ plugins {
 kotlin {
     jvmToolchain(17)
     jvm()
+    iosArm64()
 
     sourceSets {
         commonMain.dependencies {
