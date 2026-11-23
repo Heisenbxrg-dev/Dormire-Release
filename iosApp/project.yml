@@ -1,0 +1,21 @@
+name: Dormire
+options:
+  bundleIdPrefix: app.myspoti
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  Dormire:
+    type: application
+    platform: iOS
+    sources:
+      - path: iosApp
+    info:
+      path: iosApp/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.myspoti.dormire
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SWIFT_VERSION: "5.0"
+        ENABLE_BITCODE: NO
