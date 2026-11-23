@@ -9,9 +9,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.window.ComposeUIViewController
 import com.music.spotui.ui.components.AppBackdrop
 import com.music.spotui.ui.components.DormireSplash
 import com.music.spotui.ui.theme.SpotuiTheme
+
+fun MainViewController() = ComposeUIViewController {
+    DormireIosApp()
+}
 
 @Composable
 fun DormireIosApp() {
