@@ -1,5 +1,11 @@
 package com.music.spotui.ui.components
 
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.background
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.border
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -83,25 +89,41 @@ fun LyricsSourceSheet(onDismiss: () -> Unit, vm: LyricsViewModel = viewModel()) 
         })
     }
 
-    LookSheet(onDismissRequest = onDismiss, containerColor = tone(0xFF282828)) {
+    val accent = com.music.spotui.ui.theme.AppAccent
+    val card = androidx.compose.foundation.shape.RoundedCornerShape(18.dp)
+    LookSheet(onDismissRequest = onDismiss, containerColor = tone(0xFF140A0C)) {
         Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(bottom = 24.dp)) {
-            Text(
-                stringResource(R.string.lyrics_other_source), color = AppText, fontSize = 20.sp, fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(20.dp, 8.dp),
-            )
+            // Title in the title face, with a short red rule under it.
+            Column(Modifier.padding(start = 20.dp, end = 20.dp, top = 8.dp, bottom = 12.dp)) {
+                Text(
+                    stringResource(R.string.lyrics_other_source), color = AppText, fontSize = 20.sp, letterSpacing = 1.sp,
+                    fontFamily = androidx.compose.ui.text.font.FontFamily(
+                        androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, FontWeight.Bold),
+                    ),
+                )
+                androidx.compose.foundation.layout.Box(
+                    Modifier.padding(top = 8.dp).width(44.dp).height(3.dp)
+                        .clip(androidx.compose.foundation.shape.RoundedCornerShape(2.dp)).background(accent),
+                )
+            }
             val mine = remember(track) { CustomLyrics.has(track) }
+            val mineShown = mine && current == null
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.fillMaxWidth().clickable { editing = true }.padding(20.dp, 12.dp),
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
+                    .clip(card)
+                    .background(if (mineShown) accent.copy(alpha = 0.16f) else Color.White.copy(alpha = 0.06f))
+                    .border(if (mineShown) 1.5.dp else 1.dp, if (mineShown) accent else Color.White.copy(alpha = 0.08f), card)
+                    .clickable { editing = true }.padding(16.dp, 14.dp),
             ) {
                 Column(Modifier.weight(1f)) {
-                    Text(stringResource(R.string.lyrics_custom), color = AppText, fontSize = 16.sp)
+                    Text(stringResource(R.string.lyrics_custom), color = AppText, fontSize = 16.sp, fontWeight = FontWeight.Medium)
                     Text(
                         stringResource(if (mine) R.string.lyrics_custom_saved else R.string.lyrics_custom_hint),
                         color = AppMuted, fontSize = 12.sp,
                     )
                 }
-                if (mine && current == null) Icon(Icons.Default.Check, contentDescription = null, tint = AppText)
+                if (mineShown) Icon(Icons.Default.Check, contentDescription = null, tint = accent)
             }
             sources.forEach { s ->
                 val here = s.id == current
@@ -115,17 +137,22 @@ fun LyricsSourceSheet(onDismiss: () -> Unit, vm: LyricsViewModel = viewModel()) 
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
                     modifier = Modifier
                         .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 4.dp)
                         // Set aside: dimmed, still tappable (asking by hand ignores the break).
                         .alpha(if (s.setAside != null) 0.45f else 1f)
+                        .clip(card)
+                        // The one shown is lit in red; the others are dim rounded cards.
+                        .background(if (here) accent.copy(alpha = 0.16f) else Color.White.copy(alpha = 0.06f))
+                        .border(if (here) 1.5.dp else 1.dp, if (here) accent else Color.White.copy(alpha = 0.08f), card)
                         .clickable(enabled = trying == null) { vm.loadFrom(track, s.id) }
-                        .padding(20.dp, 12.dp),
+                        .padding(16.dp, 14.dp),
                 ) {
                     Column(Modifier.weight(1f)) {
-                        Text(s.name, color = AppText, fontSize = 16.sp)
-                        if (detail.isNotEmpty()) Text(detail, color = AppMuted, fontSize = 12.sp)
+                        Text(s.name, color = AppText, fontSize = 16.sp, fontWeight = FontWeight.Medium)
+                        if (detail.isNotEmpty()) Text(detail, color = if (here) accent else AppMuted, fontSize = 12.sp)
                     }
-                    if (trying == s.id) CircularProgressIndicator(color = AppText, strokeWidth = 2.dp, modifier = Modifier.size(18.dp))
-                    else if (here) Icon(Icons.Default.Check, contentDescription = null, tint = AppText)
+                    if (trying == s.id) CircularProgressIndicator(color = accent, strokeWidth = 2.dp, modifier = Modifier.size(18.dp))
+                    else if (here) Icon(Icons.Default.Check, contentDescription = null, tint = accent)
                 }
             }
         }

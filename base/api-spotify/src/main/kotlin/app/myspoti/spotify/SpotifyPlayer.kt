@@ -1719,7 +1719,7 @@ class SpotifyPlayer(private val bridge: Bridge, private val scope: CoroutineScop
     private fun outside(): AccountAudio? = audio?.takeIf { it.on && !mirroring }
 
     /**
-     * [outside] for the transport (pause, resume, seek, skip): not while another device of the account
+     * [outside] for the seek and the skips: not while another device of the account
      * is the active one (a PS5, a speaker...). The engine only drives this phone's own player, so a
      * seek or a skip sent to it while that device played started the music on the phone instead
      * (reported on a PS5). The page's path below reaches the active device, as before the engine existed.
@@ -1845,7 +1845,7 @@ class SpotifyPlayer(private val bridge: Bridge, private val scope: CoroutineScop
     override suspend fun pauseSlowly(fadeMs: Long) = pauseOver(fadeMs)
 
     private suspend fun pauseOver(fadeMs: Long) {
-        outsideTransport()?.let { a -> pausedByUser = true; a.pause(); return }
+        outside()?.let { a -> pausedByUser = true; a.pause(); return }
         // A long fade is still playing: the song is only marked paused once it is.
         if (fadeMs <= PAUSE_MS) pausedByUser = true
         endCrossfade(restore = true)
@@ -1906,7 +1906,7 @@ class SpotifyPlayer(private val bridge: Bridge, private val scope: CoroutineScop
 
     override suspend fun resume() {
         userPlays()
-        outsideTransport()?.let { a -> pausedByUser = false; a.resume(); return }
+        outside()?.let { a -> pausedByUser = false; a.resume(); return }
         // The user's pick around an ad they paused during: played now, in one play (held by
         // [playAsked] if an ad or a reload is still on), not the song before the ad.
         val pick = pickAfterPause?.takeIf { pausedByUser }

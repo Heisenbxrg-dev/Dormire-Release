@@ -2869,11 +2869,12 @@ object SongPlayer {
             runCatching { chosenPrefs().edit().putString("device", value).putLong("at", System.currentTimeMillis()).apply() }
         }
     /**
-     * This phone is the one playing: no other device is active and none was picked here (or kept
-     * from before a restart). A picked console/TV/speaker whose state is not read yet is NOT the
-     * phone: without this a skip or a seek taken in that gap played on the phone (reported on a PS5).
+     * This phone is the one playing: no other device is active, as the page's watcher reads it live
+     * ([playsElsewhere], read every few seconds). It does NOT look at [chosenRemote]: that pick is kept
+     * 24 hours, and while it stood after the PS5 was left the songs went on through the page's silent
+     * web player instead of this phone's engine (reported: the music moved to "Web Player" after a while).
      */
-    private val phonePlays: Boolean get() = _activeDevice.value == null && chosenRemote == null
+    private val phonePlays: Boolean get() = _activeDevice.value == null && !MyspotiRuntime.spotify.player.playsElsewhere.value
 
     /** Device kinds that are never a "takeover": started on purpose, they keep the music (normalised, no underscores). */
     private val KEEP_REMOTE_TYPES = setOf("GAMECONSOLE", "TV", "CASTVIDEO", "CASTAUDIO", "SPEAKER", "AVR", "STB", "AUDIODONGLE", "AUTOMOBILE")

@@ -1,5 +1,7 @@
 package com.music.spotui.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.horizontalScroll
 import com.music.spotui.data.preferences.TransitionPref.Mode as TransitionMode
 import com.music.spotui.ui.theme.tone
 import com.music.spotui.ui.theme.AppText
@@ -83,14 +85,16 @@ fun SettingsScreen(navController: NavController) {
     var query by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf<String?>(null) }
     androidx.activity.compose.BackHandler(enabled = query != null) { query = null }
     Column(Modifier.fillMaxSize().background(com.music.spotui.ui.theme.AppPage).statusBarsPadding()) {
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth().padding(4.dp)) {
-            IconButton(onClick = { if (sub != null) sub = null else navController.popBackStack() }) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.accessibility_navigate_back), tint = AppText)
+        // New header: back and search as rounded square buttons, the title in the title face.
+        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 8.dp)) {
+            SettingsTile(onClick = { if (sub != null) sub = null else navController.popBackStack() }) {
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.accessibility_navigate_back), tint = AppText, modifier = Modifier.size(22.dp))
             }
             Text(stringResource(if (sub == SUB_TRANSITIONS) R.string.settings_transitions_title else R.string.settings_title),
-                color = AppText, fontSize = 20.sp, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
-            if (sub == null) IconButton(onClick = { query = if (query == null) "" else null }) {
-                Icon(androidx.compose.material.icons.Icons.Default.Search, contentDescription = stringResource(R.string.settings_search), tint = AppText)
+                color = AppText, fontSize = 20.sp, letterSpacing = 1.sp, fontFamily = SettingsTitleFont,
+                modifier = Modifier.weight(1f).padding(start = 14.dp))
+            if (sub == null) SettingsTile(onClick = { query = if (query == null) "" else null }) {
+                Icon(androidx.compose.material.icons.Icons.Default.Search, contentDescription = stringResource(R.string.settings_search), tint = AppText, modifier = Modifier.size(22.dp))
             }
         }
         // The search button: a field over the tabs, the rows of every tab it finds; a tap opens its tab.
@@ -140,21 +144,12 @@ fun SettingsScreen(navController: NavController) {
         // account, then the sources that play and download), then how it is listened to, then the app.
         val tabs = listOf(R.string.settings_section_playback, R.string.settings_sources_tab, R.string.settings_section_lyrics, R.string.settings_section_downloads,
             R.string.settings_tab_appearance, R.string.settings_tab_about, R.string.accounts_title, R.string.settings_section_library)
-        androidx.compose.material3.ScrollableTabRow(
-            selectedTabIndex = TAB_ORDER.indexOf(tab).coerceAtLeast(0), containerColor = Color.Transparent, contentColor = AppText, edgePadding = 12.dp,
-            indicator = { positions ->
-                androidx.compose.material3.TabRowDefaults.SecondaryIndicator(
-                    Modifier.tabIndicatorOffset(positions[TAB_ORDER.indexOf(tab).coerceAtLeast(0)]), color = com.music.spotui.ui.theme.AppAccent)
-            },
-            divider = { HorizontalDivider(color = tone(0xFF2A2A2A)) },
+        // The tabs are chips now (a rounded rectangle, red when it is the one you are in).
+        Row(
+            Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            TAB_ORDER.forEach { i ->
-                androidx.compose.material3.Tab(
-                    selected = tab == i, onClick = { tab = i },
-                    text = { Text(stringResource(tabs[i]), fontSize = 14.sp, fontWeight = if (tab == i) FontWeight.Bold else FontWeight.Normal) },
-                    selectedContentColor = AppText, unselectedContentColor = AppMuted,
-                )
-            }
+            TAB_ORDER.forEach { i -> SettingsChip(stringResource(tabs[i]), tab == i) { tab = i } }
         }
         Column(Modifier.fillMaxWidth().weight(1f).verticalScroll(rememberScrollState()).navigationBarsPadding()) {
             // The first source of each order, when it is an extension announcing settings in that tab.
@@ -620,8 +615,14 @@ private fun SourcesBlock(action: app.myspoti.extensions.Action, navController: N
 
 @Composable
 internal fun Section(title: Int) {
-    Text(stringResource(title).uppercase(), color = com.music.spotui.ui.theme.AppAccent, fontSize = 12.sp, fontWeight = FontWeight.Bold,
-        letterSpacing = 1.sp, modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 16.dp, bottom = 8.dp))
+    val accent = com.music.spotui.ui.theme.AppAccent
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 22.dp, bottom = 10.dp)) {
+        Text(stringResource(title).uppercase(), color = accent, fontSize = 12.sp, fontWeight = FontWeight.Bold, letterSpacing = 2.sp)
+        androidx.compose.foundation.layout.Box(
+            Modifier.padding(start = 12.dp).weight(1f).height(1.dp)
+                .background(androidx.compose.ui.graphics.Brush.horizontalGradient(listOf(accent.copy(alpha = 0.6f), Color.Transparent))),
+        )
+    }
 }
 
 @Composable
@@ -1237,15 +1238,25 @@ private fun RemoveDownloadsRow() {
 @Composable
 internal fun OptionRow(label: String, detail: String, checked: Boolean,
     enabled: Boolean = true, onChecked: (Boolean) -> Unit) {
+    val accent = com.music.spotui.ui.theme.AppAccent
+    val shape = RoundedCornerShape(18.dp)
+    // A rounded card with a hairline edge; the switch is red when on.
     Row(verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp)
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
+            .clip(shape).background(Color.White.copy(alpha = 0.06f)).border(1.dp, Color.White.copy(alpha = 0.08f), shape)
             .toggleable(checked, enabled = enabled, role = Role.Switch, onValueChange = onChecked)
-            .padding(horizontal = 20.dp, vertical = 10.dp)) {
+            .padding(horizontal = 16.dp, vertical = 12.dp)) {
         androidx.compose.foundation.layout.Column(Modifier.weight(1f)) {
-            Text(label, color = AppText, fontSize = 16.sp)
+            Text(label, color = AppText, fontSize = 16.sp, fontWeight = FontWeight.Medium)
             Text(detail, color = AppMuted, fontSize = 12.sp)
         }
-        androidx.compose.material3.Switch(checked = checked, enabled = enabled, onCheckedChange = null)
+        androidx.compose.material3.Switch(
+            checked = checked, enabled = enabled, onCheckedChange = null,
+            colors = androidx.compose.material3.SwitchDefaults.colors(
+                checkedTrackColor = accent, checkedThumbColor = Color.White, checkedBorderColor = accent,
+                uncheckedTrackColor = Color(0xFF241114), uncheckedThumbColor = Color(0xFF9A8A8C), uncheckedBorderColor = accent.copy(alpha = 0.45f),
+            ),
+        )
     }
 }
 
@@ -1311,4 +1322,32 @@ internal fun shareDiagnosticReport(context: android.content.Context, file: java.
         send.putExtra(android.content.Intent.EXTRA_TEXT, "Dormire diagnostic report: ${file.absolutePath}")
     }
     context.startActivity(android.content.Intent.createChooser(send, null).addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+}
+
+
+private val SettingsTitleFont = androidx.compose.ui.text.font.FontFamily(androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, androidx.compose.ui.text.font.FontWeight.Bold))
+
+/** A settings header button: a rounded square with a hairline edge (back, search). */
+@Composable
+private fun SettingsTile(onClick: () -> Unit, content: @Composable () -> Unit) {
+    val shape = RoundedCornerShape(14.dp)
+    androidx.compose.foundation.layout.Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.size(42.dp).clip(shape).background(Color.White.copy(alpha = 0.08f))
+            .border(1.dp, Color.White.copy(alpha = 0.12f), shape).clickable(onClick = onClick),
+    ) { content() }
+}
+
+/** A tab of Settings as a chip: red when selected, a dim rounded rectangle otherwise. */
+@Composable
+private fun SettingsChip(label: String, selected: Boolean, onClick: () -> Unit) {
+    val shape = RoundedCornerShape(14.dp)
+    androidx.compose.foundation.layout.Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.clip(shape)
+            .background(if (selected) com.music.spotui.ui.theme.AppAccent else Color.White.copy(alpha = 0.08f))
+            .clickable(onClick = onClick).padding(horizontal = 18.dp, vertical = 10.dp),
+    ) {
+        Text(label, color = if (selected) Color.Black else AppText, fontSize = 14.sp, fontWeight = FontWeight.Bold, maxLines = 1)
+    }
 }

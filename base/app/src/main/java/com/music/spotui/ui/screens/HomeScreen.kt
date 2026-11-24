@@ -243,11 +243,14 @@ private fun HomeHeaderRow(navController: NavController, facet: String, onFacet: 
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier.fillMaxWidth().padding(start = 18.dp, end = 14.dp, top = 12.dp),
         ) {
+            // The name of the Spotify account in the title face (the app's own name until it is known).
             Text(
-                text = "DORMIRE",
+                text = com.music.spotui.data.api.ProfileCache.name?.trim()?.takeIf { it.isNotEmpty() } ?: "Dormire",
                 color = AppText,
-                fontSize = 20.sp,
-                letterSpacing = 3.sp,
+                fontSize = 21.sp,
+                letterSpacing = 1.5.sp,
+                maxLines = 1,
+                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
                 fontFamily = androidx.compose.ui.text.font.FontFamily(
                     androidx.compose.ui.text.font.Font(app.myspoti.engine.R.font.dormire_cinzel, FontWeight.Bold),
                 ),
@@ -427,15 +430,20 @@ private fun uniqueKeys(raw: List<String>): List<String> {
 
 @Composable
 private fun HomeFeedSection(navController: NavController, section: HomeSection) {
-    Text(
-        text = section.title,
-        color = AppText,
-        fontSize = 21.sp,
-        fontWeight = FontWeight.Bold,
-        maxLines = 2,
-        overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
-        modifier = Modifier.padding(16.dp, 20.dp, 16.dp, 4.dp),
-    )
+    // A short red bar before each shelf title.
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(16.dp, 20.dp, 16.dp, 4.dp)) {
+        Box(Modifier.width(4.dp).height(22.dp).clip(RoundedCornerShape(2.dp)).background(com.music.spotui.ui.theme.AppAccent))
+        Spacer(Modifier.width(10.dp))
+        Text(
+            text = section.title,
+            color = AppText,
+            fontSize = 21.sp,
+            fontWeight = FontWeight.Bold,
+            maxLines = 2,
+            overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+            modifier = Modifier.weight(1f),
+        )
+    }
     val keys = remember(section) { uniqueKeys(section.items.map { it.name + "|" + it.imageUrl }) }
     LazyRow(contentPadding = androidx.compose.foundation.layout.PaddingValues(10.dp, 0.dp)) {
         items(section.items.size, key = { keys[it] }) { i ->
