@@ -1192,8 +1192,12 @@ object SongPlayer {
             play()
             return
         }
+        // A song picked while a console, TV or speaker plays: a play by name starts on this phone, so it is
+        // handed straight back to that device (a brief start here, then it plays there).
+        val keep = remoteToKeep()
         val before = api.player.state.value?.item?.uri
         play()
+        if (keep != null) runCatching { api.devices.transfer(keep.id) }
         repeat(2) { attempt ->
             val moved = kotlinx.coroutines.withTimeoutOrNull(PLAY_CHECK_MS) {
                 api.player.state.first { s ->
@@ -1202,8 +1206,31 @@ object SongPlayer {
                 }
             }
             if (moved != null || !isLatest()) return
-            if (attempt == 0) { Log.w(TAG, "play of $itemUri not taken: sent again"); play() }
+            if (attempt == 0) {
+                Log.w(TAG, "play of $itemUri not taken: sent again")
+                play()
+                if (keep != null) runCatching { api.devices.transfer(keep.id) }
+            }
         }
+    }
+
+    /**
+     * The device a picked song should stay on: the one playing now when it is a kind started on purpose
+     * (console, TV, speaker...) or the one picked in the app; null when this phone plays, or when another
+     * phone or computer of the account does (a pick there plays here, as before).
+     */
+    private suspend fun remoteToKeep(): ConnectDevice? {
+        var device = _activeDevice.value
+        if (device == null && MyspotiRuntime.spotify.player.playsElsewhere.value) {
+            runCatching { api.devices.refresh() }
+            device = api.devices.devices.value.firstOrNull { it.active && !it.local }
+                ?.let { ConnectDevice(it.id, it.name, it.type, false, true) }
+        }
+        val d = device ?: return null
+        val keep = d.id == chosenRemote ||
+            d.type.uppercase().replace("_", "") in KEEP_REMOTE_TYPES ||
+            d.name.contains("playstation", true) || d.name.contains("ps5", true)
+        return d.takeIf { keep }
     }
 
     /** Remember the Spotify context the given play keys belong to. */
