@@ -1197,7 +1197,7 @@ object SongPlayer {
         val keep = remoteToKeep()
         val before = api.player.state.value?.item?.uri
         play()
-        if (keep != null) runCatching { api.devices.transfer(keep.id) }
+        if (keep != null) handBack(keep)
         repeat(2) { attempt ->
             val moved = kotlinx.coroutines.withTimeoutOrNull(PLAY_CHECK_MS) {
                 api.player.state.first { s ->
@@ -1209,9 +1209,28 @@ object SongPlayer {
             if (attempt == 0) {
                 Log.w(TAG, "play of $itemUri not taken: sent again")
                 play()
-                if (keep != null) runCatching { api.devices.transfer(keep.id) }
+                if (keep != null) handBack(keep)
             }
         }
+    }
+
+    /**
+     * Moves the song that just started on this phone back to [device]. Not at once: Spotify still lists
+     * [device] as the active one for a moment after the phone starts, and a transfer to the device that is
+     * already the active one does nothing. Waits (up to ~3 s) until another device is the active one, then transfers.
+     */
+    private suspend fun handBack(device: ConnectDevice) {
+        var taken = false
+        repeat(8) {
+            if (taken) return@repeat
+            runCatching { api.devices.refresh() }
+            val active = api.devices.devices.value.firstOrNull { it.active }
+            if (active != null && active.id != device.id) taken = true else kotlinx.coroutines.delay(400)
+        }
+        val result = runCatching { api.devices.transfer(device.id) }
+        app.myspoti.host.android.Logbook.log(
+            "connect: picked song handed back to ${device.name} (${device.type.lowercase()}): phone became active=$taken, transfer ${if (result.isSuccess) "sent" else "failed: ${result.exceptionOrNull()?.message}"}",
+        )
     }
 
     /**
